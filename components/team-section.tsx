@@ -3,7 +3,6 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { principalInvestigator, teamMembers, othersMembers, researchStaff, type TeamMember } from "@/lib/data"
 
 export function TeamSection() {
@@ -15,7 +14,7 @@ export function TeamSection() {
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-[#254D70] text-center mb-8 border-b-4 border-[#954C2E] inline-block w-full pb-4">Our Team</h2>
+                    <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080]  inline-block w-full pb-4">Our Team</h2>
                     <p className="text-xl text-slate-600 max-w-3xl mx-auto">
                         Meet the dedicated researchers advancing our understanding of language and cognition.
                     </p>

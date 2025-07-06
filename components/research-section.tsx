@@ -34,7 +34,7 @@ export function ResearchSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#254D70] text-center mb-8 border-b-4 border-[#954C2E] inline-block w-full pb-4">Research Portfolio</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">Research Portfolio</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Discover our ongoing projects, publications, and contributions to the field of language and cognition
               research.
@@ -115,26 +115,13 @@ export function ResearchSection() {
                           <h3 className="text-lg font-semibold text-slate-900 flex-1 mr-4">{pub.title}</h3>
                           <Badge variant="outline">{pub.year}</Badge>
                         </div>
-                        <p className="text-slate-600 mb-2">{pub.authors.join(", ")}</p>
-                        <p className="text-sm text-slate-500 italic">
-                          {pub.journal}
-                          {pub.volume && `, ${pub.volume}`}
-                          {pub.publisher && `, ${pub.publisher}`}
-                        </p>
-                        {(pub.doi || pub.link) && (
+                        <p className="text-slate-600 mb-2 text-sm leading-relaxed">{pub.citation}</p>
+                        {pub.link && (
                             <div className="flex items-center text-sm text-blue-600 mt-2">
                               <Link2 size={14} className="mr-1" />
-                              {pub.doi && (
-                                  <a href={`https://doi.org/${pub.doi}`} target="_blank" rel="noopener noreferrer">
-                                    DOI
-                                  </a>
-                              )}
-                              {pub.doi && pub.link && " | "}
-                              {pub.link && (
-                                  <a href={pub.link} target="_blank" rel="noopener noreferrer">
-                                    Link
-                                  </a>
-                              )}
+                              <a href={pub.link} target="_blank" rel="noopener noreferrer">
+                                View Publication
+                              </a>
                             </div>
                         )}
                       </CardContent>

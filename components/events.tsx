@@ -8,25 +8,114 @@ import { eventsData } from "@/lib/eventData"
 export function EventsSection() {
     const [isVisible, setIsVisible] = useState(false)
     const sectionRef = useRef<HTMLElement>(null)
+    const intervalRefs = useRef<(NodeJS.Timeout | null)[]>(eventsData.map(() => null))
 
     // Dynamic state for each event's current image index
     const [currentImageIndices, setCurrentImageIndices] = useState<number[]>(
         eventsData.map(() => 0)
     )
 
-    const nextImage = (eventIndex: number) => {
-        setCurrentImageIndices(prev => {
-            const newIndices = [...prev]
-            newIndices[eventIndex] = (newIndices[eventIndex] + 1) % eventsData[eventIndex].images.length
-            return newIndices
-        })
+    // Track next image index for smooth transitions
+    const [nextImageIndices, setNextImageIndices] = useState<number[]>(
+        eventsData.map(() => 0)
+    )
+
+    // Track which images are transitioning (for slideshow only)
+    const [transitioning, setTransitioning] = useState<boolean[]>(
+        eventsData.map(() => false)
+    )
+
+    // Track if individual carousels are paused
+    const [isPaused, setIsPaused] = useState<boolean[]>(
+        eventsData.map(() => false)
+    )
+
+    const nextImage = (eventIndex: number, isAutomatic = false) => {
+        if (isAutomatic) {
+            // Smooth transition for slideshow
+            if (transitioning[eventIndex]) return
+
+            // Set up next image
+            setNextImageIndices(prev => {
+                const newIndices = [...prev]
+                newIndices[eventIndex] = (currentImageIndices[eventIndex] + 1) % eventsData[eventIndex].images.length
+                return newIndices
+            })
+
+            // Start transition
+            setTransitioning(prev => {
+                const newTransitioning = [...prev]
+                newTransitioning[eventIndex] = true
+                return newTransitioning
+            })
+
+            // Complete transition after fade
+            setTimeout(() => {
+                setCurrentImageIndices(prev => {
+                    const newIndices = [...prev]
+                    newIndices[eventIndex] = (newIndices[eventIndex] + 1) % eventsData[eventIndex].images.length
+                    return newIndices
+                })
+
+                setTransitioning(prev => {
+                    const newTransitioning = [...prev]
+                    newTransitioning[eventIndex] = false
+                    return newTransitioning
+                })
+            }, 800)
+        } else {
+            // Instant change for manual navigation
+            setCurrentImageIndices(prev => {
+                const newIndices = [...prev]
+                newIndices[eventIndex] = (newIndices[eventIndex] + 1) % eventsData[eventIndex].images.length
+                return newIndices
+            })
+            resetTimer(eventIndex)
+        }
     }
 
     const prevImage = (eventIndex: number) => {
+        // Always instant for manual navigation
         setCurrentImageIndices(prev => {
             const newIndices = [...prev]
             newIndices[eventIndex] = (newIndices[eventIndex] - 1 + eventsData[eventIndex].images.length) % eventsData[eventIndex].images.length
             return newIndices
+        })
+        resetTimer(eventIndex)
+    }
+
+    const startTimer = (eventIndex: number) => {
+        if (intervalRefs.current[eventIndex]) {
+            clearInterval(intervalRefs.current[eventIndex]!)
+        }
+
+        intervalRefs.current[eventIndex] = setInterval(() => {
+            if (!isPaused[eventIndex]) {
+                nextImage(eventIndex, true)
+            }
+        }, 5000)
+    }
+
+    const resetTimer = (eventIndex: number) => {
+        if (intervalRefs.current[eventIndex]) {
+            clearInterval(intervalRefs.current[eventIndex]!)
+        }
+        startTimer(eventIndex)
+    }
+
+    const pauseTimer = (eventIndex: number) => {
+        setIsPaused(prev => {
+            const newPaused = [...prev]
+            newPaused[eventIndex] = true
+            return newPaused
+        })
+    }
+
+    const resumeTimer = (eventIndex: number) => {
+        setIsPaused(prev => {
+            const newPaused = [...prev]
+            newPaused[eventIndex] = false
+            return newPaused
         })
     }
 
@@ -48,14 +137,33 @@ export function EventsSection() {
     }, [])
 
     useEffect(() => {
-        const interval = setInterval(() => {
-            eventsData.forEach((_, index) => {
-                nextImage(index)
-            })
-        }, 5000)
+        // Start individual timers for each event
+        eventsData.forEach((_, index) => {
+            startTimer(index)
+        })
 
-        return () => clearInterval(interval)
+        return () => {
+            // Clean up all timers
+            intervalRefs.current.forEach(interval => {
+                if (interval) {
+                    clearInterval(interval)
+                }
+            })
+        }
     }, [])
+
+    // Update timers when pause state changes
+    useEffect(() => {
+        eventsData.forEach((_, index) => {
+            if (isPaused[index]) {
+                if (intervalRefs.current[index]) {
+                    clearInterval(intervalRefs.current[index]!)
+                }
+            } else {
+                startTimer(index)
+            }
+        })
+    }, [isPaused])
 
     return (
         <section ref={sectionRef} id="events" className="py-20 bg-white">
@@ -63,8 +171,8 @@ export function EventsSection() {
                 <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
                     {/* Header */}
                     <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-[#254D70] text-center mb-8 border-b-4 border-[#954C2E] inline-block w-full pb-4">
-                            Events Conducted
+                        <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">
+                            Events
                         </h2>
                         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                             We have been hosting exciting events that advanced the study of language and cognition through collaboration and innovation.
@@ -74,102 +182,65 @@ export function EventsSection() {
                     {/* Dynamic Event Rendering */}
                     {eventsData.map((event, eventIndex) => (
                         <div key={event.id} className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-                            {/* Content order alternates: even index = text first, odd index = image first */}
-                            {eventIndex % 2 === 0 ? (
-                                <>
-                                    {/* Text content */}
-                                    <div className="space-y-6">
-                                        <h3 className="text-4xl font-semibold text-slate-900 leading-tight">
-                                            {event.heading}
-                                        </h3>
-                                        <Badge variant="outline" className="border-black text-black bg-white rounded-full px-4 py-1 text-sm">
-                                            {event.tag}
-                                        </Badge>
-                                        {event.description.map((desc, index) => (
-                                            <p key={index} className="text-lg text-slate-700 leading-relaxed">
-                                                {desc}
-                                            </p>
-                                        ))}
-                                        <p className="text-lg text-slate-700 leading-relaxed">
-                                            <strong>Date:</strong> {event.date}<br />
-                                            <strong>Venue:</strong> {event.venue}
-                                        </p>
-                                    </div>
+                            {/* Text content - Always on left */}
+                            <div className="space-y-6">
+                                <h3 className="text-4xl font-semibold text-slate-900 leading-tight">
+                                    {event.heading}
+                                </h3>
+                                <Badge variant="outline" className="border-black text-black bg-white rounded-full px-4 py-1 text-sm">
+                                    {event.tag}
+                                </Badge>
+                                {event.description.map((desc, index) => (
+                                    <p key={index} className="text-lg text-slate-700 leading-relaxed">
+                                        {desc}
+                                    </p>
+                                ))}
+                                <p className="text-lg text-slate-700 leading-relaxed">
+                                    <strong>Date:</strong> {event.date}<br />
+                                    <strong>Venue:</strong> {event.venue}
+                                </p>
+                            </div>
 
-                                    {/* Image carousel */}
-                                    <div className="relative">
-                                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                                            <img
-                                                src={event.images[currentImageIndices[eventIndex]] || "/placeholder.svg"}
-                                                alt={`${event.heading} Image ${currentImageIndices[eventIndex] + 1}`}
-                                                className="w-full h-full object-cover"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                                        </div>
+                            {/* Image carousel - Always on right */}
+                            <div
+                                className="relative"
+                                onMouseEnter={() => pauseTimer(eventIndex)}
+                                onMouseLeave={() => resumeTimer(eventIndex)}
+                            >
+                                <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
+                                    {/* Current image */}
+                                    <img
+                                        src={event.images[currentImageIndices[eventIndex]] || "/placeholder.svg"}
+                                        alt={`${event.heading} Image ${currentImageIndices[eventIndex] + 1}`}
+                                        className="w-full h-full object-cover"
+                                    />
 
-                                        {/* Navigation buttons */}
-                                        <button
-                                            onClick={() => prevImage(eventIndex)}
-                                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-                                        >
-                                            <ChevronLeft size={15} />
-                                        </button>
-                                        <button
-                                            onClick={() => nextImage(eventIndex)}
-                                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-                                        >
-                                            <ChevronRight size={15} />
-                                        </button>
-                                    </div>
-                                </>
-                            ) : (
-                                <>
-                                    {/* Image carousel */}
-                                    <div className="relative">
-                                        <div className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl">
-                                            <img
-                                                src={event.images[currentImageIndices[eventIndex]] || "/placeholder.svg"}
-                                                alt={`${event.heading} Image ${currentImageIndices[eventIndex] + 1}`}
-                                                className="w-full h-full object-cover"
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
-                                        </div>
+                                    {/* Next image for smooth transition */}
+                                    {transitioning[eventIndex] && (
+                                        <img
+                                            src={event.images[nextImageIndices[eventIndex]] || "/placeholder.svg"}
+                                            alt={`${event.heading} Next Image`}
+                                            className="absolute inset-0 w-full h-full object-cover animate-fade-in"
+                                        />
+                                    )}
 
-                                        {/* Navigation buttons */}
-                                        <button
-                                            onClick={() => prevImage(eventIndex)}
-                                            className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-                                        >
-                                            <ChevronLeft size={15} />
-                                        </button>
-                                        <button
-                                            onClick={() => nextImage(eventIndex)}
-                                            className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-                                        >
-                                            <ChevronRight size={15} />
-                                        </button>
-                                    </div>
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                                </div>
 
-                                    {/* Text content */}
-                                    <div className="space-y-6">
-                                        <h3 className="text-4xl font-semibold text-slate-900 leading-tight">
-                                            {event.heading}
-                                        </h3>
-                                        <Badge variant="outline" className="border-black text-black bg-white rounded-full px-4 py-1 text-sm">
-                                            {event.tag}
-                                        </Badge>
-                                        {event.description.map((desc, index) => (
-                                            <p key={index} className="text-lg text-slate-700 leading-relaxed">
-                                                {desc}
-                                            </p>
-                                        ))}
-                                        <p className="text-lg text-slate-700 leading-relaxed">
-                                            <strong>Date:</strong> {event.date}<br />
-                                            <strong>Venue:</strong> {event.venue}
-                                        </p>
-                                    </div>
-                                </>
-                            )}
+                                {/* Navigation buttons */}
+                                <button
+                                    onClick={() => prevImage(eventIndex)}
+                                    className="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+                                >
+                                    <ChevronLeft size={15} />
+                                </button>
+                                <button
+                                    onClick={() => nextImage(eventIndex)}
+                                    className="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
+                                >
+                                    <ChevronRight size={15} />
+                                </button>
+                            </div>
                         </div>
                     ))}
                 </div>

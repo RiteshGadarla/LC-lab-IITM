@@ -12,7 +12,7 @@ export function CollaborationsSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-[#254D70] text-center mb-8 border-b-4 border-[#954C2E] inline-block w-full pb-4">Collaborations</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">Collaborations</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Building bridges to advance language and cognition research through international partnerships.
             </p>
