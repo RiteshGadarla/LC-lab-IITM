@@ -47,13 +47,7 @@ export const teamMembers: TeamMember[] = [
         research: "Syntactic Patterns of Non-Verbal Predication in Select Dravidian Languages",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/prem_bzpanw.png",
     },
-    {
-        name: "Krishna Raj SR",
-        role: "PhD Scholar",
-        research: "From pixels to prepositions: Linking Vision and Spatial Prepositions",
-        image:
-            "https://media.licdn.com/dms/image/v2/C4D03AQGZ7J-NDl5ZzA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656983904228?e=1755129600&v=beta&t=e-mEsTKDvdS9Ba0LzZdqxFDtSGgHYUC_gzXBfC4bmkM",
-    },
+
     {
         name: "Scherezade Dastur",
         role: "PhD Scholar",
@@ -70,19 +64,27 @@ export const teamMembers: TeamMember[] = [
 
 export const othersMembers: TeamMember[] = [
     {
+        name: "G L Vijayavani",
+        role: "Co-guiding with Prof. Preeti Aghalayam",
+        research:
+            "Identifying Gender Bias in Indian Academic Institutional Communication: A Dual Approach Using Text Analysis and Stakeholder Perception",
+        image: "",
+    },
+    {
+        name: "Krishna Raj SR",
+        role: "Co-guiding with Prof. Srinivasa Chakravarthy",
+        research: "From pixels to prepositions: Linking Vision and Spatial Prepositions",
+        image:
+            "https://media.licdn.com/dms/image/v2/C4D03AQGZ7J-NDl5ZzA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656983904228?e=1755129600&v=beta&t=e-mEsTKDvdS9Ba0LzZdqxFDtSGgHYUC_gzXBfC4bmkM",
+    },
+    {
         name: "Ruby George",
-        role: "Co-Guided",
+        role: "Co-guided with Prof. Umakant Dash",
         research:
             "Persuasion in Public Service Advertising: Creating Changes Through Creative Strategies in the Print Media",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/ruby_l2mqos.jpg",
     },
-    {
-        name: "G L Vijayavani",
-        role: "Co-Guiding",
-        research:
-            "Identifying Gender Bias in Indian Academic Institutional Communication: A Dual Approach Using Text Analysis and Stakeholder Perception",
-        image: "",
-    }
+
 ]
 
 export const researchStaff: TeamMember[] = [
@@ -90,13 +92,13 @@ export const researchStaff: TeamMember[] = [
         name: "Nayana Rajan",
         role: "Research Staff",
         research: "",
-        image: "",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751802389/bd669f40-4140-4bca-8cb2-7cf09924f90a.png",
     },
     {
         name: "Suchitra Chakraborty",
         role: "Research Staff",
         research: "",
-        image: "",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751802299/df1d1d61-e3a7-4c65-9cb5-7917afacfdbf.png",
     }
 ]
 
@@ -150,7 +152,7 @@ export const friends = [
     },
     {
         name: "Shobhith Vadlamudi",
-        contribution: "Co-Guided",
+        contribution: "Co-Conducted the first experiment in the lab",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1750746877/shobhit_e8zraw.jpg",
     },
     {
@@ -161,7 +163,7 @@ export const friends = [
     {
         name: "Gadarla Ritesh Reddy",
         contribution: "Co-designed the website",
-        image: "",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751803202/f426fb16-54ff-49fb-a50d-ee4652e4117b.png",
     },
 ]
 

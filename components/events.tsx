@@ -73,7 +73,7 @@ export function EventsSection() {
                     <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-[#254D70] text-center mb-8 border-b-4 border-[#954C2E] inline-block w-full pb-4">Events Conducted</h2>
                         <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-                            We hosted exciting events that advanced the study of language and cognition through collaboration and innovation.
+                            We have been hosting exciting events that advanced the study of language and cognition through collaboration and innovation.
                         </p>
                     </div>
 
@@ -81,7 +81,8 @@ export function EventsSection() {
                     <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
                         {/* Text content */}
                         <div className="space-y-6">
-                            <h3 className="text-2xl font-semibold text-slate-900">Mini Summer Course on Essentials of Generative Grammar</h3>
+                            <h3 className="text-2xl font-semibold text-slate-900">4-day Mini Summer Course on </h3>
+                            <h3 className="text-2xl font-semibold text-slate-900">"Essentials of Generative Grammar"</h3>
                             <p className="text-lg text-slate-700 leading-relaxed">
                                 A four-day intensive course organized by the Department of Humanities and Social Sciences, IIT Madras, in collaboration with the Central Institute of Indian Languages, Mysuru. This course offers a deep dive into the principles of generative grammar, exploring its theoretical foundations and applications in linguistic research.
                             </p>
