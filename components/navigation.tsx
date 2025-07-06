@@ -4,9 +4,10 @@ import {useState, useEffect, useCallback} from "react"
 import {Menu, X} from "lucide-react"
 import {Button} from "@/components/ui/button"
 import Link from "next/link"
-import {usePathname} from "next/navigation"
+import {usePathname, useRouter} from "next/navigation"
 
 export function Navigation() {
+    const router = useRouter()
     const pathname = usePathname()
     const isHomePage = pathname === "/"
     const [isOpen, setIsOpen] = useState(false)
@@ -56,6 +57,7 @@ export function Navigation() {
                         <img
                             src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
                             alt="IIT Madras Logo"
+                            onClick={() => router.push("https://www.iitm.ac.in")}
                             className="h-11 w-auto"
                             onError={(e) => {
                                 e.currentTarget.src = "/placeholder.svg" // Fallback image

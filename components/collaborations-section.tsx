@@ -18,26 +18,6 @@ export function CollaborationsSection() {
             </p>
           </div>
 
-          {/* Stats */}
-          {/*<div className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-16">*/}
-          {/*  <div className="text-center">*/}
-          {/*    <div className="text-3xl font-bold text-blue-600 mb-2">6</div>*/}
-          {/*    <div className="text-slate-600">Countries</div>*/}
-          {/*  </div>*/}
-          {/*  <div className="text-center">*/}
-          {/*    <div className="text-3xl font-bold text-blue-600 mb-2">12+</div>*/}
-          {/*    <div className="text-slate-600">Institutions</div>*/}
-          {/*  </div>*/}
-          {/*  <div className="text-center">*/}
-          {/*    <div className="text-3xl font-bold text-blue-600 mb-2">25+</div>*/}
-          {/*    <div className="text-slate-600">Joint Publications</div>*/}
-          {/*  </div>*/}
-          {/*  <div className="text-center">*/}
-          {/*    <div className="text-3xl font-bold text-blue-600 mb-2">50+</div>*/}
-          {/*    <div className="text-slate-600">Exchange Programs</div>*/}
-          {/*  </div>*/}
-          {/*</div>*/}
-
           {/* Collaborators Grid */}
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {collaborators.map((collaborator, index) => (

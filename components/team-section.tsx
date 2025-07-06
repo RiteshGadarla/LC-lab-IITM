@@ -79,11 +79,11 @@ export function TeamSection() {
                 {/* PhD Scholars */}
                 <div className="mb-16">
                     <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">PhD Scholars</h3>
-                    <div className={`flex flex-wrap justify-center gap-6 ${teamMembers.length >= 3 ? 'md:grid md:grid-cols-2 lg:grid-cols-3' : ''}`}>
+                    <div className="flex flex-wrap justify-center gap-6">
                         {teamMembers.map((member, index) => (
                             <Card
                                 key={index}
-                                className={`hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm ${index >= 6 && teamMembers.length === 7 ? 'lg:col-start-2' : ''}`}
+                                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm"
                                 onClick={() => setSelectedMember(member)}
                             >
                                 <CardContent className="p-6 text-center">
@@ -102,7 +102,7 @@ export function TeamSection() {
 
                 {/* Other Members */}
                 <div className="mb-16">
-                    <div className={`flex flex-wrap justify-center gap-6 ${othersMembers.length >= 3 ? 'md:grid md:grid-cols-2 lg:grid-cols-3' : ''}`}>
+                    <div className="flex flex-wrap justify-center gap-6">
                         {othersMembers.map((member, index) => (
                             <Card
                                 key={index}
@@ -127,7 +127,7 @@ export function TeamSection() {
                 {/* Research Staff */}
                 <div className="mb-16">
                     <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">Research Staff</h3>
-                    <div className={`flex flex-wrap justify-center gap-6 ${researchStaff.length >= 3 ? 'md:grid md:grid-cols-2 lg:grid-cols-3' : ''}`}>
+                    <div className="flex flex-wrap justify-center gap-6">
                         {researchStaff.map((member, index) => (
                             <Card
                                 key={index}

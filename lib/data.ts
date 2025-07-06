@@ -21,7 +21,7 @@ export const principalInvestigator: PrincipalInvestigator = {
     title: "Assistant Professor, Department of Humanities and Social Sciences, IIT Madras",
     interests: "Syntax, Pragmatics, Language Processing, Eye-tracking, Cognition Studies",
     research: "Leading research in cross-linguistic syntax and cognitive processing",
-    image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749377865/ani_llz6al.jpg",
+    image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_fill,ar_1:1,g_auto/v1749377865/ani_llz6al.jpg",
     email: "aslinguistics.iitm@gmail.com",
     phone: "+91 44 2257 4534",
     linkedInLink: "https://www.linkedin.com/in/anindita-sahoo-3b971515/",
@@ -108,7 +108,7 @@ export const collaborators = [
         name: "Prof. Dagmar Divjak",
         institution: "University of Birmingham",
         country: "United Kingdom",
-        image: "https://loop.frontiersin.org/images/profile/248604/203",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751822838/52d15f43-2902-4d98-9b5a-c589043b100f.png",
     },
     {
         name: "Prof. Foong Ha Yap",
@@ -120,7 +120,7 @@ export const collaborators = [
         name: "Prof. Marcel den Dikken",
         institution: "Hungarian Research Centre for Linguistics",
         country: "Hungary",
-        image: "https://linguistics.blcu.edu.cn/__local/1/2C/72/CC8C92DE545727AF2C84D109DCB_B65AE196_A911.gif",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751822661/4d802908-4c29-4cce-9cec-67b912fae821.png",
     },
     {
         name: "Prof. Seppo Kittilä",
