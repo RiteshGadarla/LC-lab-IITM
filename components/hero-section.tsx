@@ -26,6 +26,7 @@ export function HeroSection() {
     line2: Array(10).fill(" ")  // "Laboratory" length
   })
   const [contentVisible, setContentVisible] = useState(false)
+  const [isMobile, setIsMobile] = useState(false)
   const router = useRouter();
   const MIN_CHARS = 50
   const MAX_CHARS = 100
@@ -41,6 +42,25 @@ export function HeroSection() {
     line2: "Laboratory"
   }
   const LETTER_REVEAL_INTERVAL = TOTAL_REVEAL_DURATION_LINE1 / targetText.line1.length // ms per letter for both lines
+
+  // Check if screen is mobile
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 1024) // lg breakpoint
+    }
+
+    checkMobile()
+    window.addEventListener('resize', checkMobile)
+
+    return () => window.removeEventListener('resize', checkMobile)
+  }, [])
+
+  // Set content visible immediately on mobile
+  useEffect(() => {
+    if (isMobile) {
+      setContentVisible(true)
+    }
+  }, [isMobile])
 
   const createChar = useCallback((id?: number): FloatingChar => {
     const x = Math.random() * 90 + 5
@@ -137,8 +157,10 @@ export function HeroSection() {
     }
   }, [createChar, updateChars])
 
-  // Sequential letter-by-letter reveal effect
+  // Sequential letter-by-letter reveal effect - only on large screens
   useEffect(() => {
+    if (isMobile) return
+
     let index = -1
     let isLine1Complete = false
 
@@ -201,11 +223,32 @@ export function HeroSection() {
 
     const revealInterval = setInterval(revealLetter, LETTER_REVEAL_INTERVAL)
     return () => clearInterval(revealInterval)
-  }, [])
+  }, [isMobile])
 
   return (
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
+        {/* SEO-friendly structured data */}
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "Language & Cognition Laboratory",
+            "description": "Research laboratory exploring the intersection of language, cognition, and communication at Department of Humanities and Social Sciences, IIT Madras",
+            "url": typeof window !== 'undefined' ? window.location.origin : '',
+            "parentOrganization": {
+              "@type": "EducationalOrganization",
+              "name": "Indian Institute of Technology Madras",
+              "department": "Department of Humanities and Social Sciences"
+            },
+            "areaServed": "Global",
+            "knowsAbout": ["Language Processing", "Cognitive Science", "Communication Research", "Linguistics", "Psycholinguistics"]
+          })}
+        </script>
+
+        {/* SEO Meta tags would go in document head, but adding semantic structure here */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900" />
+
+        {/* Floating characters - on all screens */}
         <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
           {floatingChars.map((char) => (
               <div
@@ -224,55 +267,71 @@ export function HeroSection() {
               </div>
           ))}
         </div>
+
         <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
-          <div className="animate-fade-in">
-            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight whitespace-nowrap">
-              {displayText.line1.map((char, index) => (
-                  <span
-                      key={`line1-${index}`}
-                      className={char !== targetText.line1[index] && char !== " " ? "scale-95 inline-block" : "inline-block"}
-                  >
-                  {char === " " ? "\u00A0" : char}
+          <header className="animate-fade-in">
+            {/* Mobile version - simple display */}
+            {isMobile ? (
+                <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
+                  Language & Cognition
+                  <br />
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                  Laboratory
                 </span>
-              ))}
-              <br />
-              <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                {displayText.line2.map((char, index) => (
-                    <span
-                        key={`line2-${index}`}
-                        className={char !== targetText.line2[index] && char !== " " ? "scale-85 inline-block" : "inline-block"}
-                    >
+                </h1>
+            ) : (
+                /* Desktop version - animated display */
+                <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight whitespace-nowrap">
+                  {displayText.line1.map((char, index) => (
+                      <span
+                          key={`line1-${index}`}
+                          className={char !== targetText.line1[index] && char !== " " ? "scale-95 inline-block" : "inline-block"}
+                      >
                     {char === " " ? "\u00A0" : char}
                   </span>
-                ))}
-              </span>
-            </h1>
+                  ))}
+                  <br />
+                  <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+                  {displayText.line2.map((char, index) => (
+                      <span
+                          key={`line2-${index}`}
+                          className={char !== targetText.line2[index] && char !== " " ? "scale-85 inline-block" : "inline-block"}
+                      >
+                      {char === " " ? "\u00A0" : char}
+                    </span>
+                  ))}
+                </span>
+                </h1>
+            )}
+
             <div
                 className={`transition-all duration-1000 ease-out ${
                     contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
                 }`}
             >
-              <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed">
+              <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" role="doc-subtitle">
                 Exploring the intersection of language, cognition, and communication at Department of Humanities and Social Sciences, IIT Madras
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center" role="navigation" aria-label="Primary navigation">
                 <button
                     onClick={() => router.push("/research")}
                     className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                    aria-label="Navigate to research page"
                 >
                   Explore Our Research
                 </button>
                 <button
                     onClick={() => router.push("/team")}
                     className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-300"
+                    aria-label="Navigate to team page"
                 >
                   Meet the Team
                 </button>
-              </div>
+              </nav>
             </div>
-          </div>
+          </header>
         </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
+        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" role="button" aria-label="Scroll down">
           <ChevronDown className="text-white/60" size={24} />
         </div>
       </section>

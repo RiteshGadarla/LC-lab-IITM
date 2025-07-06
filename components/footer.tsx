@@ -45,6 +45,11 @@ export function Footer() {
                 </a>
               </li>
               <li>
+                <a href="/events" className="text-slate-400 hover:text-white transition-colors">
+                  Events
+                </a>
+              </li>
+              <li>
                 <a href="/collaborations" className="text-slate-400 hover:text-white transition-colors">
                   Collaborations
                 </a>

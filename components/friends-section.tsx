@@ -22,7 +22,7 @@ export function FriendsSection() {
                 <img
                   src={friend.image || "/placeholder.svg"}
                   alt={friend.name}
-                  className="w-32 h-32 rounded-full object-cover border-4 border-[#254D70] mx-auto mb-4 shadow-md"
+                  className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                 />
                 <h3 className="text-lg font-bold text-[#254D70] mb-2">{friend.name}</h3>
                 <p className="text-base text-gray-700">{friend.contribution}</p>

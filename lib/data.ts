@@ -23,7 +23,7 @@ export const principalInvestigator: PrincipalInvestigator = {
     research: "Leading research in cross-linguistic syntax and cognitive processing",
     image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749377865/ani_llz6al.jpg",
     email: "aslinguistics.iitm@gmail.com",
-    phone: "+91 (44) 2257 4534",
+    phone: "+91 44 2257 4534",
     linkedInLink: "https://www.linkedin.com/in/anindita-sahoo-3b971515/",
 }
 
@@ -150,7 +150,7 @@ export const friends = [
     },
     {
         name: "Shobhith Vadlamudi",
-        contribution: "Co-created the logo",
+        contribution: "Co-Guided",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1750746877/shobhit_e8zraw.jpg",
     },
     {
