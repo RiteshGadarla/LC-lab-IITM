@@ -9,10 +9,5 @@ export const facilityImages = [
 
 ]
 
-export const eventImages = [
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630995/image4_wzyuto.jpg",
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630998/image10_srzi3c.jpg",
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630996/image11_f4jh96.jpg",
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630995/image5_jdwjwd.jpg",
-    "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630994/image3_aayfqu.jpg",
-]
+
+export const eyeLinkPortableDuoImage = "https://res.cloudinary.com/dt8amwctw/image/upload/v1749485687/image-removebg-preview_1_qar2n7.png"

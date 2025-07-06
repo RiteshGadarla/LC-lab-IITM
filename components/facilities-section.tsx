@@ -1,9 +1,8 @@
 "use client"
 
 import {Card, CardContent} from "@/components/ui/card"
-import {Badge} from "@/components/ui/badge"
-import {Eye, Monitor, Cpu, Database} from "lucide-react"
-
+import {Eye, Monitor} from "lucide-react"
+import {eyeLinkPortableDuoImage} from "@/lib/imagesData";
 
 const equipment = [
     {
@@ -37,7 +36,7 @@ export function FacilitiesSection() {
                     {/* Image */}
                     <div className="relative">
                         <img
-                            src="https://res.cloudinary.com/dt8amwctw/image/upload/v1749485687/image-removebg-preview_1_qar2n7.png"
+                            src= {eyeLinkPortableDuoImage}
                             alt="EyeLink Portable Duo System"
                             className="max-w-full h-auto rounded-lg shadow-lg"
                         />
