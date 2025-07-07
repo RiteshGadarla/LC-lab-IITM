@@ -1,7 +1,7 @@
 // Team data interfaces
 export interface TeamMember {
     name: string
-    role: string
+    role?: string
     research: string
     image: string
     email?: string
@@ -31,32 +31,33 @@ export const principalInvestigator: PrincipalInvestigator = {
 export const teamMembers: TeamMember[] = [
     {
         name: "Aziza Said Hussain",
-        role: "PhD Scholar",
         research: "Copula in Swahili: Pragmatic Functions and Grammaticalization Process",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749993811/aziza_abph42.png",
     },
     {
         name: "Snigdha Medhi",
-        role: "PhD Scholar",
         research: "Patterns of Ergativity in Assamese, and Its Varieties",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_crop,ar_1:1/v1749980338/snigdha_l7hcie.png",
     },
     {
         name: "Gunti Prem Sagar",
-        role: "PhD Scholar",
         research: "Syntactic Patterns of Non-Verbal Predication in Select Dravidian Languages",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/prem_bzpanw.png",
     },
-
+    {
+        name: "Krishna Raj SR",
+        role: "Co-guiding with Prof. Srinivasa Chakravarthy",
+        research: "From pixels to prepositions: Linking Vision and Spatial Prepositions",
+        image:
+            "https://media.licdn.com/dms/image/v2/C4D03AQGZ7J-NDl5ZzA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656983904228?e=1755129600&v=beta&t=e-mEsTKDvdS9Ba0LzZdqxFDtSGgHYUC_gzXBfC4bmkM",
+    },
     {
         name: "Scherezade Dastur",
-        role: "PhD Scholar",
         research: "Code Alternation in Parsi Gujarati and English: An Interactional Linguistics Approach",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_crop,ar_1:1/v1749980337/scheri_x6vo2x.png",
     },
     {
         name: "Pratiti Palit",
-        role: "PhD Scholar",
         research: "On the Interaction of Honorification, Copula and Definiteness: A Variationist Approach",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/pratiti_amhwlv.jpg",
     },
@@ -69,13 +70,6 @@ export const othersMembers: TeamMember[] = [
         research:
             "Identifying Gender Bias in Indian Academic Institutional Communication: A Dual Approach Using Text Analysis and Stakeholder Perception",
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751857873/c53beb33-0e76-4fae-8965-0ce9c23a5278.png",
-    },
-    {
-        name: "Krishna Raj SR",
-        role: "Co-guiding with Prof. Srinivasa Chakravarthy",
-        research: "From pixels to prepositions: Linking Vision and Spatial Prepositions",
-        image:
-            "https://media.licdn.com/dms/image/v2/C4D03AQGZ7J-NDl5ZzA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656983904228?e=1755129600&v=beta&t=e-mEsTKDvdS9Ba0LzZdqxFDtSGgHYUC_gzXBfC4bmkM",
     },
     {
         name: "Ruby George",

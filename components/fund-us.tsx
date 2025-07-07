@@ -2,9 +2,11 @@
 
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { HeartHandshake, TrendingUp, Users, Star, Sparkles, Globe, Award, Brain, Microscope, GraduationCap, MapPin, Calendar, Target, Zap, Lightbulb, BookOpen, Coffee } from "lucide-react";
+import { HeartHandshake, TrendingUp, Users, Star, Sparkles, Globe, Award, Brain, Microscope, GraduationCap, MapPin, Calendar, Target, Zap, Lightbulb, BookOpen, Coffee, Telescope } from "lucide-react";
+import {useRouter} from "next/navigation";
 
 export function FundUsSection() {
+    const router = useRouter();
     return (
         <div className="min-h-screen pt-12 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
             {/* Background decorative elements */}
@@ -27,21 +29,21 @@ export function FundUsSection() {
                         <div className="mt-6 w-32 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
                     </div>
                     <p className="text-2xl md:text-3xl text-slate-700 leading-relaxed max-w-5xl mx-auto font-light">
-                        Your support fuels groundbreaking research in multilingual cognition, language science, and linguistic technology.
+                        Your support fuels research in multilingual cognition, language science, and linguistic technology.
                         <span className="text-blue-600 font-semibold"> Here's why your contribution matters.</span>
                     </p>
                     <div className="flex justify-center gap-4 mt-8">
                         <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                            <Globe className="text-blue-500" size={24} />
-                            <span className="text-slate-700 font-medium">Global Impact</span>
+                            <Telescope className="text-blue-500" size={24} />
+                            <span className="text-slate-700 font-medium">Linguistic Discovery</span>
                         </div>
                         <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                             <Brain className="text-purple-500" size={24} />
                             <span className="text-slate-700 font-medium">Cognitive Research</span>
                         </div>
                         <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                            <Award className="text-indigo-500" size={24} />
-                            <span className="text-slate-700 font-medium">Excellence</span>
+                            <Microscope className="text-indigo-500" size={24} />
+                            <span className="text-slate-700 font-medium">Collaborative Science</span>
                         </div>
                     </div>
                 </section>
@@ -83,8 +85,8 @@ export function FundUsSection() {
                                         <BookOpen className="text-indigo-600" size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold text-slate-800 mb-1">Open Access</h3>
-                                        <p className="text-slate-700">Build globally relevant resources and open-access tools</p>
+                                        <h3 className="font-semibold text-slate-800 mb-1">Knowledge Production</h3>
+                                        <p className="text-slate-700">Producing knowledge about many Indian languages, including endangered and low-resource ones</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -187,7 +189,11 @@ export function FundUsSection() {
                                 <span>Make a Donation</span>
                             </div>
                         </Button>
-                        <Button variant="outline" className="group text-slate-700 border-2 border-slate-300 hover:border-blue-500 hover:text-blue-600 text-lg font-medium px-8 py-6 rounded-2xl transition-all duration-300 hover:-translate-y-1">
+                        <Button
+                            variant="outline"
+                            onClick={() => router.push("/contact")}
+                            className="group text-slate-700 border-2 border-slate-300 hover:border-blue-500 hover:text-blue-600 text-lg font-medium px-8 py-6 rounded-2xl transition-all duration-300 hover:-translate-y-1"
+                        >
                             <div className="flex items-center gap-3">
                                 <Coffee className="group-hover:animate-bounce" size={20} />
                                 <span>Join Us</span>
@@ -207,8 +213,8 @@ export function FundUsSection() {
                             <div className="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                                 <Globe className="text-purple-600" size={32} />
                             </div>
-                            <h3 className="text-xl font-semibold text-slate-800 mb-2">Global Impact</h3>
-                            <p className="text-slate-600">Worldwide collaboration</p>
+                            <h3 className="text-xl font-semibold text-slate-800 mb-2">Cultural Preservation</h3>
+                            <p className="text-slate-600">Maintaining cultural language roots</p>
                         </div>
                         <div className="text-center">
                             <div className="w-16 h-16 bg-indigo-100 rounded-full mx-auto mb-4 flex items-center justify-center">

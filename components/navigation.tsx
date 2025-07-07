@@ -20,8 +20,8 @@ export function Navigation() {
         {label: "Facilities", href: "/facilities"},
         {label: "Events", href: "/events"},
         {label: "Collaborations", href: "/collaborations"},
-        {label: "Friends", href: "/friends"},
         {label: "Contact", href: "/contact"},
+        {label: "Fund Us",  href: "/donate"},
     ]
 
     const handleScroll = useCallback(() => {

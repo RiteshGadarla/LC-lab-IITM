@@ -312,26 +312,43 @@ export function HeroSection() {
               <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" role="doc-subtitle">
                 Exploring the intersection of language, cognition, and communication at Department of Humanities and Social Sciences, IIT Madras
               </p>
-              <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center" role="navigation" aria-label="Primary navigation">
+              <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6">
+                {/* Button 1: Primary - Soft Blue Glow */}
                 <button
                     onClick={() => router.push("/research")}
-                    className="bg-blue-600 hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
-                    aria-label="Navigate to research page"
+                    className="bg-blue-700 hover:bg-blue-600 text-white px-8 py-3 rounded-2xl font-medium shadow-md shadow-blue-900/40 transition-all duration-300 hover:scale-105"
                 >
-                  Explore Our Research
+                  Explore Research
                 </button>
+
+                {/* Button 2: Secondary - Indigo Variant */}
                 <button
                     onClick={() => router.push("/team")}
-                    className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-300"
-                    aria-label="Navigate to team page"
+                    className="bg-indigo-700 hover:bg-indigo-600 text-white px-8 py-3 rounded-2xl font-medium shadow-md shadow-indigo-900/40 transition-all duration-300 hover:scale-105"
                 >
                   Meet the Team
+                </button>
+
+                {/* Button 3: Accent - Purple Variant */}
+                <button
+                    onClick={() => router.push("/donate")}
+                    className="bg-purple-700 hover:bg-purple-600 text-white px-8 py-3 rounded-2xl font-medium shadow-md shadow-purple-900/40 transition-all duration-300 hover:scale-105"
+                >
+                  Fund the Research
                 </button>
               </nav>
             </div>
           </header>
         </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce" role="button" aria-label="Scroll down">
+        <div
+            onClick={() => {
+              const section = document.getElementById("about"); // Change to your actual section ID
+              section?.scrollIntoView({ behavior: "smooth" });
+            }}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce cursor-pointer"
+            role="button"
+            aria-label="Scroll down"
+        >
           <ChevronDown className="text-white/60" size={24} />
         </div>
       </section>

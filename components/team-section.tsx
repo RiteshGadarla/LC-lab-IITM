@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
-import { principalInvestigator, teamMembers, othersMembers, researchStaff, type TeamMember } from "@/lib/teamData"
+import { principalInvestigator, teamMembers, othersMembers, researchStaff, friends, type TeamMember } from "@/lib/teamData"
 
 export function TeamSection() {
     const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
@@ -77,7 +77,7 @@ export function TeamSection() {
                 </div>
 
                 {/* PhD Scholars */}
-                <div className="mb-16">
+                <div className="py-8 mb-16">
                     <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">PhD Scholars</h3>
                     <div className="flex flex-wrap justify-center gap-6">
                         {teamMembers.map((member, index) => (
@@ -93,6 +93,7 @@ export function TeamSection() {
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />
                                     <h4 className="text-lg font-semibold text-slate-900 mb-3">{member.name}</h4>
+                                    <p className="text-sm text-slate-500 mb-3">{member.role}</p>
                                     <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">{member.research}</p>
                                 </CardContent>
                             </Card>
@@ -126,7 +127,7 @@ export function TeamSection() {
 
                 {/* Research Staff */}
                 <div className="mb-16">
-                    <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">Research Staff</h3>
+                    <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">Research Project Staff</h3>
                     <div className="flex flex-wrap justify-center gap-6">
                         {researchStaff.map((member, index) => (
                             <Card
@@ -142,6 +143,29 @@ export function TeamSection() {
                                     />
                                     <h4 className="text-lg font-semibold text-slate-900 mb-3">{member.name}</h4>
                                     <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">{member.research}</p>
+                                </CardContent>
+                            </Card>
+                        ))}
+                    </div>
+                </div>
+
+                {/* Friends */}
+                <div className="mb-16">
+                    <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">Friends of LC Lab</h3>
+                    <div className="flex flex-wrap justify-center gap-6">
+                        {friends.map((member, index) => (
+                            <Card
+                                key={index}
+                                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm"
+                            >
+                                <CardContent className="p-6 text-center">
+                                    <img
+                                        src={member.image || "/placeholder.svg"}
+                                        alt={member.name}
+                                        className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
+                                    />
+                                    <h4 className="text-lg font-semibold text-slate-900 mb-3">{member.name}</h4>
+                                    <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">{member.contribution}</p>
                                 </CardContent>
                             </Card>
                         ))}

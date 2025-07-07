@@ -52,6 +52,9 @@ export const eventsData: Event[] = [
         ],
         date: "April 14-15, 2023",
         venue: "IC & SR Building, IIT Madras, Chennai",
-        images: []
+        images: [
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751869660/avv1_g4mzhd.jpg",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751869660/avv2_bkolqa.jpg",
+        ]
     }
 ];

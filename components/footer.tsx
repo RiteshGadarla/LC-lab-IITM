@@ -54,6 +54,11 @@ export function Footer() {
                   Collaborations
                 </a>
               </li>
+              <li>
+                <a href="/donate" className="text-slate-400 hover:text-white transition-colors">
+                  Fund Us
+                </a>
+              </li>
             </ul>
           </div>
 
