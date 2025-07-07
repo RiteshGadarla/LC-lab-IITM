@@ -32,7 +32,7 @@ export function FundUsSection() {
                         Your support fuels research in multilingual cognition, language science, and linguistic technology.
                         <span className="text-blue-600 font-semibold"> Here's why your contribution matters.</span>
                     </p>
-                    <div className="flex justify-center gap-4 mt-8">
+                    <div className="flex flex-wrap justify-center gap-4 mt-8">
                         <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                             <Telescope className="text-blue-500" size={24} />
                             <span className="text-slate-700 font-medium">Linguistic Discovery</span>
