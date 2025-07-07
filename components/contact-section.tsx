@@ -1,10 +1,12 @@
 "use client"
 
 import { Card, CardContent } from "@/components/ui/card"
-import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react"
+import { Phone, Mail, MapPin, ExternalLink } from "lucide-react"
 import { principalInvestigator } from "@/lib/teamData"
+import { useRouter } from "next/navigation";
 
 export function ContactSection() {
+  const router = useRouter()
   return (
       <section id="contact" className="pt-32 py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,6 +16,15 @@ export function ContactSection() {
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Whether you're looking to fund our work, collaborate on a project, or explore joining the lab — we’re here to talk.
             </p>
+              <div className="mt-6">
+                  <button
+                      onClick={() => router.push("/donate")}
+                      className="inline-block px-6 py-3 rounded-md text-base font-medium transition-all duration-300 shadow-md
+                   bg-black text-white hover:bg-white hover:text-black border border-black"
+                  >
+                      Why Fund Us?
+                  </button>
+              </div>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">

@@ -312,31 +312,23 @@ export function HeroSection() {
               <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" role="doc-subtitle">
                 Exploring the intersection of language, cognition, and communication at Department of Humanities and Social Sciences, IIT Madras
               </p>
-              <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6">
-                {/* Button 1: Primary - Soft Blue Glow */}
+              <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center" role="navigation" aria-label="Primary navigation">
                 <button
                     onClick={() => router.push("/research")}
-                    className="bg-blue-700 hover:bg-blue-600 text-white px-8 py-3 rounded-2xl font-medium shadow-md shadow-blue-900/40 transition-all duration-300 hover:scale-105"
+                    className="bg-blue-800  hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                    aria-label="Navigate to research page"
                 >
                   Explore Research
                 </button>
-
-                {/* Button 2: Secondary - Indigo Variant */}
                 <button
                     onClick={() => router.push("/team")}
-                    className="bg-indigo-700 hover:bg-indigo-600 text-white px-8 py-3 rounded-2xl font-medium shadow-md shadow-indigo-900/40 transition-all duration-300 hover:scale-105"
+                    className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-300"
+                    aria-label="Navigate to team page"
                 >
                   Meet the Team
                 </button>
-
-                {/* Button 3: Accent - Purple Variant */}
-                <button
-                    onClick={() => router.push("/donate")}
-                    className="bg-purple-700 hover:bg-purple-600 text-white px-8 py-3 rounded-2xl font-medium shadow-md shadow-purple-900/40 transition-all duration-300 hover:scale-105"
-                >
-                  Fund the Research
-                </button>
               </nav>
+
             </div>
           </header>
         </div>

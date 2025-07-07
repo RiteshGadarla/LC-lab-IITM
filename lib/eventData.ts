@@ -41,6 +41,7 @@ export const eventsData: Event[] = [
             "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751816056/voice1_bfidwm.jpg",
             "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751816058/voice2_s8dqr6.jpg",
             "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751816063/voice3_zvtgj0.jpg",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751907506/sep3_clfrqn.jpg",
         ]
     },
     {
