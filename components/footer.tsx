@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { principalInvestigator } from "@/lib/data"
+import { principalInvestigator } from "@/lib/teamData"
 
 export function Footer() {
   return (

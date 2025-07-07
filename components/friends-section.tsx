@@ -1,5 +1,5 @@
 import { Card, CardContent } from "@/components/ui/card"
-import { friends } from "@/lib/data"
+import { friends } from "@/lib/teamData"
 
 export function FriendsSection() {
   return (

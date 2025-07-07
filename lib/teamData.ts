@@ -21,7 +21,7 @@ export const principalInvestigator: PrincipalInvestigator = {
     title: "Assistant Professor, Department of Humanities and Social Sciences, IIT Madras",
     interests: "Syntax, Pragmatics, Language Processing, Eye-tracking, Cognition Studies",
     research: "Leading research in cross-linguistic syntax and cognitive processing",
-    image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_fill,ar_1:1,g_auto/v1749377865/ani_llz6al.jpg",
+    image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749377865/ani_llz6al.jpg",
     email: "aslinguistics.iitm@gmail.com",
     phone: "+91 44 2257 4534",
     linkedInLink: "https://www.linkedin.com/in/anindita-sahoo-3b971515/",
@@ -68,7 +68,7 @@ export const othersMembers: TeamMember[] = [
         role: "Co-guiding with Prof. Preeti Aghalayam",
         research:
             "Identifying Gender Bias in Indian Academic Institutional Communication: A Dual Approach Using Text Analysis and Stakeholder Perception",
-        image: "",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751857873/c53beb33-0e76-4fae-8965-0ce9c23a5278.png",
     },
     {
         name: "Krishna Raj SR",
@@ -95,7 +95,7 @@ export const researchStaff: TeamMember[] = [
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751802389/bd669f40-4140-4bca-8cb2-7cf09924f90a.png",
     },
     {
-        name: "Suchitra Chakraborty",
+        name: "Suchitra Chakrabarty",
         role: "Research Staff",
         research: "",
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751802299/df1d1d61-e3a7-4c65-9cb5-7917afacfdbf.png",

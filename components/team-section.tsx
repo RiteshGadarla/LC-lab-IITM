@@ -3,7 +3,7 @@
 import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
-import { principalInvestigator, teamMembers, othersMembers, researchStaff, type TeamMember } from "@/lib/data"
+import { principalInvestigator, teamMembers, othersMembers, researchStaff, type TeamMember } from "@/lib/teamData"
 
 export function TeamSection() {
     const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)

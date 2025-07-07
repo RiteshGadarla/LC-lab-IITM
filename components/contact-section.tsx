@@ -2,20 +2,12 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Mail, MapPin, Clock, ExternalLink } from "lucide-react"
-import { principalInvestigator } from "@/lib/data"
+import { principalInvestigator } from "@/lib/teamData"
 
 export function ContactSection() {
   return (
       <section id="contact" className="pt-32 py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          {/* Fund Us Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Fund Us</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              We are actively seeking funding to advance our research initiatives. Your support can help us drive innovation and make a lasting impact.
-            </p>
-          </div>
-
           {/* Contact Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Get in Touch</h2>

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card"
 import { Globe, MapPin } from "lucide-react"
-import { collaborators } from "@/lib/data"
+import { collaborators } from "@/lib/teamData"
 
 export function CollaborationsSection() {
   const router = useRouter()
