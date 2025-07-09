@@ -19,7 +19,7 @@ export const principalInvestigator: PrincipalInvestigator = {
     name: "Dr. Anindita Sahoo",
     role: "Principal Investigator",
     title: "Assistant Professor, Department of Humanities and Social Sciences, IIT Madras",
-    interests: "Syntax, Pragmatics, Language Processing, Eye-tracking, Cognition Studies",
+    interests: "Linguistic Typology, Syntax, Pragmatics, Language Processing, Eye-tracking, Cognition Studies",
     research: "Leading research in cross-linguistic syntax and cognitive processing",
     image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749377865/ani_llz6al.jpg",
     email: "aslinguistics.iitm@gmail.com",
@@ -31,33 +31,38 @@ export const principalInvestigator: PrincipalInvestigator = {
 export const teamMembers: TeamMember[] = [
     {
         name: "Aziza Said Hussain",
+        role: "PhD in Progress",
         research: "Copula in Swahili: Pragmatic Functions and Grammaticalization Process",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749993811/aziza_abph42.png",
     },
     {
-        name: "Snigdha Medhi",
-        research: "Patterns of Ergativity in Assamese, and Its Varieties",
-        image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_crop,ar_1:1/v1749980338/snigdha_l7hcie.png",
-    },
-    {
-        name: "Gunti Prem Sagar",
-        research: "Syntactic Patterns of Non-Verbal Predication in Select Dravidian Languages",
-        image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/prem_bzpanw.png",
-    },
-    {
         name: "Krishna Raj SR",
-        role: "Co-guiding with Prof. Srinivasa Chakravarthy",
+        role: "IDRP Scholar - Co-guiding with Prof. Srinivasa Chakravarthy",
         research: "From pixels to prepositions: Linking Vision and Spatial Prepositions",
         image:
             "https://media.licdn.com/dms/image/v2/C4D03AQGZ7J-NDl5ZzA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656983904228?e=1755129600&v=beta&t=e-mEsTKDvdS9Ba0LzZdqxFDtSGgHYUC_gzXBfC4bmkM",
     },
     {
+        name: "Snigdha Medhi",
+        role: "PhD in Progress",
+        research: "Patterns of Ergativity in Assamese, and Its Varieties",
+        image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_crop,ar_1:1/v1749980338/snigdha_l7hcie.png",
+    },
+    {
         name: "Scherezade Dastur",
+        role: "PhD in Progress",
         research: "Code Alternation in Parsi Gujarati and English: An Interactional Linguistics Approach",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_crop,ar_1:1/v1749980337/scheri_x6vo2x.png",
     },
     {
+        name: "Gunti Prem Sagar",
+        role: "Graduated in 2025",
+        research: "Syntactic Patterns of Non-Verbal Predication in Select Dravidian Languages",
+        image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/prem_bzpanw.png",
+    },
+    {
         name: "Pratiti Palit",
+        role: "Graduated in 2023",
         research: "On the Interaction of Honorification, Copula and Definiteness: A Variationist Approach",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/pratiti_amhwlv.jpg",
     },
@@ -66,7 +71,7 @@ export const teamMembers: TeamMember[] = [
 export const othersMembers: TeamMember[] = [
     {
         name: "G L Vijayavani",
-        role: "Co-guiding with Prof. Preeti Aghalayam",
+        role: "IDRP Scholar - Co-guiding with Prof. Preeti Aghalayam",
         research:
             "Identifying Gender Bias in Indian Academic Institutional Communication: A Dual Approach Using Text Analysis and Stakeholder Perception",
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751857873/c53beb33-0e76-4fae-8965-0ce9c23a5278.png",
@@ -84,20 +89,20 @@ export const othersMembers: TeamMember[] = [
 export const researchStaff: TeamMember[] = [
     {
         name: "Nayana Rajan",
-        role: "Research Staff",
+        role: "Field Investigator",
         research: "",
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751802389/bd669f40-4140-4bca-8cb2-7cf09924f90a.png",
     },
     {
         name: "Suchitra Chakrabarty",
-        role: "Research Staff",
+        role: "Field Investigator",
         research: "",
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751802299/df1d1d61-e3a7-4c65-9cb5-7917afacfdbf.png",
-    }
+    },
 ]
 
 // Collaborators
-export const collaborators = [
+export const internationalCollaborators = [
     {
         name: "Prof. Dagmar Divjak",
         institution: "University of Birmingham",
@@ -123,17 +128,21 @@ export const collaborators = [
         image:
             "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYJ4pS9ktse5Q8p8zx832IXTBEQppXm7TnnHrRTyqbnYHNSwN9a_wJsQ8&s=10",
     },
-    {
-        name: "Prof. Srinivasa Chakravarthy",
-        institution: "Indian Institute of Technology Madras",
-        country: "India",
-        image: "https://biotech.iitm.ac.in/img/outerfaculty/Srinivasa%20chakravarthy.png",
-    },
+
+]
+
+export const IndianCollaborators = [
     {
         name: "Prof. Preeti Aghalayam",
         institution: "Indian Institute of Technology Madras",
         country: "Tanzania",
         image: "https://www.iitmz.ac.in/_next/image?url=%2Fpreeti.jpg&w=256&q=75",
+    },
+    {
+        name: "Prof. Srinivasa Chakravarthy",
+        institution: "Indian Institute of Technology Madras",
+        country: "India",
+        image: "https://biotech.iitm.ac.in/img/outerfaculty/Srinivasa%20chakravarthy.png",
     },
 ]
 

@@ -3,7 +3,7 @@
 import { useRouter } from "next/navigation";
 import { Card, CardContent } from "@/components/ui/card"
 import { Globe, MapPin } from "lucide-react"
-import { collaborators } from "@/lib/teamData"
+import { internationalCollaborators, IndianCollaborators } from "@/lib/teamData"
 
 export function CollaborationsSection() {
   const router = useRouter()
@@ -12,38 +12,79 @@ export function CollaborationsSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">Collaborations</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">Collaborators</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               Building bridges to advance language and cognition research through international partnerships.
             </p>
           </div>
 
-          {/* Collaborators Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {collaborators.map((collaborator, index) => (
-                <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group">
-                  <CardContent className="p-6">
-                    <div className="flex items-start gap-4">
-                      <img
-                          src={collaborator.image || "/placeholder.svg"}
-                          alt={collaborator.name}
-                          className="w-16 h-16 rounded-full object-cover shadow-md group-hover:scale-105 transition-transform"
-                      />
-                      <div className="flex-1">
-                        <h4 className="text-lg font-semibold text-slate-900 mb-1">{collaborator.name}</h4>
-                        <p className="text-slate-600 text-sm mb-2 leading-relaxed">{collaborator.institution}</p>
-                        {collaborator.country && (
-                            <div className="flex items-center gap-1">
-                              <MapPin size={12} className="text-slate-400" />
-                              <span className="text-xs text-slate-500">{collaborator.country}</span>
-                            </div>
-                        )}
+          <div className="mb-16">
+            <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">IIT Madras Collaborators</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+              {IndianCollaborators.map((collaborator, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group">
+                    <CardContent className="p-6">
+                      <div className="flex gap-4">
+                        <div className="h-full flex-shrink-0">
+                          <img
+                              src={collaborator.image || "/placeholder.svg"}
+                              alt={collaborator.name}
+                              className="h-full w-20 object-cover rounded-md shadow-md group-hover:scale-105 transition-transform"
+                          />
+                        </div>
+                        <div className="flex flex-col justify-between">
+                          <div>
+                            <h4 className="text-lg font-semibold text-slate-900 mb-1">{collaborator.name}</h4>
+                            <p className="text-slate-600 text-sm mb-2 leading-relaxed">{collaborator.institution}</p>
+                          </div>
+                          {collaborator.country && (
+                              <div className="flex items-center gap-1">
+                                <MapPin size={12} className="text-slate-400" />
+                                <span className="text-xs text-slate-500">{collaborator.country}</span>
+                              </div>
+                          )}
+                        </div>
                       </div>
-                    </div>
-                  </CardContent>
-                </Card>
-            ))}
+                    </CardContent>
+                  </Card>
+              ))}
+            </div>
           </div>
+
+          <div className="py-8 mb-16">
+            <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">International Collaborators</h3>
+            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+              {internationalCollaborators.map((collaborator, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group">
+                    <CardContent className="p-6">
+                      <div className="flex gap-4">
+                        <div className="h-full flex-shrink-0">
+                          <img
+                              src={collaborator.image || "/placeholder.svg"}
+                              alt={collaborator.name}
+                              className="h-full w-20 object-cover rounded-md shadow-md group-hover:scale-105 transition-transform"
+                          />
+                        </div>
+                        <div className="flex flex-col justify-between">
+                          <div>
+                            <h4 className="text-lg font-semibold text-slate-900 mb-1">{collaborator.name}</h4>
+                            <p className="text-slate-600 text-sm mb-2 leading-relaxed">{collaborator.institution}</p>
+                          </div>
+                          {collaborator.country && (
+                              <div className="flex items-center gap-1">
+                                <MapPin size={12} className="text-slate-400" />
+                                <span className="text-xs text-slate-500">{collaborator.country}</span>
+                              </div>
+                          )}
+                        </div>
+                      </div>
+                    </CardContent>
+                  </Card>
+              ))}
+            </div>
+          </div>
+
+
 
           {/* Call to Action */}
           <div className="mt-16 text-center">

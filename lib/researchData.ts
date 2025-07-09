@@ -1,11 +1,25 @@
 // Research projects (most recent first)
 export const researchProjects = [
     {
+        title: "Navigating Grammatical Voice to Explore Communication Strategies",
+        description:
+            "A cross-linguistic study of select Indo-Aryan and Dravidian languages examining how grammatical voice systems facilitate different communication strategies across diverse linguistic communities.",
+        sponsor: "Indian Council of Social Science Research (ICSSR), New Delhi",
+        year: "2024-2026",
+    },
+    {
         title: "Climate Change, Language Vulnerability, and Culture Death",
         description:
             "A critical case study examining the impact of climate change on linguistic diversity and cultural preservation in the Eastern coastal region of India under warming scenarios.",
         sponsor: "Indian Institute of Technology Madras, Chennai",
-        year: "2024-2027",
+        year: "2021-2023",
+    },
+    {
+        title: "Copula Constructions in Indo-Aryan Languages",
+        description:
+            "A detailed investigation of copula constructions from typological and discourse pragmatic perspectives, focusing on variation patterns across Indo-Aryan language families.",
+        sponsor: "Indian Institute of Technology Madras, Chennai",
+        year: "2020-2023",
     },
     {
         title: "Skilling the Unskilled and the Less Skilled",
@@ -15,32 +29,18 @@ export const researchProjects = [
         year: "2024-2025",
     },
     {
-        title: "Navigating Grammatical Voice to Explore Communication Strategies",
-        description:
-            "A cross-linguistic study of select Indo-Aryan and Dravidian languages examining how grammatical voice systems facilitate different communication strategies across diverse linguistic communities.",
-        sponsor: "Indian Council of Social Science Research (ICSSR), New Delhi",
-        year: "2023-2026",
-    },
-    {
         title: "Detection & Quantification of Gender Bias in Official Text",
         description:
             "An innovative study examining gender bias in academic and official communications within the Indian academic setting using computational linguistics and corpus analysis methods.",
         sponsor: "American Express",
-        year: "2023",
-    },
-    {
-        title: "Copula Constructions in Indo-Aryan Languages",
-        description:
-            "A detailed investigation of copula constructions from typological and discourse pragmatic perspectives, focusing on variation patterns across Indo-Aryan language families.",
-        sponsor: "Indian Institute of Technology Madras, Chennai",
-        year: "2022-2025",
+        year: "2022-2023",
     },
     {
         title: "Morphosyntax and Discourse Pragmatics",
         description:
             "An extensive study of linguistic constructions in South Asian languages, examining the interface between morphosyntactic structures and discourse-pragmatic functions.",
         sponsor: "Indian Institute of Technology Madras, Chennai",
-        year: "2021-2024",
+        year: "2017-2018",
     },
 ]
 

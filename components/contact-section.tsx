@@ -14,17 +14,17 @@ export function ContactSection() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Get In Touch</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Whether you're looking to fund our work, collaborate on a project, or explore joining the lab — we’re here to talk.
+              We’d love to hear from you! If you’re a student interested in our research, a collaborator from academia or industry, or simply curious about our work, feel free to reach out.
             </p>
-              <div className="mt-6">
-                  <button
-                      onClick={() => router.push("/donate")}
-                      className="inline-block px-6 py-3 rounded-md text-base font-medium transition-all duration-300 shadow-md
-                   bg-black text-white hover:bg-white hover:text-black border border-black"
-                  >
-                      Why Fund Us?
-                  </button>
-              </div>
+              {/*<div className="mt-6">*/}
+              {/*    <button*/}
+              {/*        onClick={() => router.push("/donate")}*/}
+              {/*        className="inline-block px-6 py-3 rounded-md text-base font-medium transition-all duration-300 shadow-md*/}
+              {/*     bg-black text-white hover:bg-white hover:text-black border border-black"*/}
+              {/*    >*/}
+              {/*        Why Fund Us?*/}
+              {/*    </button>*/}
+              {/*</div>*/}
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">

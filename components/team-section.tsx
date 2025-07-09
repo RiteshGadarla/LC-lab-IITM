@@ -4,6 +4,7 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import { Card, CardContent } from "@/components/ui/card"
 import { principalInvestigator, teamMembers, othersMembers, researchStaff, friends, type TeamMember } from "@/lib/teamData"
+import {Badge} from "@/components/ui/badge";
 
 export function TeamSection() {
     const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
@@ -92,8 +93,15 @@ export function TeamSection() {
                                         alt={member.name}
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />
-                                    <h4 className="text-lg font-semibold text-slate-900 mb-3">{member.name}</h4>
-                                    <p className="text-sm text-slate-500 mb-3">{member.role}</p>
+                                    <h4 className="text-lg font-semibold text-slate-900 mb-1">{member.name}</h4>
+                                    {member.tag && (
+                                    <Badge variant="outline" className="border-black text-black bg-white rounded-full px-2 text-sm">
+                                        {member.tag}
+                                    </Badge>
+                                    )}
+                                    {member.role && (
+                                        <p className="text-sm text-slate-500 mb-3">({member.role})</p>
+                                    )}
                                     <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">{member.research}</p>
                                 </CardContent>
                             </Card>
@@ -117,7 +125,12 @@ export function TeamSection() {
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />
                                     <h4 className="text-lg font-semibold text-slate-900 mb-1">{member.name}</h4>
-                                    <p className="text-sm text-slate-500 mb-3">{member.role}</p>
+                                    {member.tag && (
+                                        <Badge variant="outline" className="border-black text-black bg-white rounded-full px-2 text-sm">
+                                            {member.tag}
+                                        </Badge>
+                                    )}
+                                    <p className="text-sm text-slate-500 mb-3">({member.role})</p>
                                     <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">{member.research}</p>
                                 </CardContent>
                             </Card>
@@ -142,6 +155,7 @@ export function TeamSection() {
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />
                                     <h4 className="text-lg font-semibold text-slate-900 mb-3">{member.name}</h4>
+                                    <p className="text-sm text-slate-500 mb-3">({member.role})</p>
                                     <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">{member.research}</p>
                                 </CardContent>
                             </Card>
@@ -164,7 +178,7 @@ export function TeamSection() {
                                         alt={member.name}
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />
-                                    <h4 className="text-lg font-semibold text-slate-900 mb-3">{member.name}</h4>
+                                    <h4 className="text-lg font-semibold text-slate-900 mb-1">{member.name}</h4>
                                     <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">{member.contribution}</p>
                                 </CardContent>
                             </Card>
