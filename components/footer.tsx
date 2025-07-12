@@ -15,7 +15,7 @@ export function Footer() {
                 className="h-8 w-auto"
               />
               <div>
-                <h3 className="font-semibold">Language & Cognition Lab</h3>
+                <h3 className="font-semibold">Language & Cognition Laboratory</h3>
                 <p className="text-sm text-slate-400">IIT Madras</p>
               </div>
             </div>

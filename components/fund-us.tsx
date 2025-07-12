@@ -106,7 +106,7 @@ export function FundUsSection() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-slate-800 mb-1">Global Collaboration</h3>
-                                        <p className="text-slate-700">Expand cross-cultural academic collaboration</p>
+                                        <p className="text-slate-700">To expand cross-cultural academic collaboration</p>
                                     </div>
                                 </div>
                             </div>
