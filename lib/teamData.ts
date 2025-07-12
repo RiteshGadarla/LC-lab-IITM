@@ -12,6 +12,7 @@ export interface PrincipalInvestigator extends TeamMember {
     interests: string
     phone: string
     linkedInLink: string
+    iitmprofile: string
     cerai: string
 }
 
@@ -25,7 +26,8 @@ export const principalInvestigator: PrincipalInvestigator = {
     email: "aslinguistics.iitm@gmail.com",
     phone: "+91 44 2257 4534",
     linkedInLink: "https://www.linkedin.com/in/anindita-sahoo-3b971515/",
-    cerai: "https://cerai.iitm.ac.in/faculty/"
+    iitmprofile: "https://hss.iitm.ac.in/anindita-sahoo/#",
+    cerai: "https://cerai.iitm.ac.in/faculty/",
 }
 
 // Team members

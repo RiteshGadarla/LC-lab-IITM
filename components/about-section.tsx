@@ -137,7 +137,7 @@ export function AboutSection() {
                 key={index}
                 className="bg-white p-6 rounded-xl shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1"
               >
-                <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center mb-4">
+                <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center mb-4">
                   <feature.icon className="text-blue-600" size={24} />
                 </div>
                 <h4 className="text-lg font-semibold text-slate-900 mb-2">{feature.title}</h4>

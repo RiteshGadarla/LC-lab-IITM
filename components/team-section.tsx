@@ -24,7 +24,7 @@ export function TeamSection() {
                 {/* Principal Investigator */}
                 <div className="mb-16">
                     <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">Principal Investigator</h3>
-                    <Card className="max-w-4xl mx-auto shadow-lg hover:shadow-xl transition-all duration-300">
+                    <Card className="max-w-4xl mx-auto shadow-lg rounded-xl hover:shadow-xl transition-all duration-300">
                         <CardContent className="p-8">
                             <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
                                 <div className="relative flex-shrink-0">
@@ -58,7 +58,7 @@ export function TeamSection() {
                                             LinkedIn
                                         </a>
                                         <a
-                                            href="https://hss.iitm.ac.in/anindita-sahoo/#"
+                                            href={principalInvestigator.iitmprofile}
                                             target="_blank"
                                             rel="noopener noreferrer"
                                             className="inline-flex items-center gap-2 hover:underline"
@@ -68,9 +68,8 @@ export function TeamSection() {
                                                 alt="IITM"
                                                 className="w-5 h-5 object-contain"
                                             />
-                                            IITM Profile
+                                            IIT Madras
                                         </a>
-                                        {/*https://cerai.iitm.ac.in/images/CERAI_Logo.png*/}
                                         <a
                                             href={principalInvestigator.cerai}
                                             target="_blank"
@@ -98,7 +97,7 @@ export function TeamSection() {
                         {teamMembers.map((member, index) => (
                             <Card
                                 key={index}
-                                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm"
+                                className="hover:shadow-lg transition-all rounded-xl duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm"
                                 onClick={() => setSelectedMember(member)}
                             >
                                 <CardContent className="p-6 text-center">
@@ -124,7 +123,7 @@ export function TeamSection() {
                         {othersMembers.map((member, index) => (
                             <Card
                                 key={index}
-                                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm"
+                                className="hover:shadow-lg rounded-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm"
                                 onClick={() => setSelectedMember(member)}
                             >
                                 <CardContent className="p-6 text-center">
@@ -149,7 +148,7 @@ export function TeamSection() {
                         {researchStaff.map((member, index) => (
                             <Card
                                 key={index}
-                                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm"
+                                className="hover:shadow-lg rounded-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm"
                                 onClick={() => setSelectedMember(member)}
                             >
                                 <CardContent className="p-6 text-center">
@@ -174,7 +173,7 @@ export function TeamSection() {
                         {friends.map((member, index) => (
                             <Card
                                 key={index}
-                                className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm"
+                                className="hover:shadow-lg rounded-xl transition-all duration-300 hover:-translate-y-2 cursor-pointer w-full max-w-sm"
                             >
                                 <CardContent className="p-6 text-center">
                                     <img
@@ -192,7 +191,7 @@ export function TeamSection() {
 
                 {/* Open Position */}
                 <div className="mt-12 text-center">
-                    <Card className="max-w-md mx-auto border-dashed border-2 border-slate-300 hover:border-blue-400 transition-colors">
+                    <Card className="max-w-md mx-auto rounded-xl border-dashed border-2 border-slate-300 hover:border-blue-400 transition-colors">
                         <CardContent className="p-4">
                             <h4 className="text-md font-semibold text-slate-900 mb-2">Join Our Team</h4>
                             <p className="text-xs text-slate-600 mb-2">

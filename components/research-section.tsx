@@ -46,21 +46,21 @@ export function ResearchSection() {
             <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto mb-12">
               <TabsTrigger
                   value="projects"
-                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md"
+                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-2xl"
               >
                 <Users size={16} />
                 Projects
               </TabsTrigger>
               <TabsTrigger
                   value="publications"
-                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md"
+                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-2xl"
               >
                 <Award size={16} />
                 Publications
               </TabsTrigger>
               <TabsTrigger
                   value="conferences"
-                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-md"
+                  className="flex items-center gap-2 rounded-md data-[state=active]:bg-black data-[state=active]:text-white data-[state=active]:rounded-2xl"
               >
                 <MapPin size={16} />
                 Conferences

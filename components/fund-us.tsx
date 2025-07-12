@@ -3,10 +3,21 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { HeartHandshake, TrendingUp, Users, Star, Sparkles, Globe, Award, Brain, Microscope, GraduationCap, MapPin, Calendar, Target, Zap, Lightbulb, BookOpen, Coffee, Telescope } from "lucide-react";
-import {useRouter} from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useState } from "react";
 
 export function FundUsSection() {
     const router = useRouter();
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleDonationClick = () => {
+        setIsModalOpen(true);
+    };
+
+    const closeModal = () => {
+        setIsModalOpen(false);
+    };
+
     return (
         <div className="min-h-screen pt-12 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
             {/* Background decorative elements */}
@@ -184,7 +195,10 @@ export function FundUsSection() {
                     </div>
 
                     <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                        <Button className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xl font-semibold px-12 py-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2">
+                        <Button
+                            onClick={handleDonationClick}
+                            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xl font-semibold px-12 py-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
+                        >
                             <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
                             <div className="flex items-center gap-3">
                                 <Lightbulb className="group-hover:animate-pulse" size={24} />
@@ -202,6 +216,41 @@ export function FundUsSection() {
                             </div>
                         </Button>
                     </div>
+
+                    {/* Donation Modal */}
+                    {isModalOpen && (
+                        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                            <div className="bg-white rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl">
+                                <div className="flex justify-between items-center mb-6">
+                                    <h2 className="text-3xl font-bold text-slate-800">Thank You!</h2>
+                                    <button
+                                        onClick={closeModal}
+                                        className="text-slate-500 hover:text-slate-700 text-2xl font-bold"
+                                    >
+                                        &times;
+                                    </button>
+                                </div>
+                                <p className="text-lg text-slate-700 mb-6">
+                                    We deeply appreciate your interest in supporting the LC Lab's mission to advance language and cognition research.
+                                    Your generosity helps us drive innovation, support students, and preserve linguistic diversity.
+                                </p>
+                                <p className="text-lg text-slate-700 mb-8">
+                                    To further fund our initiatives or discuss partnership opportunities, please reach out to our team.
+                                </p>
+                                <div className="flex justify-center">
+                                    <Button
+                                        onClick={() => router.push("/contact")}
+                                        className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                                    >
+                                        <div className="flex items-center gap-3">
+                                            <Coffee className="group-hover:animate-bounce" size={20} />
+                                            <span>Contact Us</span>
+                                        </div>
+                                    </Button>
+                                </div>
+                            </div>
+                        </div>
+                    )}
 
                     <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
                         <div className="text-center">

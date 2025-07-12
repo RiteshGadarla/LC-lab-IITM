@@ -12,19 +12,10 @@ export function ContactSection() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Contact Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Get In Touch</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">Get In Touch</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
               We’d love to hear from you! If you’re a student interested in our research, a collaborator from academia or industry, or simply curious about our work, feel free to reach out.
             </p>
-              {/*<div className="mt-6">*/}
-              {/*    <button*/}
-              {/*        onClick={() => router.push("/donate")}*/}
-              {/*        className="inline-block px-6 py-3 rounded-md text-base font-medium transition-all duration-300 shadow-md*/}
-              {/*     bg-black text-white hover:bg-white hover:text-black border border-black"*/}
-              {/*    >*/}
-              {/*        Why Fund Us?*/}
-              {/*    </button>*/}
-              {/*</div>*/}
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
@@ -33,7 +24,7 @@ export function ContactSection() {
               {/* Contact Form */}
               <div>
                 <h3 className="text-2xl font-semibold text-slate-900 mb-6">Send Us a Message</h3>
-                <Card className="hover:shadow-md transition-all duration-300">
+                <Card className="hover:shadow-md transition-all duration-300 rounded-2xl">
                   <CardContent className="p-6">
                     <form className="space-y-4">
                       <div>
@@ -116,10 +107,10 @@ export function ContactSection() {
               <div>
                 <h3 className="text-2xl font-semibold text-slate-900 mb-6">Contact Information</h3>
                 <div className="space-y-4">
-                  <Card className="hover:shadow-md transition-all duration-300">
+                  <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
                           <Mail className="text-blue-600" size={20} />
                         </div>
                         <div>
@@ -135,10 +126,10 @@ export function ContactSection() {
                     </CardContent>
                   </Card>
 
-                  <Card className="hover:shadow-md transition-all duration-300">
+                  <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
                           <Phone className="text-blue-600" size={20} />
                         </div>
                         <div>
@@ -149,10 +140,10 @@ export function ContactSection() {
                     </CardContent>
                   </Card>
 
-                  <Card className="hover:shadow-md transition-all duration-300">
+                  <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-lg flex items-center justify-center flex-shrink-0">
+                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
                           <MapPin className="text-blue-600" size={20} />
                         </div>
                         <div>

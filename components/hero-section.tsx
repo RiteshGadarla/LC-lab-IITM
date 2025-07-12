@@ -315,14 +315,14 @@ export function HeroSection() {
               <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center" role="navigation" aria-label="Primary navigation">
                 <button
                     onClick={() => router.push("/research")}
-                    className="bg-blue-800  hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                    className="bg-blue-800  hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-medium transition-all duration-300 hover:scale-105 shadow-lg"
                     aria-label="Navigate to research page"
                 >
                   Research Portfolio
                 </button>
                 <button
                     onClick={() => router.push("/team")}
-                    className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-lg font-medium transition-all duration-300"
+                    className="border border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-2xl font-medium transition-all duration-300"
                     aria-label="Navigate to team page"
                 >
                   Meet the Team
