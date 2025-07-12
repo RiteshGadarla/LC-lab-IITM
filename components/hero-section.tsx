@@ -318,7 +318,7 @@ export function HeroSection() {
                     className="bg-blue-800  hover:bg-blue-700 text-white px-8 py-3 rounded-lg font-medium transition-all duration-300 hover:scale-105 shadow-lg"
                     aria-label="Navigate to research page"
                 >
-                  Explore Research
+                  Research Portfolio
                 </button>
                 <button
                     onClick={() => router.push("/team")}

@@ -8,6 +8,13 @@ export const researchProjects = [
         year: "2024-2026",
     },
     {
+        title: "Skilling the Unskilled and the Less Skilled",
+        description:
+            "A comprehensive need analysis study focusing on skill development requirements in the context of Odisha, examining linguistic and cognitive barriers to effective training programs.",
+        sponsor: "Aspire Infolabs, Hyderabad",
+        year: "2024-2025",
+    },
+    {
         title: "Climate Change, Language Vulnerability, and Culture Death",
         description:
             "A critical case study examining the impact of climate change on linguistic diversity and cultural preservation in the Eastern coastal region of India under warming scenarios.",
@@ -20,13 +27,6 @@ export const researchProjects = [
             "A detailed investigation of copula constructions from typological and discourse pragmatic perspectives, focusing on variation patterns across Indo-Aryan language families.",
         sponsor: "Indian Institute of Technology Madras, Chennai",
         year: "2020-2023",
-    },
-    {
-        title: "Skilling the Unskilled and the Less Skilled",
-        description:
-            "A comprehensive need analysis study focusing on skill development requirements in the context of Odisha, examining linguistic and cognitive barriers to effective training programs.",
-        sponsor: "Aspire Infolabs, Hyderabad",
-        year: "2024-2025",
     },
     {
         title: "Detection & Quantification of Gender Bias in Official Text",

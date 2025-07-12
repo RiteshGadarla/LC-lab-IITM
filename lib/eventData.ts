@@ -14,8 +14,8 @@ export const eventsData: Event[] = [
         heading: "Essentials of Generative Grammar",
         tag: "4-day Mini Summer Course",
         description: [
-            "A four-day intensive course organized by the Department of Humanities and Social Sciences, IIT Madras, in collaboration with the Central Institute of Indian Languages, Mysuru." +
-            "This course offers a deep dive into the principles of generative grammar, exploring its theoretical foundations and applications in linguistic research."
+            "A four-day intensive course organized by the Department of Humanities and Social Sciences, IIT Madras, in collaboration with the Central Institute of Indian Languages, Mysuru. " +
+            "The course offered a deep dive into the principles of generative grammar, exploring its theoretical foundations and applications in linguistic research."
         ],
         date: "June 11–14, 2025",
         venue: "IC & SR Building, IIT Madras, Chennai",

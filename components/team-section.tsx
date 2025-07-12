@@ -70,6 +70,20 @@ export function TeamSection() {
                                             />
                                             IITM Profile
                                         </a>
+                                        {/*https://cerai.iitm.ac.in/images/CERAI_Logo.png*/}
+                                        <a
+                                            href={principalInvestigator.cerai}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="inline-flex items-center gap-2 hover:underline"
+                                        >
+                                            <img
+                                                src="https://res.cloudinary.com/dgzbrujvx/image/upload/e_background_removal/f_png/v1752322335/0a251fb5-6fba-4a47-90f7-e88790143a00.png"
+                                                alt="CeRAI"
+                                                className="w-5 h-5 object-contain"
+                                            />
+                                            CeRAI
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -94,11 +108,6 @@ export function TeamSection() {
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />
                                     <h4 className="text-lg font-semibold text-slate-900 mb-1">{member.name}</h4>
-                                    {member.tag && (
-                                    <Badge variant="outline" className="border-black text-black bg-white rounded-full px-2 text-sm">
-                                        {member.tag}
-                                    </Badge>
-                                    )}
                                     {member.role && (
                                         <p className="text-sm text-slate-500 mb-3">({member.role})</p>
                                     )}
@@ -125,11 +134,6 @@ export function TeamSection() {
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />
                                     <h4 className="text-lg font-semibold text-slate-900 mb-1">{member.name}</h4>
-                                    {member.tag && (
-                                        <Badge variant="outline" className="border-black text-black bg-white rounded-full px-2 text-sm">
-                                            {member.tag}
-                                        </Badge>
-                                    )}
                                     <p className="text-sm text-slate-500 mb-3">({member.role})</p>
                                     <p className="text-sm text-slate-600 leading-relaxed line-clamp-3">{member.research}</p>
                                 </CardContent>

@@ -2,7 +2,7 @@
 export interface TeamMember {
     name: string
     role?: string
-    research: string
+    research?: string
     image: string
     email?: string
 }
@@ -12,19 +12,20 @@ export interface PrincipalInvestigator extends TeamMember {
     interests: string
     phone: string
     linkedInLink: string
+    cerai: string
 }
 
 // Principal Investigator
 export const principalInvestigator: PrincipalInvestigator = {
     name: "Dr. Anindita Sahoo",
     role: "Principal Investigator",
-    title: "Assistant Professor, Department of Humanities and Social Sciences, IIT Madras",
+    title: "Assistant Professor, Department of Humanities and Social Sciences, IIT Madras | Faculty PI at CeRAI, IIT Madras",
     interests: "Linguistic Typology, Syntax, Pragmatics, Language Processing, Eye-tracking, Cognition Studies",
-    research: "Leading research in cross-linguistic syntax and cognitive processing",
     image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749377865/ani_llz6al.jpg",
     email: "aslinguistics.iitm@gmail.com",
     phone: "+91 44 2257 4534",
     linkedInLink: "https://www.linkedin.com/in/anindita-sahoo-3b971515/",
+    cerai: "https://cerai.iitm.ac.in/faculty/"
 }
 
 // Team members
@@ -91,7 +92,7 @@ export const researchStaff: TeamMember[] = [
         name: "Nayana Rajan",
         role: "Field Investigator",
         research: "",
-        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751802389/bd669f40-4140-4bca-8cb2-7cf09924f90a.png",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1752163215/7237bd64-7d34-4596-922c-47fe8e1b63ec.png",
     },
     {
         name: "Suchitra Chakrabarty",
@@ -132,6 +133,12 @@ export const internationalCollaborators = [
 ]
 
 export const IndianCollaborators = [
+    {
+        name: "Prof. Mitesh M. Khapra",
+        institution: "Indian Institute of Technology Madras",
+        country: "India",
+        image: "https://www.cse.iitm.ac.in/~miteshk/fac.jpg",
+    },
     {
         name: "Prof. Preeti Aghalayam",
         institution: "Indian Institute of Technology Madras",

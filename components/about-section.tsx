@@ -7,23 +7,23 @@ import {facilityImages} from "@/lib/imagesData";
 const features = [
   {
     icon: Brain,
-    title: "Cognitive Processing",
+    title: "Language and Cognition Research ",
     description: "Understanding how the human mind processes and comprehends language structures",
   },
   {
     icon: Eye,
-    title: "Eye-tracking research",
+    title: "Eye tracking analysis",
     description: "Advanced eye-tracking technology to study real-time language processing",
   },
   {
     icon: Globe,
     title: "Cross-linguistic Studies",
-    description: "Comparative analysis across Indian and international language families",
+    description: "Comparative analysis across language families",
   },
   {
     icon: Microscope,
     title: "Experimental Methods",
-    description: "Rigorous experimental design and computational analysis techniques",
+    description: "Rigorous experimental design and computational analysis of linguistics data",
   },
 ]
 
@@ -70,11 +70,10 @@ export function AboutSection() {
         <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
           {/* Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Advancing Language Science</h2>
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Exploring Linguistics</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Our lab investigates the fundamental mechanisms of human language processing, combining experimental
-              psychology, computational linguistics, and cognitive neuroscience to understand how we comprehend,
-              produce, and learn language.
+              Our lab investigates and explores a wide range of linguistic phenomena through theoretical,
+              typological and experimental approaches of linguistics
             </p>
           </div>
 
@@ -84,27 +83,11 @@ export function AboutSection() {
             <div className="space-y-6">
               <h3 className="text-2xl font-semibold text-slate-900">Our Research Philosophy</h3>
               <p className="text-lg text-slate-700 leading-relaxed">
-                We believe that understanding language requires a multidisciplinary approach. Our research spans
-                theoretical linguistics, experimental psychology, and computational modeling, with a particular focus on
-                the rich linguistic diversity of South Asian languages.
+                We believe that understanding language requires a multidisciplinary approach. Therefore, through state-of-the-art
+                experimental facilities and collaborative partnerships with leading national and international institutions,
+                we investigate how linguistic structures, interact with cognitive processes, cultural contexts, and technological
+                applications, more specifically in Indian languages.
               </p>
-              <p className="text-lg text-slate-700 leading-relaxed">
-                Through state-of-the-art experimental facilities and collaborative partnerships with leading
-                institutions worldwide, we investigate how linguistic structures interact with cognitive processes,
-                cultural contexts, and technological applications.
-              </p>
-              {/*<div className="pt-4">*/}
-              {/*  <div className="grid grid-cols-2 gap-4 text-center">*/}
-              {/*    <div className="bg-white p-4 rounded-lg shadow-sm">*/}
-              {/*      <div className="text-2xl font-bold text-blue-600">15+</div>*/}
-              {/*      <div className="text-sm text-slate-600">Active Projects</div>*/}
-              {/*    </div>*/}
-              {/*    <div className="bg-white p-4 rounded-lg shadow-sm">*/}
-              {/*      <div className="text-2xl font-bold text-blue-600">8</div>*/}
-              {/*      <div className="text-sm text-slate-600">Languages Studied</div>*/}
-              {/*    </div>*/}
-              {/*  </div>*/}
-              {/*</div>*/}
             </div>
 
             {/* Image */}

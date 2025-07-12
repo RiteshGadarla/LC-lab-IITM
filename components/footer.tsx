@@ -20,8 +20,8 @@ export function Footer() {
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-relaxed">
-              Advancing our understanding of language, cognition, and communication through innovative research and
-              international collaboration.
+              Advancing our understanding of language, cognition, and communication through innovative and
+              collaborative research
             </p>
           </div>
 

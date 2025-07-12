@@ -23,23 +23,23 @@ export function FundUsSection() {
                         <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
                             <Sparkles className="text-blue-500 animate-bounce" size={48} />
                         </div>
-                        <h1 className="text-7xl md:text-8xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 leading-tight">
+                        <h1 className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 leading-tight">
                             Support the LC Lab
                         </h1>
                         <div className="mt-6 w-32 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
                     </div>
-                    <p className="text-2xl md:text-3xl text-slate-700 leading-relaxed max-w-5xl mx-auto font-light">
-                        Your support fuels research in multilingual cognition, language science, and linguistic technology.
+                    <p className="text-2xl md:text-2xl text-slate-700 leading-relaxed max-w-5xl mx-auto font-light">
+                        Your support drives research in theoretical, applied, experimental, and cognitive linguistics, language science, and linguistic technology.
                         <span className="text-blue-600 font-semibold"> Here's why your contribution matters.</span>
                     </p>
                     <div className="flex flex-wrap justify-center gap-4 mt-8">
                         <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                             <Telescope className="text-blue-500" size={24} />
-                            <span className="text-slate-700 font-medium">Linguistic Discovery</span>
+                            <span className="text-slate-700 font-medium">Language-Focused Research</span>
                         </div>
                         <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                             <Brain className="text-purple-500" size={24} />
-                            <span className="text-slate-700 font-medium">Cognitive Research</span>
+                            <span className="text-slate-700 font-medium">Cognitive Investigation</span>
                         </div>
                         <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
                             <Microscope className="text-indigo-500" size={24} />
@@ -57,7 +57,7 @@ export function FundUsSection() {
                                     <HeartHandshake className="text-white" size={48} />
                                 </div>
                                 <div>
-                                    <h2 className="text-4xl font-bold text-slate-800 mb-2">Why Fund Us?</h2>
+                                    <h2 className="text-3xl font-bold text-slate-800 mb-2">Why Fund Us?</h2>
                                     <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
                                 </div>
                             </div>
@@ -67,8 +67,8 @@ export function FundUsSection() {
                                         <MapPin className="text-blue-600" size={24} />
                                     </div>
                                     <div>
-                                        <h3 className="font-semibold text-slate-800 mb-1">Regional Excellence</h3>
-                                        <p className="text-slate-700">Advance cognitive and language research in South Asia's rich linguistic landscape</p>
+                                        <h3 className="font-semibold text-slate-800 mb-1">Linguistic Diversity</h3>
+                                        <p className="text-slate-700">To advance cognitive and language research in India's rich linguistic landscape</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -77,7 +77,7 @@ export function FundUsSection() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-slate-800 mb-1">Innovation Drive</h3>
-                                        <p className="text-slate-700">Empower interdisciplinary innovation across linguistics, neuroscience, and computation</p>
+                                        <p className="text-slate-700">To empower interdisciplinary innovation across linguistics, neuroscience, and computation</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -86,7 +86,7 @@ export function FundUsSection() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-slate-800 mb-1">Knowledge Production</h3>
-                                        <p className="text-slate-700">Producing knowledge about many Indian languages, including endangered and low-resource ones</p>
+                                        <p className="text-slate-700">To produce knowledge to uncover the interfaces of linguistics research</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">
@@ -109,7 +109,7 @@ export function FundUsSection() {
                                     <TrendingUp className="text-white" size={48} />
                                 </div>
                                 <div>
-                                    <h2 className="text-4xl font-bold text-slate-800 mb-2">What We'll Do</h2>
+                                    <h2 className="text-3xl font-bold text-slate-800 mb-2">What We'll Do</h2>
                                     <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-teal-500 rounded-full"></div>
                                 </div>
                             </div>
@@ -147,7 +147,7 @@ export function FundUsSection() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-slate-800 mb-1">Knowledge Sharing</h3>
-                                        <p className="text-slate-700">Host international workshops and knowledge-sharing events</p>
+                                        <p className="text-slate-700">Host workshops and knowledge-sharing events</p>
                                     </div>
                                 </div>
                             </div>
@@ -170,14 +170,16 @@ export function FundUsSection() {
                         </div>
                     </div>
 
-                    <div className="space-y-8">
-                        <h2 className="text-5xl md:text-6xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600">
+                    <div className="space-y-5">
+                        <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600">
                             Be a Part of Our Journey
                         </h2>
-                        <p className="text-xl md:text-2xl text-slate-700 leading-relaxed max-w-4xl mx-auto font-light">
+                        <p className="text-xl md:text-2xl pt-2 text-slate-700 leading-relaxed max-w-4xl mx-auto font-light">
                             Whether you are an individual donor, corporate sponsor, or institution, your contribution supports the future of
-                            <span className="text-blue-600 font-semibold"> inclusive, diverse, and rigorous language science.</span>
-                            Join us in shaping cognitive research from India for the world.
+                            <span className="text-blue-600 font-semibold"> inclusive, diverse, and rigorous language science research. </span>
+                        </p>
+                        <p className="text-xl md:text-2xl text-slate-700 leading-relaxed max-w-4xl mx-auto font-light">
+                            Join us in contributing to language and cognition research with special focus on Indian societies and Indian languages.
                         </p>
                     </div>
 
@@ -207,21 +209,21 @@ export function FundUsSection() {
                                 <Brain className="text-blue-600" size={32} />
                             </div>
                             <h3 className="text-xl font-semibold text-slate-800 mb-2">Research Excellence</h3>
-                            <p className="text-slate-600">Pioneering cognitive research</p>
+                            <p className="text-slate-600">Pioneering linguistic and cognitive research</p>
                         </div>
                         <div className="text-center">
                             <div className="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                                 <Globe className="text-purple-600" size={32} />
                             </div>
                             <h3 className="text-xl font-semibold text-slate-800 mb-2">Cultural Preservation</h3>
-                            <p className="text-slate-600">Maintaining cultural language roots</p>
+                            <p className="text-slate-600">Maintaining cultural linguistic roots</p>
                         </div>
                         <div className="text-center">
                             <div className="w-16 h-16 bg-indigo-100 rounded-full mx-auto mb-4 flex items-center justify-center">
                                 <Award className="text-indigo-600" size={32} />
                             </div>
                             <h3 className="text-xl font-semibold text-slate-800 mb-2">Innovation</h3>
-                            <p className="text-slate-600">Cutting-edge technology</p>
+                            <p className="text-slate-600">Interdisciplinarity in language research</p>
                         </div>
                     </div>
                 </section>

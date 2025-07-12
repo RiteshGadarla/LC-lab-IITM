@@ -14,13 +14,13 @@ export function CollaborationsSection() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">Collaborators</h2>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Building bridges to advance language and cognition research through international partnerships.
+              Working in teams to advance language and cognition research through diverse partnerships.
             </p>
           </div>
 
           <div className="mb-16">
             <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">IIT Madras Collaborators</h3>
-            <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
               {IndianCollaborators.map((collaborator, index) => (
                   <Card key={index} className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group">
                     <CardContent className="p-6">

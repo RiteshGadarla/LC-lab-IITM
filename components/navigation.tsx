@@ -77,7 +77,7 @@ export function Navigation() {
                         {/* Text */}
                         <div className="hidden sm:block">
                             <h1 className={`text-lg font-semibold ${isScrolled ? "text-slate-900" : "text-white"}`}>
-                                Language & Cognition Lab
+                                Language and Cognition Laboratory
                             </h1>
                             <p className={`text-xs ${isScrolled ? "text-slate-600" : "text-slate-200"}`}>IIT Madras</p>
                         </div>

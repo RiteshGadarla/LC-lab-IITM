@@ -5,13 +5,13 @@ import { Footer } from "@/components/footer"
 import "./globals.css"
 
 export const metadata: Metadata = {
-    title: "Language & Cognition Lab - IIT Madras",
+    title: " Language and Cognition Laboratory - IIT Madras",
     description:
         "A premier research lab at IIT Madras exploring the intersection of language, cognition, and communication through cutting-edge experimental and computational methods.",
     keywords: "linguistics, cognition, language processing, eye-tracking, IIT Madras, research lab, psycholinguistics",
-    authors: [{ name: "Language & Cognition Lab, IIT Madras" }],
+    authors: [{ name: "Language and Cognition Laboratory, IIT Madras" }],
     openGraph: {
-        title: "Language & Cognition Lab - IIT Madras",
+        title: " Language and Cognition Laboratory - IIT Madras",
         description: "Premier research lab exploring language, cognition, and communication",
         type: "website",
     },
