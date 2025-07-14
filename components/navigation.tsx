@@ -57,10 +57,10 @@ export function Navigation() {
                         <img
                             src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
                             alt="IIT Madras Logo"
-                            onClick={() => router.push("https://www.iitm.ac.in")}
-                            className="h-11 w-auto"
+                            onClick={() => window.open("https://www.iitm.ac.in", "_blank")}
+                            className="h-11 w-auto cursor-pointer"
                             onError={(e) => {
-                                e.currentTarget.src = "/placeholder.svg" // Fallback image
+                                e.currentTarget.src = "/placeholder.svg"; // Fallback image
                             }}
                         />
 
@@ -68,7 +68,8 @@ export function Navigation() {
                         <img
                             src={isScrolled ? "/darkLogo.png" : "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980465/lcl2-removebg-preview_g6aof2.png"}
                             alt="LC Lab Logo"
-                            className="h-10 w-auto transition-all duration-300"
+                            onClick={() => router.push("/")}
+                            className="h-10 w-auto transition-all duration-300 cursor-pointer"
                             onError={(e) => {
                                 e.currentTarget.src = "/placeholder.svg" // Fallback image
                             }}

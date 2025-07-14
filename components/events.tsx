@@ -100,7 +100,9 @@ export function EventsSection() {
         if (intervalRefs.current[eventIndex]) {
             clearInterval(intervalRefs.current[eventIndex]!)
         }
-        startTimer(eventIndex)
+        if (isVisible && !isPaused[eventIndex]) {
+            startTimer(eventIndex)
+        }
     }
 
     const pauseTimer = (eventIndex: number) => {
@@ -122,11 +124,9 @@ export function EventsSection() {
     useEffect(() => {
         const observer = new IntersectionObserver(
             ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true)
-                }
+                setIsVisible(entry.isIntersecting)
             },
-            { threshold: 0.1 },
+            { threshold: 0.1 }
         )
 
         if (sectionRef.current) {
@@ -137,33 +137,49 @@ export function EventsSection() {
     }, [])
 
     useEffect(() => {
-        // Start individual timers for each event
-        eventsData.forEach((_, index) => {
-            startTimer(index)
-        })
-
-        return () => {
-            // Clean up all timers
-            intervalRefs.current.forEach(interval => {
+        if (isVisible) {
+            // Start timers for non-paused carousels when section is visible
+            eventsData.forEach((_, index) => {
+                if (!isPaused[index]) {
+                    startTimer(index)
+                }
+            })
+        } else {
+            // Clear all timers when section is not visible
+            intervalRefs.current.forEach((interval, index) => {
                 if (interval) {
                     clearInterval(interval)
+                    intervalRefs.current[index] = null
                 }
             })
         }
-    }, [])
+
+        return () => {
+            // Clean up all timers on unmount
+            intervalRefs.current.forEach((interval, index) => {
+                if (interval) {
+                    clearInterval(interval)
+                    intervalRefs.current[index] = null
+                }
+            })
+        }
+    }, [isVisible])
 
     // Update timers when pause state changes
     useEffect(() => {
-        eventsData.forEach((_, index) => {
-            if (isPaused[index]) {
-                if (intervalRefs.current[index]) {
-                    clearInterval(intervalRefs.current[index]!)
+        if (isVisible) {
+            eventsData.forEach((_, index) => {
+                if (isPaused[index]) {
+                    if (intervalRefs.current[index]) {
+                        clearInterval(intervalRefs.current[index]!)
+                        intervalRefs.current[index] = null
+                    }
+                } else {
+                    startTimer(index)
                 }
-            } else {
-                startTimer(index)
-            }
-        })
-    }, [isPaused])
+            })
+        }
+    }, [isPaused, isVisible])
 
     return (
         <section ref={sectionRef} id="events" className="py-20 bg-white">
