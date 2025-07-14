@@ -39,18 +39,19 @@ export const teamMembers: TeamMember[] = [
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749993811/aziza_abph42.png",
     },
     {
+        name: "Snigdha Medhi",
+        role: "PhD in Progress",
+        research: "Patterns of Ergativity in Assamese, and Its Varieties",
+        image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_crop,ar_1:1/v1749980338/snigdha_l7hcie.png",
+    },
+    {
         name: "Krishna Raj SR",
         role: "IDRP Scholar - Co-guiding with Prof. Srinivasa Chakravarthy",
         research: "From pixels to prepositions: Linking Vision and Spatial Prepositions",
         image:
             "https://media.licdn.com/dms/image/v2/C4D03AQGZ7J-NDl5ZzA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656983904228?e=1755129600&v=beta&t=e-mEsTKDvdS9Ba0LzZdqxFDtSGgHYUC_gzXBfC4bmkM",
     },
-    {
-        name: "Snigdha Medhi",
-        role: "PhD in Progress",
-        research: "Patterns of Ergativity in Assamese, and Its Varieties",
-        image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_crop,ar_1:1/v1749980338/snigdha_l7hcie.png",
-    },
+
     {
         name: "Scherezade Dastur",
         role: "PhD in Progress",

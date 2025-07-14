@@ -13,79 +13,42 @@ export function ContactSection() {
           {/* Contact Header */}
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">Get In Touch</h2>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto">
+            <p className="text-xl text-black max-w-3xl mx-auto">
               We’d love to hear from you! If you’re a student interested in our research, a collaborator from academia or industry, or simply curious about our work, feel free to reach out.
             </p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12">
-            {/* Left Column: Contact Form and Quick Links */}
+            {/* Left Column: Google Form and Quick Links */}
             <div className="space-y-8">
-              {/* Contact Form */}
+              {/* Google Form */}
               <div>
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">Send Us a Message</h3>
-                <Card className="hover:shadow-md transition-all duration-300 rounded-2xl">
+                <h3 className="text-2xl font-semibold text-black mb-6">Send Us a Message</h3>
+                <Card className="hover:shadow-md transition-all duration-300 rounded-2xl border border-black">
                   <CardContent className="p-6">
-                    <form className="space-y-4">
-                      <div>
-                        <label htmlFor="name" className="block text-sm font-medium text-slate-700">
-                          Name
-                        </label>
-                        <input
-                            type="text"
-                            id="name"
-                            name="name"
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600 focus:ring focus:ring-blue-600 focus:ring-opacity-50"
-                            placeholder="Your name"
-                            required
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="contact" className="block text-sm font-medium text-slate-700">
-                          Email or Phone
-                        </label>
-                        <input
-                            type="text"
-                            id="contact"
-                            name="contact"
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600 focus:ring focus:ring-blue-600 focus:ring-opacity-50"
-                            placeholder="Your email or phone number"
-                            required
-                        />
-                      </div>
-                      <div>
-                        <label htmlFor="query" className="block text-sm font-medium text-slate-700">
-                          Query
-                        </label>
-                        <textarea
-                            id="query"
-                            name="query"
-                            rows={4}
-                            className="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-600 focus:ring focus:ring-blue-600 focus:ring-opacity-50"
-                            placeholder="Your message or query"
-                            required
-                        ></textarea>
-                      </div>
-                      <button
-                          type="submit"
-                          className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors"
-                      >
-                        Submit
-                      </button>
-                    </form>
+                    <div className="w-full h-[600px]">
+                      <iframe
+                          src="https://forms.gle/nP7Vkm8vkyPSbA1KA"
+                          width="100%"
+                          height="100%"
+                          style={{ border: 0 }}
+                          allowFullScreen
+                          title="Contact Form"
+                      ></iframe>
+                    </div>
                   </CardContent>
                 </Card>
               </div>
 
               {/* Quick Links */}
               <div>
-                <h3 className="text-xl font-semibold text-slate-900 mb-4">Quick Links</h3>
+                <h3 className="text-xl font-semibold text-black mb-4">Quick Links</h3>
                 <div className="space-y-2">
                   <a
                       href="https://www.iitm.ac.in"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors"
+                      className="flex items-center gap-2 text-black hover:text-gray-700 transition-colors"
                   >
                     IIT Madras <ExternalLink size={14} />
                   </a>
@@ -93,7 +56,7 @@ export function ContactSection() {
                       href="https://hss.iitm.ac.in/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-blue-600 hover:text-blue-700 transition-colors"
+                      className="flex items-center gap-2 text-black hover:text-gray-700 transition-colors"
                   >
                     Department of HSS <ExternalLink size={14} />
                   </a>
@@ -105,19 +68,19 @@ export function ContactSection() {
             <div className="space-y-8">
               {/* Contact Information */}
               <div>
-                <h3 className="text-2xl font-semibold text-slate-900 mb-6">Contact Information</h3>
+                <h3 className="text-2xl font-semibold text-black mb-6">Contact Information</h3>
                 <div className="space-y-4">
-                  <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100">
+                  <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-white border border-black">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <Mail className="text-blue-600" size={20} />
+                        <div className="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <Mail className="text-black" size={20} />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-slate-900 mb-1">Email</h4>
+                          <h4 className="font-semibold text-black mb-1">Email</h4>
                           <a
                               href={`mailto:${principalInvestigator.email}`}
-                              className="text-blue-600 hover:text-blue-700 transition-colors"
+                              className="text-black hover:text-gray-700 transition-colors"
                           >
                             {principalInvestigator.email}
                           </a>
@@ -126,29 +89,29 @@ export function ContactSection() {
                     </CardContent>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100">
+                  <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-white border border-black">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <Phone className="text-blue-600" size={20} />
+                        <div className="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <Phone className="text-black" size={20} />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-slate-900 mb-1">Phone</h4>
-                          <p className="text-slate-600">{principalInvestigator.phone}</p>
+                          <h4 className="font-semibold text-black mb-1">Phone</h4>
+                          <p className="text-black">{principalInvestigator.phone}</p>
                         </div>
                       </div>
                     </CardContent>
                   </Card>
 
-                  <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-gradient-to-br from-blue-50 to-white border border-blue-100">
+                  <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-white border border-black">
                     <CardContent className="p-6">
                       <div className="flex items-start gap-4">
-                        <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                          <MapPin className="text-blue-600" size={20} />
+                        <div className="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center flex-shrink-0">
+                          <MapPin className="text-black" size={20} />
                         </div>
                         <div>
-                          <h4 className="font-semibold text-slate-900 mb-1">Address</h4>
-                          <p className="text-slate-600 leading-relaxed">
+                          <h4 className="font-semibold text-black mb-1">Address</h4>
+                          <p className="text-black leading-relaxed">
                             HSB332B, Humanities and Sciences Block
                             <br />
                             Indian Institute of Technology Madras
@@ -163,7 +126,7 @@ export function ContactSection() {
               </div>
 
               {/* Map */}
-              <Card className="h-96 bg-slate-100 flex items-center justify-center">
+              <Card className="h-96 bg-white border border-black flex items-center justify-center">
                 <div className="w-full h-full">
                   <iframe
                       title="IIT Madras Precise Location"

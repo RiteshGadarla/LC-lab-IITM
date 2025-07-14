@@ -79,7 +79,7 @@ export function FundUsSection() {
                                     </div>
                                     <div>
                                         <h3 className="font-semibold text-slate-800 mb-1">Linguistic Diversity</h3>
-                                        <p className="text-slate-700">To advance cognitive and language research in India's rich linguistic landscape</p>
+                                        <p className="text-slate-700">To advance language and cognition research against the backdrop of India’s linguistic richness.</p>
                                     </div>
                                 </div>
                                 <div className="flex items-start gap-4">

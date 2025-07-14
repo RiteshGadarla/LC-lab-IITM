@@ -78,7 +78,7 @@ export function FacilitiesSection() {
                 {/* Equipment Grid */}
                 <div className="grid md:grid-cols-2 gap-6">
                     {equipment.map((item, index) => (
-                        <Card key={index} className="hover:shadow-lg transition-all rounded-2xl duration-300 hover:-translate-y-1">
+                        <Card key={index} className="hover:shadow-lg transition-all rounded-xl duration-300 hover:-translate-y-1">
                             <CardContent className="p-6">
                                 <div className="flex items-stretch gap-4">
                                     <div className="flex-shrink-0">
