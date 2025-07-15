@@ -28,7 +28,7 @@ export function ContactSection() {
                   <CardContent className="p-6">
                     <div className="w-full h-[600px]">
                       <iframe
-                          src="https://forms.gle/nP7Vkm8vkyPSbA1KA"
+                          src="https://forms.gle/JsYaGnY8F5eAqmUX7"
                           width="100%"
                           height="100%"
                           style={{ border: 0 }}

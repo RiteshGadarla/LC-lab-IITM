@@ -46,12 +46,11 @@ export const teamMembers: TeamMember[] = [
     },
     {
         name: "Krishna Raj SR",
-        role: "IDRP Scholar - Co-guiding with Prof. Srinivasa Chakravarthy",
+        role: "IDRP Scholar (PhD in progress) - Co-guiding with Prof. Srinivasa Chakravarthy",
         research: "From pixels to prepositions: Linking Vision and Spatial Prepositions",
         image:
             "https://media.licdn.com/dms/image/v2/C4D03AQGZ7J-NDl5ZzA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656983904228?e=1755129600&v=beta&t=e-mEsTKDvdS9Ba0LzZdqxFDtSGgHYUC_gzXBfC4bmkM",
     },
-
     {
         name: "Scherezade Dastur",
         role: "PhD in Progress",
