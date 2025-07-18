@@ -74,14 +74,14 @@ export const teamMembers: TeamMember[] = [
 export const othersMembers: TeamMember[] = [
     {
         name: "G L Vijayavani",
-        role: "IDRP Scholar - Co-guiding with Prof. Preeti Aghalayam",
+        role: "IDRP Scholar (PhD in progress) - Co-guiding with Prof. Preeti Aghalayam",
         research:
             "Identifying Gender Bias in Indian Academic Institutional Communication: A Dual Approach Using Text Analysis and Stakeholder Perception",
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751857873/c53beb33-0e76-4fae-8965-0ce9c23a5278.png",
     },
     {
         name: "Ruby George",
-        role: "Co-guided with Prof. Umakant Dash",
+        role: "Graduated in 2019, Co-guided by Prof. Umakant Dash",
         research:
             "Persuasion in Public Service Advertising: Creating Changes Through Creative Strategies in the Print Media",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/ruby_l2mqos.jpg",
