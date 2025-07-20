@@ -102,6 +102,11 @@ export const researchStaff: TeamMember[] = [
         research: "",
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751802299/df1d1d61-e3a7-4c65-9cb5-7917afacfdbf.png",
     },
+    {
+        name: "Gadarla Ritesh Reddy",
+        role: "Intern",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751803202/f426fb16-54ff-49fb-a50d-ee4652e4117b.png",
+    },
 ]
 
 // Collaborators
@@ -139,7 +144,7 @@ export const IndianCollaborators = [
         name: "Prof. Mitesh M. Khapra",
         institution: "Indian Institute of Technology Madras",
         country: "India",
-        image: "https://www.cse.iitm.ac.in/~miteshk/fac.jpg",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/v1753027304/a319b64a-2fdd-40cb-914f-444f804fc9f4.png",
     },
     {
         name: "Prof. Preeti Aghalayam",
@@ -171,11 +176,6 @@ export const friends = [
         name: "Gadarla Rohit Reddy",
         contribution: "Co-designed the website",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1750746876/rohit_o1zjut.jpg",
-    },
-    {
-        name: "Gadarla Ritesh Reddy",
-        contribution: "Co-designed the website",
-        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751803202/f426fb16-54ff-49fb-a50d-ee4652e4117b.png",
     },
 ]
 
