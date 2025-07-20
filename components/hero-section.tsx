@@ -227,24 +227,6 @@ export function HeroSection() {
 
   return (
       <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        {/* SEO-friendly structured data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Organization",
-            "name": "Language & Cognition Laboratory",
-            "description": "Research laboratory exploring the intersection of language, cognition, and communication at Department of Humanities and Social Sciences, IIT Madras",
-            "url": typeof window !== 'undefined' ? window.location.origin : '',
-            "parentOrganization": {
-              "@type": "EducationalOrganization",
-              "name": "Indian Institute of Technology Madras",
-              "department": "Department of Humanities and Social Sciences"
-            },
-            "areaServed": "Global",
-            "knowsAbout": ["Language Processing", "Cognitive Science", "Communication Research", "Linguistics", "Psycholinguistics"]
-          })}
-        </script>
-
         {/* SEO Meta tags would go in document head, but adding semantic structure here */}
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900" />
 
