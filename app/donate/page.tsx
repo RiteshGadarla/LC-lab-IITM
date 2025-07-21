@@ -1,5 +1,3 @@
-"use client"
-
 import {FundUsSection} from "@/components/fund-us";
 
 export default function FundUsPage() {

@@ -22,14 +22,14 @@ export const metadata: Metadata = {
         description: 'Explore our global network of research partnerships advancing language and cognition science.',
         // url: 'https://yoursite.com/collaborations',
         siteName: 'Language & Cognition Lab',
-        images: [
-            {
-                url: 'https://yoursite.com/og-collaborations.jpg',
-                width: 1200,
-                height: 630,
-                alt: 'Language & Cognition Lab Research Collaborations',
-            },
-        ],
+        // images: [
+        //     {
+        //         url: 'https://yoursite.com/og-collaborations.jpg',
+        //         width: 1200,
+        //         height: 630,
+        //         alt: 'Language & Cognition Lab Research Collaborations',
+        //     },
+        // ],
         locale: 'en_US',
         type: 'website',
     },
