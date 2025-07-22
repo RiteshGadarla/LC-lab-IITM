@@ -85,19 +85,25 @@ export const publications = [
     {
         title: "Passives in South Asian Languages: Some Typological Puzzles",
         year: "2013",
+        citation: "Chandra, P. and Sahoo, A. (2013). Passives in South Asian Languages: Some Typological Puzzles. Acta Linguistica Asiatica, Vol 3:1, 9-28. University of Ljubljana, Slovenia",
+        link: "https://journals.uni-lj.si/ala/article/view/188",
     },
     {
         title: "Odia passives with ditransitives",
         year: "2010",
+        citation: "Sahoo, A. (2010). Odia Passives with Ditransitives. Papers from the Lancaster University Postgraduate Conference in Linguistics & Language Teaching 2010, 173-200. Lancaster University",
+        link: "https://www.lancaster.ac.uk/fass/events/laelpgconference/papers/v05/Sahoo.pdf",
     },
-    {
-        title: "Gradience In ditransitives and morphological specifities: The case Of Oriya",
-        year: "2010",
-    },
-    {
-        title: "Yes-no Questions: Probing the Structures of Indian English",
-        year: "2009",
-    },
+    // {
+    //     title: "Gradience In ditransitives and morphological specifities: The case Of Oriya",
+    //     year: "2010",
+    //     citation: " Chandra, P. (2010). Gradience in Ditransitives and Morphological Specificities: The Case of Oriya. AICL Pre-conference Proceedings, Lucknow University",
+    //     link: ""
+    // },
+    // {
+    //     title: "Yes-no Questions: Probing the Structures of Indian English",
+    //     year: "2009",
+    // },
 ]
 
 // Conferences (most recent first)
