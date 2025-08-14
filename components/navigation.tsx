@@ -66,7 +66,7 @@ export function Navigation() {
 
                         {/* LC Lab Logo */}
                         <img
-                            src={isScrolled ? "/darkLogo.png" : "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980465/lcl2-removebg-preview_g6aof2.png"}
+                            src={isScrolled ? "/darkLogo.png" : "/lightLogo.png"}
                             alt="LC Lab Logo"
                             onClick={() => router.push("/")}
                             className="h-10 w-auto transition-all duration-300 cursor-pointer"

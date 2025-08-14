@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="https://res.cloudinary.com/dt8amwctw/image/upload/v1749980465/lcl2-removebg-preview_g6aof2.png"
+                src="/lightLogo.png"
                 alt="LC Lab"
                 className="h-8 w-auto"
               />
