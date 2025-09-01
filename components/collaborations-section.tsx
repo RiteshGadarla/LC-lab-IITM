@@ -27,60 +27,60 @@ export function CollaborationsSection() {
           </header>
 
           {/* IIT Madras Collaborators */}
-          <section className="mb-16" aria-labelledby="iit-collaborators-heading">
-            <h2
-                id="iit-collaborators-heading"
-                className="text-4xl font-semibold text-slate-900 mb-8 text-center"
-            >
-              IIT Madras Collaborators
-            </h2>
-            <div
-                className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"
-                role="list"
-                aria-label="IIT Madras research collaborators"
-            >
-              {IndianCollaborators.map((collaborator, index) => (
-                  <Card
-                      key={`iit-${index}`}
-                      className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group"
-                      role="listitem"
-                  >
-                    <CardContent className="p-6">
-                      <div className="flex gap-4">
-                        <div className="h-full flex-shrink-0">
-                          <Image
-                              src={collaborator.image || "/placeholder.svg"}
-                              alt={`Portrait of ${collaborator.name}`}
-                              width={80}
-                              height={80}
-                              className="h-20 w-20 object-cover rounded-md shadow-md group-hover:scale-105 transition-transform"
-                              loading="lazy"
-                          />
-                        </div>
-                        <div className="flex flex-col justify-between">
-                          <div>
-                            <h3 className="text-lg font-semibold text-slate-900 mb-1">
-                              {collaborator.name}
-                            </h3>
-                            <p className="text-slate-600 text-sm mb-2 leading-relaxed">
-                              {collaborator.institution}
-                            </p>
-                          </div>
-                          {collaborator.country && (
-                              <div className="flex items-center gap-1">
-                                <MapPin size={12} className="text-slate-400" aria-hidden="true" />
-                                <span className="text-xs text-slate-500">
-                            {collaborator.country}
-                          </span>
-                              </div>
-                          )}
-                        </div>
-                      </div>
-                    </CardContent>
-                  </Card>
-              ))}
-            </div>
-          </section>
+          {/*<section className="mb-16" aria-labelledby="iit-collaborators-heading">*/}
+          {/*  <h2*/}
+          {/*      id="iit-collaborators-heading"*/}
+          {/*      className="text-4xl font-semibold text-slate-900 mb-8 text-center"*/}
+          {/*  >*/}
+          {/*    IIT Madras Collaborators*/}
+          {/*  </h2>*/}
+          {/*  <div*/}
+          {/*      className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"*/}
+          {/*      role="list"*/}
+          {/*      aria-label="IIT Madras research collaborators"*/}
+          {/*  >*/}
+          {/*    {IndianCollaborators.map((collaborator, index) => (*/}
+          {/*        <Card*/}
+          {/*            key={`iit-${index}`}*/}
+          {/*            className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group"*/}
+          {/*            role="listitem"*/}
+          {/*        >*/}
+          {/*          <CardContent className="p-6">*/}
+          {/*            <div className="flex gap-4">*/}
+          {/*              <div className="h-full flex-shrink-0">*/}
+          {/*                <Image*/}
+          {/*                    src={collaborator.image || "/placeholder.svg"}*/}
+          {/*                    alt={`Portrait of ${collaborator.name}`}*/}
+          {/*                    width={80}*/}
+          {/*                    height={80}*/}
+          {/*                    className="h-20 w-20 object-cover rounded-md shadow-md group-hover:scale-105 transition-transform"*/}
+          {/*                    loading="lazy"*/}
+          {/*                />*/}
+          {/*              </div>*/}
+          {/*              <div className="flex flex-col justify-between">*/}
+          {/*                <div>*/}
+          {/*                  <h3 className="text-lg font-semibold text-slate-900 mb-1">*/}
+          {/*                    {collaborator.name}*/}
+          {/*                  </h3>*/}
+          {/*                  <p className="text-slate-600 text-sm mb-2 leading-relaxed">*/}
+          {/*                    {collaborator.institution}*/}
+          {/*                  </p>*/}
+          {/*                </div>*/}
+          {/*                {collaborator.country && (*/}
+          {/*                    <div className="flex items-center gap-1">*/}
+          {/*                      <MapPin size={12} className="text-slate-400" aria-hidden="true" />*/}
+          {/*                      <span className="text-xs text-slate-500">*/}
+          {/*                  {collaborator.country}*/}
+          {/*                </span>*/}
+          {/*                    </div>*/}
+          {/*                )}*/}
+          {/*              </div>*/}
+          {/*            </div>*/}
+          {/*          </CardContent>*/}
+          {/*        </Card>*/}
+          {/*    ))}*/}
+          {/*  </div>*/}
+          {/*</section>*/}
 
           {/* International Collaborators */}
           <section className="py-8 mb-16" aria-labelledby="international-collaborators-heading">
