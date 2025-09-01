@@ -49,7 +49,7 @@ export const teamMembers: TeamMember[] = [
         role: "IDRP Scholar (PhD in progress) - Co-guiding with Prof. Srinivasa Chakravarthy",
         research: "From pixels to prepositions: Linking Vision and Spatial Prepositions",
         image:
-            "https://media.licdn.com/dms/image/v2/C4D03AQGZ7J-NDl5ZzA/profile-displayphoto-shrink_400_400/profile-displayphoto-shrink_400_400/0/1656983904228?e=1755129600&v=beta&t=e-mEsTKDvdS9Ba0LzZdqxFDtSGgHYUC_gzXBfC4bmkM",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1756733304/krishna_peb5xz.jpg",
     },
     {
         name: "Scherezade Dastur",
