@@ -83,7 +83,7 @@ export function CollaborationsSection() {
           {/*</section>*/}
 
           {/* International Collaborators */}
-          <section className="py-8 mb-16" aria-labelledby="international-collaborators-heading">
+          <section className="mb-16" aria-labelledby="international-collaborators-heading">
             <h2
                 id="international-collaborators-heading"
                 className="text-4xl font-semibold text-slate-900 mb-8 text-center"
