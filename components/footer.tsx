@@ -30,32 +30,32 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/research" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/research" className="text-slate-400 hover:text-white transition-colors">
                   Research
                 </a>
               </li>
               <li>
-                <a href="/team" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/team" className="text-slate-400 hover:text-white transition-colors">
                   Team
                 </a>
               </li>
               <li>
-                <a href="/facilities" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/facilities" className="text-slate-400 hover:text-white transition-colors">
                   Facilities
                 </a>
               </li>
               <li>
-                <a href="/events" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/events" className="text-slate-400 hover:text-white transition-colors">
                   Events
                 </a>
               </li>
               <li>
-                <a href="/collaborations" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/collaborations" className="text-slate-400 hover:text-white transition-colors">
                   Collaborations
                 </a>
               </li>
               <li>
-                <a href="/donate" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/donate" className="text-slate-400 hover:text-white transition-colors">
                   Fund Us
                 </a>
               </li>
@@ -64,7 +64,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <Link href="/contact">
+            <Link href="/anindita/contact">
               <h3 className="font-semibold mb-4 cursor-pointer hover:underline">
                 Contact
               </h3>

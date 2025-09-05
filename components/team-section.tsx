@@ -198,7 +198,7 @@ export function TeamSection() {
                                 We're always looking for passionate researchers to join our lab.
                             </p>
                             <button
-                                onClick={() => router.push("/contact")}
+                                onClick={() => router.push("/anindita/contact")}
                                 className="text-blue-600 hover:text-blue-700 font-medium text-xs"
                             >
                                 Get in touch
