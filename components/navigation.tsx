@@ -13,6 +13,8 @@ export function Navigation() {
     const [isOpen, setIsOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(!isHomePage)
 
+    const BASE_PATH = "/anindita" // match next.config.js basePath
+
     const navItems = [
         {label: "Home", href: "/"},
         {label: "Research", href: "/research"},
@@ -30,18 +32,17 @@ export function Navigation() {
 
     useEffect(() => {
         if (isHomePage) {
-            // Set initial scroll state on mount
             const initialScroll = typeof window !== "undefined" ? window.scrollY > 50 : false
             setIsScrolled(initialScroll)
-
-            // Add scroll event listener
             window.addEventListener("scroll", handleScroll, {passive: true})
             return () => window.removeEventListener("scroll", handleScroll)
         } else {
-            // Ensure non-home pages always use dark theme
             setIsScrolled(true)
         }
     }, [isHomePage, handleScroll])
+
+    // Helper to prepend basePath for local assets
+    const asset = (path: string) => `${BASE_PATH}${path}`
 
     return (
         <nav
@@ -59,20 +60,16 @@ export function Navigation() {
                             alt="IIT Madras Logo"
                             onClick={() => window.open("https://www.iitm.ac.in", "_blank")}
                             className="h-11 w-auto cursor-pointer"
-                            onError={(e) => {
-                                e.currentTarget.src = "/placeholder.svg"; // Fallback image
-                            }}
+                            onError={(e) => { e.currentTarget.src = asset("/placeholder.svg") }}
                         />
 
                         {/* LC Lab Logo */}
                         <img
-                            src={isScrolled ? "/darkLogo.png" : "/lightLogo.png"}
+                            src={isScrolled ? asset("/darkLogo.png") : asset("/lightLogo.png")}
                             alt="LC Lab Logo"
                             onClick={() => router.push("/")}
                             className="h-10 w-auto transition-all duration-300 cursor-pointer"
-                            onError={(e) => {
-                                e.currentTarget.src = "/placeholder.svg" // Fallback image
-                            }}
+                            onError={(e) => { e.currentTarget.src = asset("/placeholder.svg") }}
                         />
 
                         {/* Text */}
@@ -121,7 +118,7 @@ export function Navigation() {
                             {navItems.map((item) => (
                                 <Link
                                     key={item.href}
-                                    href={item.href}
+                                    href={`${BASE_PATH}${item.href}`}
                                     onClick={() => setIsOpen(false)}
                                     className={`block w-full text-left px-3 py-2 text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md transition-colors ${
                                         pathname === item.href ? "text-blue-600 bg-slate-50" : ""
