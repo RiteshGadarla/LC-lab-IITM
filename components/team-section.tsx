@@ -102,7 +102,7 @@ export function TeamSection() {
                             >
                                 <CardContent className="p-6 text-center">
                                     <img
-                                        src={member.image || "/placeholder.svg"}
+                                        src={member.image || "/anindita/placeholder.svg"}
                                         alt={member.name}
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />
@@ -128,7 +128,7 @@ export function TeamSection() {
                             >
                                 <CardContent className="p-6 text-center">
                                     <img
-                                        src={member.image || "/placeholder.svg"}
+                                        src={member.image || "/anindita/placeholder.svg"}
                                         alt={member.name}
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />
@@ -153,7 +153,7 @@ export function TeamSection() {
                             >
                                 <CardContent className="p-6 text-center">
                                     <img
-                                        src={member.image || "/placeholder.svg"}
+                                        src={member.image || "/anindita/placeholder.svg"}
                                         alt={member.name}
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />
@@ -177,7 +177,7 @@ export function TeamSection() {
                             >
                                 <CardContent className="p-6 text-center">
                                     <img
-                                        src={member.image || "/placeholder.svg"}
+                                        src={member.image || "/anindita/placeholder.svg"}
                                         alt={member.name}
                                         className="w-32 h-32 rounded-full object-cover mx-auto mb-4 shadow-md"
                                     />

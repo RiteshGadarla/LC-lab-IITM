@@ -10,7 +10,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-4">
               <img
-                src="/lightLogo.png"
+                src="/anindita/lightLogo.png"
                 alt="LC Lab"
                 className="h-8 w-auto"
               />
@@ -30,32 +30,32 @@ export function Footer() {
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2 text-sm">
               <li>
-                <a href="/anindita/research" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/lclab/research" className="text-slate-400 hover:text-white transition-colors">
                   Research
                 </a>
               </li>
               <li>
-                <a href="/anindita/team" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/lclab/team" className="text-slate-400 hover:text-white transition-colors">
                   Team
                 </a>
               </li>
               <li>
-                <a href="/anindita/facilities" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/lclab/facilities" className="text-slate-400 hover:text-white transition-colors">
                   Facilities
                 </a>
               </li>
               <li>
-                <a href="/anindita/events" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/lclab/events" className="text-slate-400 hover:text-white transition-colors">
                   Events
                 </a>
               </li>
               <li>
-                <a href="/anindita/collaborations" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/lclab/collaborations" className="text-slate-400 hover:text-white transition-colors">
                   Collaborations
                 </a>
               </li>
               <li>
-                <a href="/anindita/donate" className="text-slate-400 hover:text-white transition-colors">
+                <a href="/anindita/lclab/donate" className="text-slate-400 hover:text-white transition-colors">
                   Fund Us
                 </a>
               </li>
@@ -64,7 +64,7 @@ export function Footer() {
 
           {/* Contact */}
           <div>
-            <Link href="/anindita/contact">
+            <Link href="/lclab/contact">
               <h3 className="font-semibold mb-4 cursor-pointer hover:underline">
                 Contact
               </h3>

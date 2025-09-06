@@ -22,7 +22,7 @@ export function ImageSlideshow({ images }: ImageSlideshowProps) {
       {images.map((image, index) => (
         <img
           key={index}
-          src={image || "/placeholder.svg"}
+          src={image || "/anindita/placeholder.svg"}
           alt={`Facility image ${index + 1}`}
           className={`absolute inset-0 w-full h-full object-cover transition-opacity duration-1000 ${
             index === currentSlide ? "opacity-100" : "opacity-0"

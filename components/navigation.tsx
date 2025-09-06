@@ -14,14 +14,14 @@ export function Navigation() {
     const [isScrolled, setIsScrolled] = useState(!isHomePage)
 
     const navItems = [
-        {label: "Home", href: "/anindita"},
-        {label: "Research", href: "/anindita/research"},
-        {label: "Team", href: "/anindita/team"},
-        {label: "Facilities", href: "/anindita/facilities"},
-        {label: "Events", href: "/anindita/events"},
-        {label: "Collaborations", href: "/anindita/collaborations"},
-        {label: "Contact", href: "/anindita/contact"},
-        {label: "Fund Us",  href: "/anindita/donate"},
+        {label: "Home", href: "/lclab"},
+        {label: "Research", href: "/lclab/research"},
+        {label: "Team", href: "/lclab/team"},
+        {label: "Facilities", href: "/lclab/facilities"},
+        {label: "Events", href: "/lclab/events"},
+        {label: "Collaborations", href: "/lclab/collaborations"},
+        {label: "Contact", href: "/lclab/contact"},
+        {label: "Fund Us",  href: "/lclab/donate"},
     ]
 
     const handleScroll = useCallback(() => {
@@ -66,12 +66,12 @@ export function Navigation() {
 
                         {/* LC Lab Logo */}
                         <img
-                            src={isScrolled ? "/darkLogo.png" : "/lightLogo.png"}
+                            src={isScrolled ? "/anindita/darkLogo.png" : "/anindita/lightLogo.png"}
                             alt="LC Lab Logo"
-                            onClick={() => router.push("/anindita")}
+                            onClick={() => router.push("/lclab")}
                             className="h-10 w-auto transition-all duration-300 cursor-pointer"
                             onError={(e) => {
-                                e.currentTarget.src = "/placeholder.svg" // Fallback image
+                                e.currentTarget.src = "/anindita/placeholder.svg" // Fallback image
                             }}
                         />
 
