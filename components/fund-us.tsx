@@ -207,7 +207,7 @@ export function FundUsSection() {
                         </Button>
                         <Button
                             variant="outline"
-                            onClick={() => router.push("/anindita/contact")}
+                            onClick={() => router.push("/lclab/contact")}
                             className="group text-slate-700 border-2 border-slate-300 hover:border-blue-500 hover:text-blue-600 text-lg font-medium px-8 py-6 rounded-2xl transition-all duration-300 hover:-translate-y-1"
                         >
                             <div className="flex items-center gap-3">
@@ -239,7 +239,7 @@ export function FundUsSection() {
                                 </p>
                                 <div className="flex justify-center">
                                     <Button
-                                        onClick={() => router.push("/anindita/contact")}
+                                        onClick={() => router.push("/lclab/contact")}
                                         className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
                                     >
                                         <div className="flex items-center gap-3">

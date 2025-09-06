@@ -9,7 +9,7 @@ import {usePathname, useRouter} from "next/navigation"
 export function Navigation() {
     const router = useRouter()
     const pathname = usePathname()
-    const isHomePage = pathname === "/anindita"
+    const isHomePage = pathname === "/lclab/";
     const [isOpen, setIsOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(!isHomePage)
 
