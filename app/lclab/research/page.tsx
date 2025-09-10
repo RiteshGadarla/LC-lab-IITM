@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     openGraph: {
         title: "Research Portfolio | Language and Cognition Research Lab",
         description: "Explore our comprehensive research portfolio including ongoing projects, peer-reviewed publications, and conference presentations in linguistics and cognition.",
-        // url: "https://yourdomain.com/research",
+        url: "https://home.iitm.ac.in/anindita/lclab/research/",
         siteName: "Language and Cognition Research Lab",
         // images: [
         //     {

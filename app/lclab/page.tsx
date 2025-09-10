@@ -20,7 +20,7 @@ export const metadata = {
         title: "Language and Cognition Research Lab | Exploring Linguistics",
         description: "Discover research in linguistics, cognition, and experimental methods.",
         type: "website",
-        // url: "https://yourdomain.com", // Uncomment & update when you have a domain
+        url: "https://home.iitm.ac.in/anindita/lclab/", // Uncomment & update when you have a domain
         // images: ["https://yourdomain.com/og-image.jpg"], // Add your OG image when ready
     },
     robots: { index: true, follow: true },

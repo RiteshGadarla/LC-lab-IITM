@@ -47,6 +47,24 @@ export const researchProjects = [
 // Publications (most recent first)
 export const publications = [
     {
+        title: "A Description of Non-verbal Predication in Kuwi",
+        citation: "Prem Sagar, G. & Sahoo, A. (2025). A Description of Non-verbal Predication in Kuwi. 54. 118-142. ",
+        year: "2025",
+        link: "https://www.researchgate.net/publication/394263887_A_Description_of_Non-verbal_Predication_in_Kuwi",
+    },
+    {
+        title: "Assessing language vitality: A case of Indigenous Kuwi",
+        citation: "Prem Sagar, G., & Sahoo, A. (2025). Assessing language vitality: A case of Indigenous Kuwi. Australian Review of Applied Linguistics. 10.1075/aral.24115.pre. ",
+        year: "2025",
+        link: "https://www.researchgate.net/publication/394072895_Assessing_language_vitality_A_case_of_Indigenous_Kuwi",
+    },
+    {
+        title: "Code-Mixing and Code-Switching of Parsi Gujarati with English: A Structural Analysis",
+        citation: "Dastur, S. and Sahoo, A. (2025). Code-Mixing and Code-Switching of Parsi Gujarati with English: A Structural Analysis. Indian Linguistics. 85(1-2)",
+        year: "2025",
+        link: "",
+    },
+    {
         title: "Versatile copulas and their stance-marking uses in conversational Odia, an Indo-Aryan language",
         citation: "Yap, F. H., & Sahoo, A. (2024). Versatile copulas and their stance-marking uses in conversational Odia, an Indo-Aryan language. Lingua, 297, 103641.",
         year: "2024",
@@ -74,7 +92,7 @@ export const publications = [
         title: "Ditransitive Active-passives in Malayalam: A brief note",
         citation: "Chandra, P. and Sahoo, A. (2015). Ditransitive Active-passives in Malayalam: A brief note. International Journal of Dravidian Linguistics, Vol 44:1. Dravidian Linguistics Association",
         year: "2015",
-        link:"https://www.academia.edu/24793944/DITRANSITIVE_ACTIVE_PASSIVES_IN_MALAYALAM_A_BRIEF_NOTE",
+        link: "https://www.academia.edu/24793944/DITRANSITIVE_ACTIVE_PASSIVES_IN_MALAYALAM_A_BRIEF_NOTE",
     },
     {
         title: "Learning Puzzles with Indian English Tags",
@@ -108,6 +126,22 @@ export const publications = [
 
 // Conferences (most recent first)
 export const conferences = [
+    {
+        title: "Investigating cognitive processing using eye-tracking: A Study on Punjabi Grammatical Voice Constructions",
+        authors: ["Anindita Sahoo", "Celia Shiyu He", "Krishna Raj S R", "Dagmar Divjak. P"],
+        conference: "2nd Annual conference on Languages and Language at the Crossroads of Disciplines",
+        organizer: "University of Lille",
+        location: "France",
+        date: "01-03 September 2025",
+    },
+    {
+        title: "On the relationship between light verbs and voice constructions: An areal typological study.",
+        authors: ["Foong Ha Yap", "Anindita Sahoo"],
+        conference: "Societas Linguistica Europaea 58th Annual Meeting",
+        organizer: "Université Bordeaux Montaigne",
+        location: "France",
+        date: "26-29 August 2025",
+    },
     {
         title: "Definiteness marking and de-honorification in Odia, an eastern Indo-Aryan language",
         authors: ["Foong Ha Yap", "Anindita Sahoo"],

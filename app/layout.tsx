@@ -22,15 +22,13 @@ export const viewport: Viewport = {
     initialScale: 1,
 }
 
-export default function RootLayout({
-                                       children,
-                                   }: {
+export default function RootLayout({children,}: {
     children: React.ReactNode
 }) {
     return (
         <html lang="en" className="scroll-smooth">
         <head>
-            <link rel="icon" href="/anindita/darkLogo.png" />
+            <link rel="icon" href="/anindita/darkLogo2.png" />
             <link rel="preconnect" href="https://fonts.googleapis.com" />
             <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
             <link

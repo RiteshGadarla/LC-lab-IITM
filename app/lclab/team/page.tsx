@@ -16,7 +16,7 @@ export const metadata = {
         title: "Our Team | Language & Cognition Lab, IIT Madras",
         description: "Meet the faculty, researchers, and scholars of the Language Lab, IIT Madras.",
         type: "website",
-        // url: "https://yourdomain.com/team", // fill when live
+        url: "https://home.iitm.ac.in/anindita/lclab/team/", // fill when live
         // images: [{ url: "https://yourdomain.com/og-team.jpg" }] // fill when live
     },
     twitter: {
@@ -33,7 +33,7 @@ const jsonLD = {
     "@type": "ResearchProject",
     "name": "Language & Cognition Lab Team, IIT Madras",
     "description": "Meet the expert faculty, researchers, PhD scholars, and staff at the Language & Cognition Lab, Department of Humanities and Social Sciences at IIT Madras.",
-    // "url": "https://yourdomain.com/team",
+    "url": "https://home.iitm.ac.in/anindita/lclab/team/",
     "provider": {
         "@type": "Organization",
         "name": "Language & Cognition Lab, IIT Madras",

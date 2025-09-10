@@ -30,10 +30,22 @@ export function ContactSection() {
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left: Form and Links */}
             <section aria-labelledby="form-links-heading" className="space-y-8">
-              <h2 id="form-links-heading" className="text-2xl font-semibold text-black mb-6">
-                Send Us a Message
-              </h2>
-              <Card className="hover:shadow-md transition-all duration-300 rounded-2xl border border-black">
+                <h2
+                    id="form-links-heading"
+                    className="text-2xl font-semibold text-black mb-6 flex items-center gap-2"
+                >
+                    Send Us a Message
+                    <a
+                        href="https://forms.gle/JsYaGnY8F5eAqmUX7"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-blue-600 text-sm hover:text-blue-800"
+                    >
+                        <ExternalLink size={18} />
+                    </a>
+                </h2>
+
+                <Card className="hover:shadow-md transition-all duration-300 rounded-2xl border border-black">
                 <CardContent className="p-6">
                   <div className="w-full h-[600px]">
                     <iframe

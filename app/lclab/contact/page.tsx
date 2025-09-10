@@ -11,7 +11,7 @@ export const metadata = {
     openGraph: {
         title: "Contact | Language & Cognition Lab IIT Madras",
         description: "Contact us for research queries, collaboration, and project information.",
-        // url: "https://yourdomain.com/contact",
+        url: "https://home.iitm.ac.in/anindita/lclab/contact",
         // images: [ { url: "https://yourdomain.com/og-contact.jpg", width: 1200, height: 630, alt: "Contact Language Lab" } ],
         type: "website",
     },
@@ -41,7 +41,7 @@ const jsonLD = {
     "@context": "https://schema.org",
     "@type": "ResearchProject",
     "name": "Language & Cognition Lab, IIT Madras",
-    "url": "#", // "https://yourdomain.com/contact",
+    "url": "https://home.iitm.ac.in/anindita/lclab/contact/", // "https://yourdomain.com/contact",
     "contactPoint": {
         "@type": "ContactPoint",
         "email": "principal@iitm.ac.in",

@@ -16,13 +16,13 @@ The Language & Cognition Lab explores the interface of **language, cognition, an
 
 ### 🧪 Key Sections
 
-* **Home**: Introduction to the lab’s vision
-* **About**: Mission and interdisciplinary approach
-* **Team**: Faculty and scholars involved in the lab’s work
-* **Projects**: Ongoing and past research projects
-* **Facility**: Details of the eye-tracking system and lab setup
-* **Collaborations**: National and international research collaborators
-* **Friends**: Acknowledging contributors who helped shape the lab
-* **Contact**: Phone, email, and physical address for inquiries
+- **Home**: Overview of the Language & Cognition Lab vision and mission
+- **Research & Projects**: Multidisciplinary studies on language, cognition, and Indian languages
+- **Team**: Faculty, researchers, and students driving the lab’s work
+- **Facilities**: State-of-the-art lab setup with eye-tracking and experimental tools
+- **Collaborations**: National and international academic partnerships
+- **Events/News**: Updates on workshops, seminars, and lab activities
+- **Contact**: Email, phone, and address for inquiries
+- **Funding/Support**: Opportunities to support and sustain research
 
 ---
