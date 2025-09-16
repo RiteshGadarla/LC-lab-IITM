@@ -48,7 +48,7 @@ export const researchProjects = [
 export const publications = [
     {
         title: "A Description of Non-verbal Predication in Kuwi",
-        citation: "Prem Sagar, G. & Sahoo, A. (2025). A Description of Non-verbal Predication in Kuwi. 54. 118-142. ",
+        citation: "Prem Sagar, G. & Sahoo, A. (2025). A Description of Non-verbal Predication in Kuwi. 54. 118-142.  International Journal of Dravidian Linguistics.",
         year: "2025",
         link: "https://www.researchgate.net/publication/394263887_A_Description_of_Non-verbal_Predication_in_Kuwi",
     },
