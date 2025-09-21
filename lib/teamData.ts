@@ -103,6 +103,12 @@ export const researchStaff: TeamMember[] = [
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751802299/df1d1d61-e3a7-4c65-9cb5-7917afacfdbf.png",
     },
     {
+        name: "Suguna SG",
+        role: "Research Assistant",
+        research: "",
+        image: "/anindita/People/sugunaSG.png",
+    },
+    {
         name: "Gadarla Ritesh Reddy",
         role: "Intern",
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751803202/f426fb16-54ff-49fb-a50d-ee4652e4117b.png",
