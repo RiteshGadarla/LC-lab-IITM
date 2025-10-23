@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Mail, MapPin, ExternalLink } from "lucide-react"
-import { principalInvestigator } from "@/lib/teamData"
+import { principalInvestigator,labDetails } from "@/lib/teamData"
 import { useRouter } from "next/navigation";
 
 export function ContactSection() {
@@ -101,10 +101,10 @@ export function ContactSection() {
                       <div>
                         <h3 className="font-semibold text-black mb-1">Email</h3>
                         <a
-                            href={`mailto:${principalInvestigator.email}`}
+                            href={`mailto:${labDetails.email}`}
                             className="text-black hover:text-gray-700 transition-colors"
                         >
-                          {principalInvestigator.email}
+                          {labDetails.email}
                         </a>
                       </div>
                     </div>
