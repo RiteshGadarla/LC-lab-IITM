@@ -5,6 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Globe, MapPin } from "lucide-react"
 import { internationalCollaborators, IndianCollaborators } from "@/lib/teamData"
 import Image from "next/image"
+import {partnerData} from "@/lib/cerai";
 
 export function CollaborationsSection() {
   const router = useRouter()
@@ -26,63 +27,63 @@ export function CollaborationsSection() {
             </p>
           </header>
 
-          {/* IIT Madras Collaborators */}
-          {/*<section className="mb-16" aria-labelledby="iit-collaborators-heading">*/}
-          {/*  <h2*/}
-          {/*      id="iit-collaborators-heading"*/}
-          {/*      className="text-4xl font-semibold text-slate-900 mb-8 text-center"*/}
-          {/*  >*/}
-          {/*    IIT Madras Collaborators*/}
-          {/*  </h2>*/}
-          {/*  <div*/}
-          {/*      className="grid md:grid-cols-2 lg:grid-cols-3 gap-6"*/}
-          {/*      role="list"*/}
-          {/*      aria-label="IIT Madras research collaborators"*/}
-          {/*  >*/}
-          {/*    {IndianCollaborators.map((collaborator, index) => (*/}
-          {/*        <Card*/}
-          {/*            key={`iit-${index}`}*/}
-          {/*            className="hover:shadow-lg transition-all duration-300 hover:-translate-y-2 group"*/}
-          {/*            role="listitem"*/}
-          {/*        >*/}
-          {/*          <CardContent className="p-6">*/}
-          {/*            <div className="flex gap-4">*/}
-          {/*              <div className="h-full flex-shrink-0">*/}
-          {/*                <Image*/}
-          {/*                    src={collaborator.image || "/placeholder.svg"}*/}
-          {/*                    alt={`Portrait of ${collaborator.name}`}*/}
-          {/*                    width={80}*/}
-          {/*                    height={80}*/}
-          {/*                    className="h-20 w-20 object-cover rounded-md shadow-md group-hover:scale-105 transition-transform"*/}
-          {/*                    loading="lazy"*/}
-          {/*                />*/}
-          {/*              </div>*/}
-          {/*              <div className="flex flex-col justify-between">*/}
-          {/*                <div>*/}
-          {/*                  <h3 className="text-lg font-semibold text-slate-900 mb-1">*/}
-          {/*                    {collaborator.name}*/}
-          {/*                  </h3>*/}
-          {/*                  <p className="text-slate-600 text-sm mb-2 leading-relaxed">*/}
-          {/*                    {collaborator.institution}*/}
-          {/*                  </p>*/}
-          {/*                </div>*/}
-          {/*                {collaborator.country && (*/}
-          {/*                    <div className="flex items-center gap-1">*/}
-          {/*                      <MapPin size={12} className="text-slate-400" aria-hidden="true" />*/}
-          {/*                      <span className="text-xs text-slate-500">*/}
-          {/*                  {collaborator.country}*/}
-          {/*                </span>*/}
-          {/*                    </div>*/}
-          {/*                )}*/}
-          {/*              </div>*/}
-          {/*            </div>*/}
-          {/*          </CardContent>*/}
-          {/*        </Card>*/}
-          {/*    ))}*/}
-          {/*  </div>*/}
-          {/*</section>*/}
+            {/* Partners */}
+            <section className="mb-16" aria-labelledby="partners-heading">
+                <h2
+                    id="partners-heading"
+                    className="text-4xl font-semibold text-slate-900 mb-12 text-center"
+                >
+                    Partners
+                </h2>
+                <div className="max-w-6xl mx-auto">
+                    <Card className="hover:shadow-2xl transition-all duration-500 border-2 border-slate-200 overflow-hidden bg-gradient-to-br from-white via-slate-50 to-blue-50">
+                        <CardContent className="p-0">
+                            <div className="flex flex-col md:flex-row items-stretch">
+                                {/* Logo Section with Premium Styling */}
+                                <div className="md:w-2/5 lg:w-1/3 bg-white p-8 md:p-10 border-b md:border-b-0 md:border-r-2 border-slate-100 flex items-center justify-center">
+                                    <div className="w-full max-w-xs">
+                                        {partnerData.logo ? (
+                                            <div className="relative group">
+                                                <div className="absolute inset-0 rounded-2xl blur-xl  transition-all duration-500"></div>
+                                                <a
+                                                    href={partnerData.link}        // <-- your link here
+                                                    target="_blank"                // open in new tab
+                                                    rel="noopener noreferrer"      // security best practice
+                                                >
+                                                    <Image
+                                                        src={partnerData.logo}
+                                                        alt={`${partnerData.name} logo`}
+                                                        width={320}
+                                                        height={320}
+                                                        className="relative w-full h-auto max-h-80 object-contain drop-shadow-2xl group-hover:scale-105 transition-transform duration-500"
+                                                        loading="lazy"
+                                                    />
+                                                </a>
+                                            </div>
+                                        ) : (
+                                            <div className="w-full aspect-square max-h-80 bg-gradient-to-br from-slate-100 to-slate-200 rounded-2xl flex items-center justify-center shadow-inner">
+                                                <span className="text-slate-400 text-lg font-medium">Partner Logo</span>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
 
-          {/* International Collaborators */}
+                                {/* Company Info */}
+                                <div className="md:w-3/5 lg:w-2/3 px-6 md:px-10 py-8 md:py-10 flex flex-col justify-center">
+                                    <h3 className="text-2xl md:text-3xl lg:text-4xl font-bold text-slate-900 mb-4 md:mb-6 bg-gradient-to-r from-slate-900 via-blue-900 to-slate-900 bg-clip-text text-transparent text-center md:text-left">
+                                        {partnerData.name}
+                                    </h3>
+                                    <p className="text-slate-700 leading-relaxed text-base md:text-lg text-center md:text-left">
+                                        {partnerData.description}
+                                    </p>
+                                </div>
+                            </div>
+                        </CardContent>
+                    </Card>
+                </div>
+            </section>
+
+            {/* International Collaborators */}
           <section className="mb-16" aria-labelledby="international-collaborators-heading">
             <h2
                 id="international-collaborators-heading"

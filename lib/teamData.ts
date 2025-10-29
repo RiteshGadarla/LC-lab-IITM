@@ -61,7 +61,7 @@ export const teamMembers: TeamMember[] = [
     },
     {
         name: "Scherezade Dastur",
-        role: "PhD in Progress",
+        role: "Graduated in 2025",
         research: "Code Alternation in Parsi Gujarati and English: An Interactional Linguistics Approach",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_crop,ar_1:1/v1749980337/scheri_x6vo2x.png",
     },
