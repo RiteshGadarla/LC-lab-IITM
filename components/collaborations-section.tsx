@@ -23,7 +23,7 @@ export function CollaborationsSection() {
               Research Collaborators
             </h1>
             <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-              Building bridges across institutions to advance language and cognition research through diverse global partnerships.
+              Building bridges across institutions to advance language and cognition research through diverse partnerships.
             </p>
           </header>
 

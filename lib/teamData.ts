@@ -41,7 +41,7 @@ export const principalInvestigator: PrincipalInvestigator = {
 // Team members
 export const teamMembers: TeamMember[] = [
     {
-        name: "Aziza Said Hussain",
+        name: "Aziza Said Hussein",
         role: "PhD in Progress",
         research: "Copula in Swahili: Pragmatic Functions and Grammaticalization Process",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749993811/aziza_abph42.png",
