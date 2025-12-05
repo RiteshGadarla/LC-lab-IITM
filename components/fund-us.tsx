@@ -19,7 +19,7 @@ export function FundUsSection() {
     };
 
     return (
-        <div className="min-h-screen pt-12 bg-gradient-to-br from-slate-50 via-blue-50 to-indigo-100 relative overflow-hidden">
+        <div className="min-h-screen pt-12 bg-gradient-to-br relative overflow-hidden">
             {/* Background decorative elements */}
             <div className="absolute inset-0 overflow-hidden">
                 <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full opacity-20 blur-3xl animate-pulse"></div>

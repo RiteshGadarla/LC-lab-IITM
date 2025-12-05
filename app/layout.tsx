@@ -1,15 +1,16 @@
 import type React from "react"
-import type { Metadata, Viewport } from "next"
-import { Navigation } from "@/components/navigation"
-import { Footer } from "@/components/footer"
+import type {Metadata, Viewport} from "next"
+import {Navigation} from "@/components/navigation"
+import {Footer} from "@/components/footer"
 import "./globals.css"
+import {FontProvider} from "@/app/FontContext";
 
 export const metadata: Metadata = {
     title: " Language and Cognition Laboratory - IIT Madras",
     description:
         "A premier research lab at IIT Madras exploring the intersection of language, cognition, and communication through cutting-edge experimental and computational methods.",
     keywords: "linguistics, cognition, language processing, eye-tracking, IIT Madras, research lab, psycholinguistics",
-    authors: [{ name: "Language and Cognition Laboratory, IIT Madras" }],
+    authors: [{name: "Language and Cognition Laboratory, IIT Madras"}],
     openGraph: {
         title: " Language and Cognition Laboratory - IIT Madras",
         description: "Premier research lab exploring language, cognition, and communication",
@@ -28,19 +29,21 @@ export default function RootLayout({children,}: {
     return (
         <html lang="en" className="scroll-smooth">
         <head>
-            <link rel="icon" href="/anindita/darkLogo2.png" />
-            <link rel="preconnect" href="https://fonts.googleapis.com" />
-            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+            <link rel="icon" href="/anindita/darkLogo2.png"/>
+            <link rel="preconnect" href="https://fonts.googleapis.com"/>
+            <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous"/>
             <link
                 href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Crimson+Text:ital,wght@0,400;0,600;1,400&display=swap"
                 rel="stylesheet"
             />
-            <meta name="theme-color" content="#1e293b" />
+            <meta name="theme-color" content="#1e293b"/>
         </head>
         <body className="antialiased min-h-screen bg-white">
-        <Navigation />
-        {children}
-        <Footer />
+        <FontProvider>
+            <Navigation/>
+            {children}
+            <Footer/>
+        </FontProvider>
         </body>
         </html>
     )

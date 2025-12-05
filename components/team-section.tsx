@@ -23,7 +23,8 @@ export function TeamSection() {
 
                 {/* Principal Investigator */}
                 <div className="mb-16">
-                    <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">Principal Investigator</h3>
+                    <h3 className="text-4xl font-semibold text-slate-900 mb-2 text-center">Principal Investigator</h3>
+                    <div className="h-1 w-20 bg-[#000080] mx-auto rounded-full mb-6"/>
                     <Card className="max-w-4xl mx-auto shadow-lg rounded-xl hover:shadow-xl transition-all duration-300">
                         <CardContent className="p-8">
                             <div className="flex flex-col lg:flex-row items-center lg:items-stretch gap-8">
@@ -92,7 +93,8 @@ export function TeamSection() {
 
                 {/* PhD Scholars */}
                 <div className="py-8 mb-16">
-                    <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">PhD Scholars</h3>
+                    <h3 className="text-4xl font-semibold text-slate-900 mb-2 text-center">PhD Scholars</h3>
+                    <div className="h-1 w-20 bg-[#000080] mx-auto rounded-full mb-6"/>
                     <div className="flex flex-wrap justify-center gap-6">
                         {teamMembers.map((member, index) => (
                             <Card
@@ -143,7 +145,8 @@ export function TeamSection() {
 
                 {/* Research Staff */}
                 <div className="mb-16">
-                    <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">Research Project Staff</h3>
+                    <h3 className="text-4xl font-semibold text-slate-900 mb-2 text-center">Research Project Staff</h3>
+                    <div className="h-1 w-20 bg-[#000080] mx-auto rounded-full mb-6"/>
                     <div className="flex flex-wrap justify-center gap-6">
                         {researchStaff.map((member, index) => (
                             <Card
@@ -168,7 +171,8 @@ export function TeamSection() {
 
                 {/* Friends */}
                 <div className="mb-16">
-                    <h3 className="text-4xl font-semibold text-slate-900 mb-8 text-center">Friends of LC Lab</h3>
+                    <h3 className="text-4xl font-semibold text-slate-900 mb-2 text-center">Friends of LC Lab</h3>
+                    <div className="h-1 w-20 bg-[#000080] mx-auto rounded-full mb-6"/>
                     <div className="flex flex-wrap justify-center gap-6">
                         {friends.map((member, index) => (
                             <Card

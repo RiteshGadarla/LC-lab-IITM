@@ -1,47 +1,89 @@
 "use client"
 
-import {useState, useEffect, useCallback} from "react"
-import {Menu, X} from "lucide-react"
-import {Button} from "@/components/ui/button"
+import { useState, useEffect, useCallback, useRef } from "react"
+import { Menu, X, Type, MoreVertical } from "lucide-react"
+import { Button } from "@/components/ui/button"
 import Link from "next/link"
-import {usePathname, useRouter} from "next/navigation"
+import { usePathname, useRouter } from "next/navigation"
+import { useFont } from "@/app/FontContext"
+
+// Defined outside component to prevent re-creation on every render
+const NAV_ITEMS = [
+    { label: "Home", href: "/lclab" },
+    { label: "Research", href: "/lclab/research" },
+    { label: "Team", href: "/lclab/team" },
+    { label: "Facilities", href: "/lclab/facilities" },
+    { label: "Events", href: "/lclab/events" },
+    { label: "Collaborations", href: "/lclab/collaborations" },
+    { label: "Contact", href: "/lclab/contact" },
+    { label: "Fund Us", href: "/lclab/donate" },
+]
 
 export function Navigation() {
     const router = useRouter()
     const pathname = usePathname()
-    const isHomePage = pathname === "/lclab/";
+
+    // Handle trailing slashes gracefully
+    const isHomePage = pathname === "/lclab" || pathname === "/lclab/"
+
     const [isOpen, setIsOpen] = useState(false)
     const [isScrolled, setIsScrolled] = useState(!isHomePage)
+    const [showOverflow, setShowOverflow] = useState(false)
+    const [overflowItems, setOverflowItems] = useState<typeof NAV_ITEMS>([])
+    const navRef = useRef<HTMLDivElement>(null)
 
-    const navItems = [
-        {label: "Home", href: "/lclab"},
-        {label: "Research", href: "/lclab/research"},
-        {label: "Team", href: "/lclab/team"},
-        {label: "Facilities", href: "/lclab/facilities"},
-        {label: "Events", href: "/lclab/events"},
-        {label: "Collaborations", href: "/lclab/collaborations"},
-        {label: "Contact", href: "/lclab/contact"},
-        {label: "Fund Us",  href: "/lclab/donate"},
-    ]
+    const { isDyslexic, toggleDyslexic } = useFont()
 
     const handleScroll = useCallback(() => {
-        setIsScrolled(window.scrollY > 50)
-    }, [])
-
-    useEffect(() => {
         if (isHomePage) {
-            // Set initial scroll state on mount
-            const initialScroll = typeof window !== "undefined" ? window.scrollY > 50 : false
-            setIsScrolled(initialScroll)
-
-            // Add scroll event listener
-            window.addEventListener("scroll", handleScroll, {passive: true})
-            return () => window.removeEventListener("scroll", handleScroll)
+            setIsScrolled(window.scrollY > 50)
         } else {
-            // Ensure non-home pages always use dark theme
             setIsScrolled(true)
         }
-    }, [isHomePage, handleScroll])
+    }, [isHomePage])
+
+    useEffect(() => {
+        handleScroll()
+        window.addEventListener("scroll", handleScroll, { passive: true })
+        return () => window.removeEventListener("scroll", handleScroll)
+    }, [handleScroll])
+
+    // Check for overflow in dyslexia mode
+    useEffect(() => {
+        if (!isDyslexic) {
+            setOverflowItems([])
+            return
+        }
+
+        const checkOverflow = () => {
+            if (navRef.current) {
+                // Determine if we need to show the overflow menu (the 3 dots)
+                // We use a tighter threshold here because the logo is now taking up space in the center
+                const containerWidth = navRef.current.offsetWidth
+                const minSpaceNeeded = 900
+
+                if (containerWidth < minSpaceNeeded) {
+                    setOverflowItems(NAV_ITEMS.slice(-3))
+                } else {
+                    setOverflowItems([])
+                }
+            }
+        }
+
+        checkOverflow()
+        window.addEventListener("resize", checkOverflow)
+        return () => window.removeEventListener("resize", checkOverflow)
+    }, [isDyslexic])
+
+    const visibleItems = isDyslexic && overflowItems.length > 0
+        ? NAV_ITEMS.slice(0, -3)
+        : NAV_ITEMS
+
+    const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+        const target = e.currentTarget
+        target.onerror = null
+        target.src = "/placeholder.svg"
+    }
 
     return (
         <nav
@@ -50,47 +92,48 @@ export function Navigation() {
             }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
-                    {/* Logo */}
-                    <div className="flex items-center space-x-6">
-                        {/* IIT Madras Logo */}
+                <div className={`flex items-center h-16 ${
+                    isDyslexic ? "justify-center gap-6 xl:gap-10" : "justify-between"
+                }`}>
+
+                    {/* --- Logo Section --- */}
+                    <div className="flex items-center space-x-3 md:space-x-6 flex-shrink-0">
                         <img
                             src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
                             alt="IIT Madras Logo"
                             onClick={() => window.open("https://www.iitm.ac.in", "_blank")}
-                            className="h-11 w-auto cursor-pointer"
-                            onError={(e) => {
-                                e.currentTarget.src = "/placeholder.svg"; // Fallback image
-                            }}
+                            className="h-10 md:h-11 w-auto cursor-pointer flex-shrink-0"
+                            onError={handleImageError}
                         />
 
-                        {/* LC Lab Logo */}
                         <img
                             src={isScrolled ? "/anindita/darkLogo.png" : "/anindita/lightLogo.png"}
                             alt="LC Lab Logo"
                             onClick={() => router.push("/lclab")}
-                            className="h-10 w-auto transition-all duration-300 cursor-pointer"
+                            className="h-9 md:h-10 w-auto transition-all duration-300 cursor-pointer flex-shrink-0"
                             onError={(e) => {
-                                e.currentTarget.src = "/anindita/placeholder.svg" // Fallback image
+                                const target = e.currentTarget;
+                                target.onerror = null;
+                                target.src = "/anindita/placeholder.svg"
                             }}
                         />
-
-                        {/* Text */}
-                        <div className="hidden sm:block">
-                            <h1 className={`text-lg font-semibold ${isScrolled ? "text-slate-900" : "text-white"}`}>
+                        <div className="hidden sm:block whitespace-nowrap">
+                            <h1 className={`text-base md:text-lg font-semibold leading-tight ${isScrolled ? "text-slate-900" : "text-white"}`}>
                                 Language and Cognition Laboratory
                             </h1>
                             <p className={`text-xs ${isScrolled ? "text-slate-600" : "text-slate-200"}`}>IIT Madras</p>
                         </div>
                     </div>
 
-                    {/* Desktop Navigation */}
-                    <div className="hidden md:flex items-center space-x-8">
-                        {navItems.map((item) => (
+                    {/* --- Desktop Navigation --- */}
+                    <div className={`hidden lg:flex items-center gap-4 xl:gap-6 ${
+                        isDyslexic ? "flex-shrink-0" : ""
+                    }`} ref={navRef}>
+                        {visibleItems.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className={`text-sm font-medium transition-colors hover:text-blue-600 ${
+                                className={`text-sm font-medium transition-colors whitespace-nowrap hover:text-blue-600 ${
                                     pathname === item.href
                                         ? "text-blue-600"
                                         : isScrolled
@@ -101,39 +144,130 @@ export function Navigation() {
                                 {item.label}
                             </Link>
                         ))}
-                    </div>
 
-                    {/* Mobile menu button */}
-                    <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={() => setIsOpen(!isOpen)}
-                        className={`md:hidden ${isScrolled ? "text-slate-900" : "text-white"}`}
-                    >
-                        {isOpen ? <X size={20}/> : <Menu size={20}/>}
-                    </Button>
-                </div>
-
-                {/* Mobile Navigation */}
-                {isOpen && (
-                    <div className="md:hidden bg-white border-t border-slate-200 shadow-lg">
-                        <div className="px-2 pt-2 pb-3 space-y-1">
-                            {navItems.map((item) => (
-                                <Link
-                                    key={item.href}
-                                    href={item.href}
-                                    onClick={() => setIsOpen(false)}
-                                    className={`block w-full text-left px-3 py-2 text-slate-700 hover:text-blue-600 hover:bg-slate-50 rounded-md transition-colors ${
-                                        pathname === item.href ? "text-blue-600 bg-slate-50" : ""
+                        {/* Overflow Menu for Desktop in Dyslexia Mode (The 3 dots) */}
+                        {isDyslexic && overflowItems.length > 0 && (
+                            <div className="relative">
+                                <button
+                                    onClick={(e) => {
+                                        e.stopPropagation();
+                                        setShowOverflow(!showOverflow)
+                                    }}
+                                    className={`p-2 rounded-full transition-all duration-300 ${
+                                        isScrolled
+                                            ? "bg-slate-100 text-slate-700 hover:bg-slate-200"
+                                            : "bg-white/10 text-white hover:bg-white/20"
                                     }`}
                                 >
-                                    {item.label}
-                                </Link>
-                            ))}
+                                    <MoreVertical size={18} />
+                                </button>
+
+                                {showOverflow && (
+                                    <div className="absolute right-0 top-full mt-2 w-48 bg-white rounded-lg shadow-xl border border-slate-200 py-2 z-50">
+                                        {overflowItems.map((item) => (
+                                            <Link
+                                                key={item.href}
+                                                href={item.href}
+                                                onClick={() => setShowOverflow(false)}
+                                                className={`block px-4 py-2 text-sm transition-colors ${
+                                                    pathname === item.href
+                                                        ? "bg-blue-50 text-blue-600 font-medium"
+                                                        : "text-slate-700 hover:bg-slate-50"
+                                                }`}
+                                            >
+                                                {item.label}
+                                            </Link>
+                                        ))}
+                                    </div>
+                                )}
+                            </div>
+                        )}
+
+                        {/* --- Accessibility Font Toggle Button --- */}
+                        <button
+                            onClick={toggleDyslexic}
+                            title="Toggle Dyslexia-Friendly Font"
+                            className={`p-2 rounded-full transition-all duration-300 flex items-center justify-center border ${
+                                isDyslexic
+                                    ? "bg-blue-600 text-white border-blue-600"
+                                    : isScrolled
+                                        ? "bg-slate-100 text-slate-700 border-slate-200 hover:bg-blue-50"
+                                        : "bg-white/10 text-white border-white/20 hover:bg-white/20"
+                            }`}
+                        >
+                            <Type size={18} strokeWidth={2.5} />
+                            <span className="sr-only">Toggle Dyslexic Font</span>
+                        </button>
+                    </div>
+
+                    {/* --- Mobile Menu Button --- */}
+                    <div className={`flex items-center gap-2 lg:hidden ${
+                        isDyslexic ? "absolute right-4" : ""
+                    }`}>
+                        <button
+                            onClick={toggleDyslexic}
+                            className={`p-2 rounded-full transition-colors ${
+                                isDyslexic ? "bg-blue-600 text-white" : isScrolled ? "text-slate-900 bg-slate-100" : "text-white bg-white/10"
+                            }`}
+                        >
+                            <Type size={18} />
+                        </button>
+
+                        <Button
+                            variant="ghost"
+                            size="sm"
+                            onClick={() => setIsOpen(!isOpen)}
+                            className={`${isScrolled ? "text-slate-900" : "text-white"}`}
+                        >
+                            {isOpen ? <X size={24} /> : <Menu size={24} />}
+                        </Button>
+                    </div>
+                </div>
+
+                {/* --- Mobile Dropdown --- */}
+                {isOpen && (
+                    <div className="lg:hidden absolute top-16 left-0 right-0 z-40 animate-in slide-in-from-top-5 fade-in duration-200">
+                        <div className="bg-white/95 backdrop-blur-xl border-t border-slate-200 shadow-2xl p-4 border-b">
+                            <div className="space-y-2">
+                                {NAV_ITEMS.map((item) => {
+                                    const isActive = pathname === item.href
+                                    return (
+                                        <Link
+                                            key={item.href}
+                                            href={item.href}
+                                            onClick={() => setIsOpen(false)}
+                                            className={`
+                                                group flex items-center justify-between px-4 py-3 text-sm font-medium rounded-xl transition-all duration-200
+                                                ${isActive
+                                                ? "bg-blue-50 text-blue-700 shadow-sm border-l-4 border-blue-600 pl-3"
+                                                : "text-slate-600 hover:bg-slate-50 hover:text-slate-900 hover:pl-5 pl-4"
+                                            }
+                                            `}
+                                        >
+                                            <span>{item.label}</span>
+                                            <span className={`opacity-0 transition-opacity duration-200 ${isActive ? "opacity-100" : "group-hover:opacity-50"}`}>
+                                                →
+                                            </span>
+                                        </Link>
+                                    )
+                                })}
+                            </div>
                         </div>
+                        <div
+                            className="h-screen bg-black/20 backdrop-blur-sm"
+                            onClick={() => setIsOpen(false)}
+                        />
                     </div>
                 )}
             </div>
+
+            {/* Click outside to close overflow menu */}
+            {showOverflow && (
+                <div
+                    className="fixed inset-0 z-40"
+                    onClick={() => setShowOverflow(false)}
+                />
+            )}
         </nav>
     )
 }
