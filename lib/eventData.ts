@@ -10,6 +10,18 @@ export interface Event {
 
 export const eventsData: Event[] = [
     {
+        id: "language-cognition-lab-inauguration-2025",
+        heading: "Inauguration of the Language & Cognition Laboratory",
+        tag: "One-Day Symposium",
+        description: [
+            "A one-day symposium organized by the Department of Humanities and Social Sciences, IIT Madras, in collaboration with LC-Lab and CeRAI. " +
+            "The event marked the formal inauguration of the Language & Cognition Laboratory and featured a panel discussion titled “Language for Thought: Exploring Interdisciplinary Dimensions,” bringing together experts from linguistics, psychology, public service, and interdisciplinary research."
+        ],
+        date: "November 10, 2025",
+        venue: "LCL Lab and IC & SR Hall 3, IIT Madras, Chennai",
+        images : []
+    },
+    {
         id: "generative-grammar-2025",
         heading: "Essentials of Generative Grammar",
         tag: "4-day Mini Summer Course",

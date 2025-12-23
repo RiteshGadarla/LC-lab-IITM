@@ -30,6 +30,7 @@ export function Navigation() {
     const [isScrolled, setIsScrolled] = useState(!isHomePage)
     const [showOverflow, setShowOverflow] = useState(false)
     const [overflowItems, setOverflowItems] = useState<typeof NAV_ITEMS>([])
+    const [showDyslexicTip, setShowDyslexicTip] = useState(false)
     const navRef = useRef<HTMLDivElement>(null)
 
     const { isDyslexic, toggleDyslexic } = useFont()
@@ -48,6 +49,28 @@ export function Navigation() {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [handleScroll])
 
+    // Handle Tooltip Visibility
+    useEffect(() => {
+        let timer: NodeJS.Timeout
+
+        if (isHomePage) {
+            // Wait 5.5 seconds before showing the tip
+            timer = setTimeout(() => {
+                setShowDyslexicTip(true)
+            }, 5500)
+        } else {
+            setShowDyslexicTip(false)
+        }
+
+        // Cleanup timer if user leaves page before 4.5s
+        return () => clearTimeout(timer)
+    }, [isHomePage])
+
+    const closeTooltip = (e: React.MouseEvent) => {
+        e.stopPropagation()
+        setShowDyslexicTip(false)
+    }
+
     // Check for overflow in dyslexia mode
     useEffect(() => {
         if (!isDyslexic) {
@@ -57,11 +80,8 @@ export function Navigation() {
 
         const checkOverflow = () => {
             if (navRef.current) {
-                // Determine if we need to show the overflow menu (the 3 dots)
-                // We use a tighter threshold here because the logo is now taking up space in the center
                 const containerWidth = navRef.current.offsetWidth
                 const minSpaceNeeded = 900
-
                 if (containerWidth < minSpaceNeeded) {
                     setOverflowItems(NAV_ITEMS.slice(-3))
                 } else {
@@ -85,6 +105,28 @@ export function Navigation() {
         target.src = "/placeholder.svg"
     }
 
+    // Tooltip Component
+    const DyslexiaTooltip = () => (
+        <div className={`
+            absolute top-14 right-0 z-50 animate-in fade-in slide-in-from-top-2 duration-500
+            ${!showDyslexicTip ? 'hidden' : 'block'}
+        `}>
+            <div className="relative bg-red-500 text-white text-xs font-bold px-4 py-2 rounded-xl shadow-xl flex items-center gap-2 whitespace-nowrap">
+                {/* Arrow pointing up */}
+                <div className="absolute -top-1.5 right-3 w-3 h-3 bg-red-500 rotate-45 transform" />
+
+                <span>Try Dyslexia Font</span>
+
+                <button
+                    onClick={closeTooltip}
+                    className="ml-1 hover:bg-red-600 rounded-full p-0.5 transition-colors"
+                >
+                    <X size={12} strokeWidth={3} />
+                </button>
+            </div>
+        </div>
+    )
+
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -92,9 +134,7 @@ export function Navigation() {
             }`}
         >
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className={`flex items-center h-16 ${
-                    isDyslexic ? "justify-center gap-6 xl:gap-10" : "justify-between"
-                }`}>
+                <div className="flex items-center justify-between h-16">
 
                     {/* --- Logo Section --- */}
                     <div className="flex items-center space-x-3 md:space-x-6 flex-shrink-0">
@@ -145,7 +185,7 @@ export function Navigation() {
                             </Link>
                         ))}
 
-                        {/* Overflow Menu for Desktop in Dyslexia Mode (The 3 dots) */}
+                        {/* Overflow Menu (Desktop Dyslexia) */}
                         {isDyslexic && overflowItems.length > 0 && (
                             <div className="relative">
                                 <button
@@ -183,35 +223,42 @@ export function Navigation() {
                             </div>
                         )}
 
-                        {/* --- Accessibility Font Toggle Button --- */}
-                        <button
-                            onClick={toggleDyslexic}
-                            title="Toggle Dyslexia-Friendly Font"
-                            className={`p-2 rounded-full transition-all duration-300 flex items-center justify-center border ${
-                                isDyslexic
-                                    ? "bg-blue-600 text-white border-blue-600"
-                                    : isScrolled
-                                        ? "bg-slate-100 text-slate-700 border-slate-200 hover:bg-blue-50"
-                                        : "bg-white/10 text-white border-white/20 hover:bg-white/20"
-                            }`}
-                        >
-                            <Type size={18} strokeWidth={2.5} />
-                            <span className="sr-only">Toggle Dyslexic Font</span>
-                        </button>
+                        {/* --- Desktop Accessibility Font Toggle --- */}
+                        <div className="relative">
+                            <button
+                                onClick={toggleDyslexic}
+                                title="Toggle Dyslexia-Friendly Font"
+                                className={`p-2 rounded-full transition-all duration-300 flex items-center justify-center border ${
+                                    isDyslexic
+                                        ? "bg-blue-600 text-white border-blue-600"
+                                        : isScrolled
+                                            ? "bg-slate-100 text-slate-700 border-slate-200 hover:bg-blue-50"
+                                            : "bg-white/10 text-white border-white/20 hover:bg-white/20"
+                                }`}
+                            >
+                                <Type size={18} strokeWidth={2.5} />
+                                <span className="sr-only">Toggle Dyslexic Font</span>
+                            </button>
+                            {/* Desktop Tooltip */}
+                            <DyslexiaTooltip />
+                        </div>
                     </div>
 
                     {/* --- Mobile Menu Button --- */}
-                    <div className={`flex items-center gap-2 lg:hidden ${
-                        isDyslexic ? "absolute right-4" : ""
-                    }`}>
-                        <button
-                            onClick={toggleDyslexic}
-                            className={`p-2 rounded-full transition-colors ${
-                                isDyslexic ? "bg-blue-600 text-white" : isScrolled ? "text-slate-900 bg-slate-100" : "text-white bg-white/10"
-                            }`}
-                        >
-                            <Type size={18} />
-                        </button>
+                    <div className="flex items-center gap-2 lg:hidden">
+                        {/* Mobile Font Toggle */}
+                        <div className="relative">
+                            <button
+                                onClick={toggleDyslexic}
+                                className={`p-2 rounded-full transition-colors ${
+                                    isDyslexic ? "bg-blue-600 text-white" : isScrolled ? "text-slate-900 bg-slate-100" : "text-white bg-white/10"
+                                }`}
+                            >
+                                <Type size={18} />
+                            </button>
+                            {/* Mobile Tooltip */}
+                            <DyslexiaTooltip />
+                        </div>
 
                         <Button
                             variant="ghost"

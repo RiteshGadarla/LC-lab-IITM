@@ -36,7 +36,7 @@ export function ContactSection() {
                 >
                     Send Us a Message
                     <a
-                        href="https://forms.gle/JsYaGnY8F5eAqmUX7"
+                        href="https://forms.gle/d1ebU3yL2xsBduMz5"
                         target="_blank"
                         rel="noopener noreferrer"
                         className="text-blue-600 text-sm hover:text-blue-800"
@@ -49,7 +49,7 @@ export function ContactSection() {
                 <CardContent className="p-6">
                   <div className="w-full h-[600px]">
                     <iframe
-                        src="https://forms.gle/JsYaGnY8F5eAqmUX7"
+                        src="https://forms.gle/d1ebU3yL2xsBduMz5"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
@@ -118,7 +118,7 @@ export function ContactSection() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-black mb-1">Phone</h3>
-                        <p className="text-black">{principalInvestigator.phone}</p>
+                        <p className="text-black">{labDetails.phone}</p>
                       </div>
                     </div>
                   </CardContent>
@@ -132,11 +132,9 @@ export function ContactSection() {
                       <div>
                         <h3 className="font-semibold text-black mb-1">Address</h3>
                         <address className="text-black not-italic leading-relaxed">
-                          HSB332B, Humanities and Sciences Block
-                          <br />
-                          Indian Institute of Technology Madras
-                          <br />
-                          Chennai - 600036, Tamil Nadu, India
+                          {labDetails.addresses[0]}
+                          <br/>
+                          {labDetails.addresses[1]}
                         </address>
                       </div>
                     </div>
@@ -153,7 +151,7 @@ export function ContactSection() {
                       loading="lazy"
                       allowFullScreen
                       referrerPolicy="no-referrer-when-downgrade"
-                      src="https://www.google.com/maps?q=12.989725,80.232165&z=18&output=embed&layer=s"
+                      src="https://www.google.com/maps?q=12.989680310247959,80.23191098658076&z=18&output=embed&layer=s"
                   ></iframe>
                 </div>
               </Card>

@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { principalInvestigator } from "@/lib/teamData"
+import {labDetails} from "@/lib/teamData"
 
 export function Footer() {
   return (
@@ -70,12 +70,12 @@ export function Footer() {
               </h3>
             </Link>
             <div className="space-y-2 text-sm text-slate-400">
-              <p>{principalInvestigator.email}</p>
-              <p>{principalInvestigator.phone}</p>
+              <p>{labDetails.email}</p>
+              <p>{labDetails.phone}</p>
               <p>
-                HSB332B, Humanities and Sciences Block
-                <br />
-                IIT Madras, Chennai - 600036
+                {labDetails.addresses[0]}
+                <br/>
+                {labDetails.addresses[1]}
               </p>
             </div>
           </div>
