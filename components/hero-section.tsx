@@ -251,39 +251,38 @@ export function HeroSection() {
                             Language & Cognition
                             <br />
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                  Laboratory
-                </span>
+                                Laboratory
+                            </span>
                         </h1>
                     ) : (
                         <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight break-words flex flex-wrap justify-center gap-x-2">
-                  <span className="inline-block">
-                    {displayText.line1.map((char, index) => (
-                        <span
-                            key={`line1-${index}`}
-                            className={char !== targetText.line1[index] && char !== " " ? "scale-95 inline-block" : "inline-block"}
-                        >
-                      {char === " " ? "\u00A0" : char}
-                    </span>
-                    ))}
-                  </span>
+                            <span className="inline-block">
+                                {displayText.line1.map((char, index) => (
+                                    <span
+                                        key={`line1-${index}`}
+                                        className={char !== targetText.line1[index] && char !== " " ? "scale-95 inline-block" : "inline-block"}
+                                    >
+                                        {char === " " ? "\u00A0" : char}
+                                    </span>
+                                ))}
+                            </span>
                             <br className="hidden md:block" />
                             <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 inline-block">
-                  {displayText.line2.map((char, index) => (
-                      <span
-                          key={`line2-${index}`}
-                          className={char !== targetText.line2[index] && char !== " " ? "scale-85 inline-block" : "inline-block"}
-                      >
-                      {char === " " ? "\u00A0" : char}
-                    </span>
-                  ))}
-                </span>
+                                {displayText.line2.map((char, index) => (
+                                    <span
+                                        key={`line2-${index}`}
+                                        className={char !== targetText.line2[index] && char !== " " ? "scale-85 inline-block" : "inline-block"}
+                                    >
+                                        {char === " " ? "\u00A0" : char}
+                                    </span>
+                                ))}
+                            </span>
                         </h1>
                     )}
 
                     <div
-                        className={`transition-all duration-1000 ease-out ${
-                            contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
-                        }`}
+                        className={`transition-all duration-1000 ease-out ${contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
+                            }`}
                     >
                         <p className="text-xl md:text-2xl text-slate-300 mb-8 max-w-3xl mx-auto leading-relaxed" role="doc-subtitle">
                             Exploring the intersection of language, cognition, and communication at Department of Humanities and Social Sciences, IIT Madras
