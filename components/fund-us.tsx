@@ -1,8 +1,8 @@
 "use client"
 
-import { Card, CardContent } from "@/components/ui/card";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { HeartHandshake, TrendingUp, Users, Star, Sparkles, Globe, Award, Brain, Microscope, GraduationCap, MapPin, Calendar, Target, Zap, Lightbulb, BookOpen, Coffee, Telescope } from "lucide-react";
+import { HeartHandshake, TrendingUp, Users, Globe, Award, Brain, Microscope, GraduationCap, MapPin, Calendar, Target, Zap, Lightbulb, BookOpen, Coffee, Telescope, Mail } from "lucide-react";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 
@@ -19,263 +19,221 @@ export function FundUsSection() {
     };
 
     return (
-        <div className="min-h-screen pt-12 bg-gradient-to-br relative overflow-hidden">
-            {/* Background decorative elements */}
-            <div className="absolute inset-0 overflow-hidden">
-                <div className="absolute top-20 left-10 w-72 h-72 bg-blue-200 rounded-full opacity-20 blur-3xl animate-pulse"></div>
-                <div className="absolute top-40 right-20 w-96 h-96 bg-indigo-200 rounded-full opacity-20 blur-3xl animate-pulse delay-1000"></div>
-                <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-purple-200 rounded-full opacity-20 blur-3xl animate-pulse delay-2000"></div>
-            </div>
-
-            <div className="relative z-10 px-6 py-32 md:px-16 space-y-32">
+        <div className="min-h-screen bg-slate-50 pt-32 pb-20">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-24">
                 {/* Header Section */}
-                <section className="text-center max-w-6xl mx-auto space-y-12">
-                    <div className="relative">
-                        <div className="absolute -top-8 left-1/2 transform -translate-x-1/2">
-                            <Sparkles className="text-blue-500 animate-bounce" size={48} />
-                        </div>
-                        <h1 className="text-5xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 leading-tight">
+                <section className="text-center max-w-4xl mx-auto space-y-8">
+                    <div>
+                        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6 ">
                             Support the LC Lab
                         </h1>
-                        <div className="mt-6 w-32 h-2 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full mx-auto"></div>
+                        <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full"></div>
                     </div>
-                    <p className="text-2xl md:text-2xl text-slate-700 leading-relaxed max-w-5xl mx-auto font-light">
+                    <p className="text-xl text-slate-700 leading-relaxed font-light">
                         Your support drives research in theoretical, applied, experimental, and cognitive linguistics, language science, and linguistic technology.
-                        <span className="text-blue-600 font-semibold"> Here's why your contribution matters.</span>
+                        <span className="font-semibold text-slate-900"> Here's why your contribution matters.</span>
                     </p>
-                    <div className="flex flex-wrap justify-center gap-4 mt-8">
-                        <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                            <Telescope className="text-blue-500" size={24} />
-                            <span className="text-slate-700 font-medium">Language-Focused Research</span>
+
+                    <div className="flex flex-wrap justify-center gap-6 mt-8">
+                        <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-full px-6 py-2 shadow-sm">
+                            <Telescope className="text-[#000080]" size={20} />
+                            <span className="text-slate-800 font-medium text-sm tracking-wide">Language-Focused Research</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                            <Brain className="text-purple-500" size={24} />
-                            <span className="text-slate-700 font-medium">Cognitive Investigation</span>
+                        <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-full px-6 py-2 shadow-sm">
+                            <Brain className="text-[#000080]" size={20} />
+                            <span className="text-slate-800 font-medium text-sm tracking-wide">Cognitive Investigation</span>
                         </div>
-                        <div className="flex items-center gap-2 bg-white/60 backdrop-blur-sm rounded-full px-6 py-3 shadow-lg">
-                            <Microscope className="text-indigo-500" size={24} />
-                            <span className="text-slate-700 font-medium">Collaborative Science</span>
+                        <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-full px-6 py-2 shadow-sm">
+                            <Microscope className="text-[#000080]" size={20} />
+                            <span className="text-slate-800 font-medium text-sm tracking-wide">Collaborative Science</span>
                         </div>
                     </div>
                 </section>
 
-                {/* Why Fund Us and What We'll Do */}
-                <section className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
-                    <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 bg-white/80 backdrop-blur-sm border-0 shadow-xl">
-                        <CardContent className="p-12 space-y-8">
-                            <div className="flex items-center gap-6 mb-8">
-                                <div className="p-4 bg-gradient-to-br from-blue-500 to-purple-500 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                    <HeartHandshake className="text-white" size={48} />
+                {/* Main Content Grid */}
+                <section className="grid md:grid-cols-2 gap-12">
+                    {/* Why Fund Us */}
+                    <Card className="bg-white border text-card-foreground shadow-sm rounded-xl overflow-hidden">
+                        <CardHeader className="bg-slate-100/50 border-b border-slate-100 p-8 pb-6">
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 bg-blue-50 rounded-lg">
+                                    <HeartHandshake className="text-[#000080]" size={32} />
                                 </div>
+                                <CardTitle className="text-2xl font-bold text-slate-900">Why Fund Us?</CardTitle>
+                            </div>
+                        </CardHeader>
+                        <CardContent className="p-8 pt-6 space-y-6">
+                            <div className="flex gap-4">
+                                <MapPin className="text-slate-400 mt-1 flex-shrink-0" size={20} />
                                 <div>
-                                    <h2 className="text-3xl font-bold text-slate-800 mb-2">Why Fund Us?</h2>
-                                    <div className="w-20 h-1 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full"></div>
+                                    <h3 className="font-semibold text-slate-900 text-lg">Linguistic Diversity</h3>
+                                    <p className="text-slate-600 leading-relaxed mt-1">To advance language and cognition research against the backdrop of India’s linguistic richness.</p>
                                 </div>
                             </div>
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="p-2 bg-blue-100 rounded-xl">
-                                        <MapPin className="text-blue-600" size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-slate-800 mb-1">Linguistic Diversity</h3>
-                                        <p className="text-slate-700">To advance language and cognition research against the backdrop of India’s linguistic richness.</p>
-                                    </div>
+                            <div className="flex gap-4">
+                                <Zap className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                                <div>
+                                    <h3 className="font-semibold text-slate-900 text-lg">Innovation Drive</h3>
+                                    <p className="text-slate-600 leading-relaxed mt-1">To empower interdisciplinary innovation across linguistics, neuroscience, and computation</p>
                                 </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="p-2 bg-purple-100 rounded-xl">
-                                        <Zap className="text-purple-600" size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-slate-800 mb-1">Innovation Drive</h3>
-                                        <p className="text-slate-700">To empower interdisciplinary innovation across linguistics, neuroscience, and computation</p>
-                                    </div>
+                            </div>
+                            <div className="flex gap-4">
+                                <BookOpen className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                                <div>
+                                    <h3 className="font-semibold text-slate-900 text-lg">Knowledge Production</h3>
+                                    <p className="text-slate-600 leading-relaxed mt-1">To produce knowledge to uncover the interfaces of linguistics research</p>
                                 </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="p-2 bg-indigo-100 rounded-xl">
-                                        <BookOpen className="text-indigo-600" size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-slate-800 mb-1">Knowledge Production</h3>
-                                        <p className="text-slate-700">To produce knowledge to uncover the interfaces of linguistics research</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="p-2 bg-green-100 rounded-xl">
-                                        <Globe className="text-green-600" size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-slate-800 mb-1">Global Collaboration</h3>
-                                        <p className="text-slate-700">To expand cross-cultural academic collaboration</p>
-                                    </div>
+                            </div>
+                            <div className="flex gap-4">
+                                <Globe className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                                <div>
+                                    <h3 className="font-semibold text-slate-900 text-lg">Global Collaboration</h3>
+                                    <p className="text-slate-600 leading-relaxed mt-1">To expand cross-cultural academic collaboration</p>
                                 </div>
                             </div>
                         </CardContent>
                     </Card>
 
-                    <Card className="group hover:shadow-2xl transition-all duration-500 hover:-translate-y-4 bg-white/80 backdrop-blur-sm border-0 shadow-xl">
-                        <CardContent className="p-12 space-y-8">
-                            <div className="flex items-center gap-6 mb-8">
-                                <div className="p-4 bg-gradient-to-br from-green-500 to-teal-500 rounded-2xl shadow-lg group-hover:scale-110 transition-transform duration-300">
-                                    <TrendingUp className="text-white" size={48} />
+                    {/* What We'll Do */}
+                    <Card className="bg-white border text-card-foreground shadow-sm rounded-xl overflow-hidden">
+                        <CardHeader className="bg-slate-100/50 border-b border-slate-100 p-8 pb-6">
+                            <div className="flex items-center gap-4">
+                                <div className="p-3 bg-teal-50 rounded-lg">
+                                    <TrendingUp className="text-teal-700" size={32} />
                                 </div>
+                                <CardTitle className="text-2xl font-bold text-slate-900">What We'll Do</CardTitle>
+                            </div>
+                        </CardHeader>
+                        <CardContent className="p-8 pt-6 space-y-6">
+                            <div className="flex gap-4">
+                                <Microscope className="text-slate-400 mt-1 flex-shrink-0" size={20} />
                                 <div>
-                                    <h2 className="text-3xl font-bold text-slate-800 mb-2">What We'll Do</h2>
-                                    <div className="w-20 h-1 bg-gradient-to-r from-green-500 to-teal-500 rounded-full"></div>
+                                    <h3 className="font-semibold text-slate-900 text-lg">Research Equipment</h3>
+                                    <p className="text-slate-600 leading-relaxed mt-1">Purchase research equipment (eye-tracking, EEG, etc.)</p>
                                 </div>
                             </div>
-                            <div className="space-y-6">
-                                <div className="flex items-start gap-4">
-                                    <div className="p-2 bg-green-100 rounded-xl">
-                                        <Microscope className="text-green-600" size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-slate-800 mb-1">Research Equipment</h3>
-                                        <p className="text-slate-700">Purchase research equipment (eye-tracking, EEG, etc.)</p>
-                                    </div>
+                            <div className="flex gap-4">
+                                <GraduationCap className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                                <div>
+                                    <h3 className="font-semibold text-slate-900 text-lg">Student Support</h3>
+                                    <p className="text-slate-600 leading-relaxed mt-1">Offer student fellowships and research assistantships</p>
                                 </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="p-2 bg-teal-100 rounded-xl">
-                                        <GraduationCap className="text-teal-600" size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-slate-800 mb-1">Student Support</h3>
-                                        <p className="text-slate-700">Offer student fellowships and research assistantships</p>
-                                    </div>
+                            </div>
+                            <div className="flex gap-4">
+                                <Target className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                                <div>
+                                    <h3 className="font-semibold text-slate-900 text-lg">Field Research</h3>
+                                    <p className="text-slate-600 leading-relaxed mt-1">Fund fieldwork and multilingual data collection</p>
                                 </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="p-2 bg-blue-100 rounded-xl">
-                                        <Target className="text-blue-600" size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-slate-800 mb-1">Field Research</h3>
-                                        <p className="text-slate-700">Fund fieldwork and multilingual data collection</p>
-                                    </div>
-                                </div>
-                                <div className="flex items-start gap-4">
-                                    <div className="p-2 bg-purple-100 rounded-xl">
-                                        <Calendar className="text-purple-600" size={24} />
-                                    </div>
-                                    <div>
-                                        <h3 className="font-semibold text-slate-800 mb-1">Knowledge Sharing</h3>
-                                        <p className="text-slate-700">Host workshops and knowledge-sharing events</p>
-                                    </div>
+                            </div>
+                            <div className="flex gap-4">
+                                <Calendar className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                                <div>
+                                    <h3 className="font-semibold text-slate-900 text-lg">Knowledge Sharing</h3>
+                                    <p className="text-slate-600 leading-relaxed mt-1">Host workshops and knowledge-sharing events</p>
                                 </div>
                             </div>
                         </CardContent>
                     </Card>
+                </section>
+
+                {/* Impact Grid - Simplified */}
+                <section className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-slate-200 pt-16">
+                    <div className="text-center p-6 rounded-lg hover:bg-white transition-colors duration-300">
+                        <Brain className="text-[#000080] mx-auto mb-4" size={40} strokeWidth={1.5} />
+                        <h3 className="text-lg font-bold text-slate-900 mb-2">Research Excellence</h3>
+                        <p className="text-slate-600">Pioneering linguistic and cognitive research</p>
+                    </div>
+                    <div className="text-center p-6 rounded-lg hover:bg-white transition-colors duration-300">
+                        <Globe className="text-[#000080] mx-auto mb-4" size={40} strokeWidth={1.5} />
+                        <h3 className="text-lg font-bold text-slate-900 mb-2">Cultural Preservation</h3>
+                        <p className="text-slate-600">Maintaining cultural linguistic roots</p>
+                    </div>
+                    <div className="text-center p-6 rounded-lg hover:bg-white transition-colors duration-300">
+                        <Award className="text-[#000080] mx-auto mb-4" size={40} strokeWidth={1.5} />
+                        <h3 className="text-lg font-bold text-slate-900 mb-2">Innovation</h3>
+                        <p className="text-slate-600">Interdisciplinarity in language research</p>
+                    </div>
                 </section>
 
                 {/* Call to Action */}
-                <section className="max-w-5xl mx-auto text-center space-y-12">
-                    <div className="relative">
-                        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                            <div className="flex gap-2">
-                                <Star className="text-yellow-400 animate-pulse" size={32} />
-                                <Star className="text-yellow-400 animate-pulse delay-200" size={32} />
-                                <Star className="text-yellow-400 animate-pulse delay-400" size={32} />
-                            </div>
-                        </div>
-                        <div className="p-8 bg-gradient-to-br from-blue-500 to-purple-500 rounded-full w-32 h-32 mx-auto flex items-center justify-center shadow-2xl">
-                            <Users className="text-white" size={64} />
-                        </div>
+                <section className="bg-[#000080] rounded-2xl overflow-hidden shadow-lg relative">
+                    <div className="absolute top-0 right-0 p-12 opacity-10">
+                        <Users size={200} className="text-white" />
                     </div>
-
-                    <div className="space-y-5">
-                        <h2 className="text-4xl md:text-5xl font-black text-transparent bg-clip-text bg-gradient-to-r from-slate-800 to-slate-600">
+                    <div className="relative z-10 px-8 py-16 text-center max-w-4xl mx-auto space-y-8">
+                        <h2 className="text-3xl md:text-4xl font-bold text-white">
                             Be a Part of Our Journey
                         </h2>
-                        <p className="text-xl md:text-2xl pt-2 text-slate-700 leading-relaxed max-w-4xl mx-auto font-light">
-                            Whether you are an individual donor, corporate sponsor, or institution, your contribution supports the future of
-                            <span className="text-blue-600 font-semibold"> inclusive, diverse, and rigorous language science research. </span>
-                        </p>
-                        <p className="text-xl md:text-2xl text-slate-700 leading-relaxed max-w-4xl mx-auto font-light">
-                            Join us in contributing to language and cognition research with special focus on Indian societies and Indian languages.
-                        </p>
-                    </div>
+                        <div className="space-y-4 text-blue-100 text-lg leading-relaxed font-light">
+                            <p>
+                                Whether you are an individual donor, corporate sponsor, or institution, your contribution supports the future of
+                                <span className="text-white font-medium"> inclusive, diverse, and rigorous language science research. </span>
+                            </p>
+                            <p>
+                                Join us in contributing to language and cognition research with special focus on Indian societies and Indian languages.
+                            </p>
+                        </div>
 
-                    <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-                        <Button
-                            onClick={handleDonationClick}
-                            className="group relative overflow-hidden bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-xl font-semibold px-12 py-6 rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2"
-                        >
-                            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
-                            <div className="flex items-center gap-3">
-                                <Lightbulb className="group-hover:animate-pulse" size={24} />
-                                <span>Make a Donation</span>
-                            </div>
-                        </Button>
-                        <Button
-                            variant="outline"
-                            onClick={() => router.push("/lclab/contact")}
-                            className="group text-slate-700 border-2 border-slate-300 hover:border-blue-500 hover:text-blue-600 text-lg font-medium px-8 py-6 rounded-2xl transition-all duration-300 hover:-translate-y-1"
-                        >
-                            <div className="flex items-center gap-3">
-                                <Coffee className="group-hover:animate-bounce" size={20} />
-                                <span>Join Us</span>
-                            </div>
-                        </Button>
-                    </div>
+                        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                            <Button
+                                onClick={handleDonationClick}
+                                className="bg-white text-[#000080] hover:bg-blue-50 font-semibold px-8 py-6 text-lg rounded-full shadow-md transition-all h-auto"
+                            >
+                                <Lightbulb className="mr-2" size={20} />
+                                Make a Donation
+                            </Button>
 
-                    {/* Donation Modal */}
-                    {isModalOpen && (
-                        <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
-                            <div className="bg-white rounded-2xl p-8 max-w-lg w-full mx-4 shadow-2xl">
-                                <div className="flex justify-between items-center mb-6">
-                                    <h2 className="text-3xl font-bold text-slate-800">Thank You!</h2>
-                                    <button
-                                        onClick={closeModal}
-                                        className="text-slate-500 hover:text-slate-700 text-2xl font-bold"
-                                    >
-                                        &times;
-                                    </button>
-                                </div>
-                                <p className="text-lg text-slate-700 mb-6">
+                            <Button
+                                variant="outline"
+                                onClick={() => router.push('/lclab/contact')}
+                                className="border-white text-white hover:bg-white/10 hover:text-white font-medium px-8 py-6 text-lg rounded-full transition-all h-auto bg-transparent"
+                            >
+                                <Coffee className="mr-2" size={20} />
+                                Join Us
+                            </Button>
+                        </div>
+
+                    </div>
+                </section>
+
+                {/* Donation Modal - Cleaned up */}
+                {isModalOpen && (
+                    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
+                        <div className="bg-white rounded-xl shadow-2xl max-w-lg w-full overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+                            <div className="p-8 pb-6 border-b border-slate-100 flex justify-between items-start">
+                                <h2 className="text-2xl font-bold text-slate-900">Thank You!</h2>
+                                <button
+                                    onClick={closeModal}
+                                    className="text-slate-400 hover:text-slate-600 transition-colors"
+                                >
+                                    <span className="sr-only">Close</span>
+                                    <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div className="p-8 space-y-6">
+                                <p className="text-slate-600 leading-relaxed">
                                     We deeply appreciate your interest in supporting the LC Lab's mission to advance language and cognition research.
                                     Your generosity helps us drive innovation, support students, and preserve linguistic diversity.
                                 </p>
-                                <p className="text-lg text-slate-700 mb-8">
+                                <p className="text-slate-600 leading-relaxed">
                                     To further fund our initiatives or discuss partnership opportunities, please reach out to our team.
                                 </p>
-                                <div className="flex justify-center">
+                                <div className="pt-2">
                                     <Button
                                         onClick={() => router.push("/lclab/contact")}
-                                        className="group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white text-lg font-semibold px-8 py-4 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+                                        className="w-full bg-[#000080] hover:bg-blue-900 text-white font-semibold py-4 h-auto rounded-lg"
                                     >
-                                        <div className="flex items-center gap-3">
-                                            <Coffee className="group-hover:animate-bounce" size={20} />
-                                            <span>Contact Us</span>
-                                        </div>
+                                        <Mail className="mr-2" size={18} />
+                                        Contact Us
                                     </Button>
                                 </div>
                             </div>
                         </div>
-                    )}
-
-                    <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-blue-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                <Brain className="text-blue-600" size={32} />
-                            </div>
-                            <h3 className="text-xl font-semibold text-slate-800 mb-2">Research Excellence</h3>
-                            <p className="text-slate-600">Pioneering linguistic and cognitive research</p>
-                        </div>
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-purple-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                <Globe className="text-purple-600" size={32} />
-                            </div>
-                            <h3 className="text-xl font-semibold text-slate-800 mb-2">Cultural Preservation</h3>
-                            <p className="text-slate-600">Maintaining cultural linguistic roots</p>
-                        </div>
-                        <div className="text-center">
-                            <div className="w-16 h-16 bg-indigo-100 rounded-full mx-auto mb-4 flex items-center justify-center">
-                                <Award className="text-indigo-600" size={32} />
-                            </div>
-                            <h3 className="text-xl font-semibold text-slate-800 mb-2">Innovation</h3>
-                            <p className="text-slate-600">Interdisciplinarity in language research</p>
-                        </div>
                     </div>
-                </section>
+                )}
             </div>
         </div>
     );

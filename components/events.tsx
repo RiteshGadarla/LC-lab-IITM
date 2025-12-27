@@ -1,7 +1,7 @@
 "use client"
 
 import { useEffect, useState, useRef, useCallback } from "react"
-import { ChevronLeft, ChevronRight } from "lucide-react"
+import { ChevronLeft, ChevronRight, Calendar, MapPin } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { eventsData } from "@/lib/eventData"
 
@@ -42,41 +42,41 @@ const EventImageSlideshow = ({ images, title }: { images: string[], title: strin
 
     return (
         <div
-            className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-2xl"
+            className="relative aspect-[4/3] rounded-2xl overflow-hidden shadow-md border border-slate-100"
             onMouseEnter={() => setIsHovered(true)}
             onMouseLeave={() => setIsHovered(false)}
         >
-
             {images.map((src, index) => (
                 <div
                     key={index}
-                    className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-                        index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-                    }`}
+                    className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                        }`}
                 >
                     <img
                         src={src}
                         alt={`${title} - image ${index + 1}`}
                         className="w-full h-full object-cover"
                     />
-                    {/* Your original gradient overlay */}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent" />
                 </div>
             ))}
 
-            {/* Navigation Buttons (Original Styling) */}
-            <button
-                onClick={prevImage}
-                className="absolute z-20 left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-            >
-                <ChevronLeft size={15} />
-            </button>
-            <button
-                onClick={manualNext}
-                className="absolute z-20 right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all"
-            >
-                <ChevronRight size={15} />
-            </button>
+            {images.length > 1 && (
+                <>
+                    <button
+                        onClick={prevImage}
+                        className="absolute z-20 left-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all border border-slate-200"
+                    >
+                        <ChevronLeft size={16} className="text-slate-700" />
+                    </button>
+                    <button
+                        onClick={manualNext}
+                        className="absolute z-20 right-4 top-1/2 transform -translate-y-1/2 bg-white/90 hover:bg-white p-2 rounded-full shadow-lg transition-all border border-slate-200"
+                    >
+                        <ChevronRight size={16} className="text-slate-700" />
+                    </button>
+                </>
+            )}
         </div>
     )
 }
@@ -101,50 +101,74 @@ export function EventsSection() {
     }, [])
 
     return (
-        <section ref={sectionRef} id="events" className="py-20 bg-white">
-            <div className="pt-12 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section ref={sectionRef} id="events" className="py-24 bg-white">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
-                    {/* Header - Exact Original UI */}
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">
+                    {/* Header */}
+                    <div className="text-center mb-20">
+                        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-6 mt-8">
                             Events
                         </h2>
-                        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+                        <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-8"></div>
+                        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
                             We have been hosting exciting events that advanced the study of language and cognition through collaboration and innovation.
                         </p>
                     </div>
 
-                    {/* Dynamic Event Rendering - Exact Original Layout */}
-                    {eventsData.map((event) => (
-                        <div key={event.id} className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-                            {/* Text content - Always on left */}
-                            <div className="space-y-6">
-                                <h3 className="text-4xl font-semibold text-slate-900 leading-tight">
-                                    {event.heading}
-                                </h3>
-                                <Badge variant="outline" className="border-black text-black bg-white rounded-full px-4 py-1 text-sm">
-                                    {event.tag}
-                                </Badge>
-                                {event.description.map((desc, index) => (
-                                    <p key={index} className="text-lg text-slate-700 leading-relaxed">
-                                        {desc}
-                                    </p>
-                                ))}
-                                <p className="text-lg text-slate-700 leading-relaxed">
-                                    <strong>Date:</strong> {event.date}<br />
-                                    <strong>Venue:</strong> {event.venue}
-                                </p>
-                            </div>
+                    {/* Events List */}
+                    <div className="space-y-24">
+                        {eventsData.map((event, index) => (
+                            <div
+                                key={event.id}
+                                className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-start ${index % 2 === 1 ? 'lg:grid-flow-dense' : ''}`}
+                            >
+                                {/* Text Content */}
+                                <div className={`space-y-8 ${index % 2 === 1 ? 'lg:col-start-2' : ''}`}>
+                                    <div className="space-y-4">
+                                        <Badge variant="outline" className="border-[#000080] text-[#000080] bg-blue-50/50 rounded-full px-4 py-1.5 text-sm font-medium">
+                                            {event.tag}
+                                        </Badge>
+                                        <h3 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
+                                            {event.heading}
+                                        </h3>
+                                    </div>
 
-                            {/* Image carousel - Always on right (Using the new logic component) */}
-                            <div className="relative">
-                                <EventImageSlideshow
-                                    images={event.images}
-                                    title={event.heading}
-                                />
+                                    <div className="bg-slate-50 border-l-4 border-[#000080] p-6 rounded-r-lg space-y-3">
+                                        <div className="flex items-start gap-4">
+                                            <Calendar className="text-[#000080] mt-1 shrink-0" size={20} />
+                                            <div>
+                                                <span className="block text-sm font-semibold text-slate-500 uppercase tracking-wide">Date</span>
+                                                <span className="text-lg text-slate-900 font-medium">{event.date}</span>
+                                            </div>
+                                        </div>
+                                        <div className="flex items-start gap-4">
+                                            <MapPin className="text-[#000080] mt-1 shrink-0" size={20} />
+                                            <div>
+                                                <span className="block text-sm font-semibold text-slate-500 uppercase tracking-wide">Venue</span>
+                                                <span className="text-lg text-slate-900 font-medium">{event.venue}</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div className="space-y-4">
+                                        {event.description.map((desc, idx) => (
+                                            <p key={idx} className="text-lg text-slate-700 leading-relaxed font-light">
+                                                {desc}
+                                            </p>
+                                        ))}
+                                    </div>
+                                </div>
+
+                                {/* Image Slideshow */}
+                                <div className={`relative ${index % 2 === 1 ? 'lg:col-start-1' : ''}`}>
+                                    <EventImageSlideshow
+                                        images={event.images}
+                                        title={event.heading}
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    ))}
+                        ))}
+                    </div>
                 </div>
             </div>
         </section>
