@@ -13,7 +13,7 @@ export function CollaborationsSection() {
     return (
         <section
             id="collaborations"
-            className="pt-24 pb-20 bg-slate-50"
+            className="pt-24 pb-16 bg-slate-50"
             aria-label="Research Collaborations"
         >
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -23,14 +23,14 @@ export function CollaborationsSection() {
                         Research Collaborators
                     </h1>
                     <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-8"></div>
-                    <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
+                    <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed mb-12">
                         Building bridges across institutions to advance language and cognition research through diverse
                         partnerships.
                     </p>
                 </header>
 
                 {/* Partners */}
-                <section className="mb-24" aria-labelledby="partners-heading">
+                <section className="mb-16" aria-labelledby="partners-heading">
                     <h2 id="partners-heading" className="text-3xl font-bold text-slate-900 mb-8 text-center">
                         Partners
                         <div className="w-16 h-1 bg-[#000080] mx-auto rounded-full mt-3"></div>

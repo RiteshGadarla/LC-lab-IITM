@@ -21,10 +21,10 @@ const equipment = [
 
 export function FacilitiesSection() {
     return (
-        <section id="facilities" className="pt-24 pb-20 bg-slate-50">
+        <section id="facilities" className="pt-24 pb-16 bg-slate-50">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 {/* Header */}
-                <div className="text-center mb-20">
+                <div className="text-center mb-16">
                     <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-6 mt-8">Research Facilities</h2>
                     <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-8"></div>
                     <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
@@ -34,7 +34,7 @@ export function FacilitiesSection() {
                 </div>
 
                 {/* Featured Equipment: EyeLink */}
-                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-20">
+                <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-16">
                     <div className="grid lg:grid-cols-2 gap-0">
                         {/* Image Side */}
                         <div className="relative h-[400px] lg:h-auto bg-slate-100 flex items-center justify-center p-8">

@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect, useCallback, useRef } from "react"
+import { createPortal } from "react-dom"
 import { Menu, X, Type, MoreVertical } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
@@ -31,7 +32,24 @@ export function Navigation() {
     const [showOverflow, setShowOverflow] = useState(false)
     const [overflowItems, setOverflowItems] = useState<typeof NAV_ITEMS>([])
     const [showDyslexicTip, setShowDyslexicTip] = useState(false)
+    const [mounted, setMounted] = useState(false)
     const navRef = useRef<HTMLDivElement>(null)
+
+    useEffect(() => {
+        setMounted(true)
+    }, [])
+
+    // Lock body scroll when menu is open
+    useEffect(() => {
+        if (isOpen) {
+            document.body.style.overflow = 'hidden'
+        } else {
+            document.body.style.overflow = 'unset'
+        }
+        return () => {
+            document.body.style.overflow = 'unset'
+        }
+    }, [isOpen])
 
     const { isDyslexic, toggleDyslexic } = useFont()
 
@@ -129,7 +147,7 @@ export function Navigation() {
 
     return (
         <nav
-            className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-in-out border-b ${isScrolled
+            className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ease-in-out border-b ${isScrolled
                 ? "bg-white/90 backdrop-blur-md shadow-sm border-slate-200/50 py-2"
                 : "bg-transparent border-transparent py-4"
                 }`}
@@ -269,21 +287,36 @@ export function Navigation() {
                     </div>
                 </div>
 
-                {/* --- Mobile Dropdown --- */}
-                {isOpen && (
-                    <div className="lg:hidden fixed inset-0 z-40 bg-white/80 backdrop-blur-xl animate-in fade-in duration-200 pt-20">
-                        <div className="absolute top-5 right-4">
+                {/* --- Mobile Dropdown (Full Screen Revamp with Portal) --- */}
+                {isOpen && mounted && createPortal(
+                    <div className="fixed inset-0 z-[9999] bg-white text-slate-900 animate-in slide-in-from-right-full duration-300 flex flex-col">
+                        {/* Header within Mobile Menu */}
+                        <div className="flex items-center justify-between p-6 border-b border-slate-100">
+                            <div className="flex items-center gap-3">
+                                <img
+                                    src="/anindita/darkLogo.png"
+                                    alt="LC Lab Logo"
+                                    className="h-8 w-auto"
+                                    onError={(e) => {
+                                        const target = e.currentTarget;
+                                        target.onerror = null;
+                                        target.src = "/anindita/placeholder.svg"
+                                    }}
+                                />
+                            </div>
                             <Button
                                 variant="ghost"
                                 size="sm"
                                 onClick={() => setIsOpen(false)}
-                                className="h-10 w-10 p-0 rounded-full bg-slate-100 text-slate-900"
+                                className="h-10 w-10 p-0 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-900 transition-colors"
                             >
                                 <X size={24} />
                             </Button>
                         </div>
-                        <div className="px-6 py-8 h-full overflow-y-auto">
-                            <div className="space-y-2">
+
+                        {/* Menu Items */}
+                        <div className="flex-1 overflow-y-auto px-6 py-8 flex flex-col justify-center gap-6">
+                            <div className="space-y-4 max-w-md mx-auto w-full">
                                 {NAV_ITEMS.map((item, idx) => {
                                     const isActive = pathname === item.href
                                     return (
@@ -293,10 +326,10 @@ export function Navigation() {
                                             onClick={() => setIsOpen(false)}
                                             style={{ animationDelay: `${idx * 50}ms` }}
                                             className={`
-                                                block px-6 py-4 text-lg font-medium rounded-2xl transition-all duration-300 animate-in slide-in-from-bottom-4 fill-mode-backwards
+                                                block w-full text-center px-4 py-4 text-2xl font-bold rounded-2xl transition-all duration-300 animate-in slide-in-from-bottom-8 fill-mode-backwards
                                                 ${isActive
-                                                    ? "bg-blue-50 text-blue-700 shadow-sm"
-                                                    : "text-slate-600 hover:bg-slate-50 hover:text-slate-900"
+                                                    ? "text-[#000080]"
+                                                    : "text-slate-400 hover:text-slate-900"
                                                 }
                                             `}
                                         >
@@ -306,7 +339,13 @@ export function Navigation() {
                                 })}
                             </div>
                         </div>
-                    </div>
+
+                        {/* Mobile Footer Area */}
+                        <div className="p-8 text-center bg-slate-50 border-t border-slate-100">
+                            <p className="text-slate-400 text-sm font-medium tracking-widest uppercase">IIT Madras</p>
+                        </div>
+                    </div>,
+                    document.body
                 )}
             </div>
 

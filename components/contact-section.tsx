@@ -10,7 +10,7 @@ export function ContactSection() {
   return (
     <section
       id="contact"
-      className="pt-24 pb-20 bg-white"
+      className="pt-24 pb-16 bg-white"
       aria-labelledby="contact-heading"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
@@ -28,7 +28,7 @@ export function ContactSection() {
           </p>
         </header>
 
-        <div className="grid lg:grid-cols-2 gap-16">
+        <div className="grid lg:grid-cols-2 gap-12">
           {/* Left: Form and Links */}
           <section aria-labelledby="form-links-heading" className="space-y-10">
             <div className="flex items-center justify-between">

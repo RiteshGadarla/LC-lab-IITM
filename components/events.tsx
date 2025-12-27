@@ -101,11 +101,11 @@ export function EventsSection() {
     }, [])
 
     return (
-        <section ref={sectionRef} id="events" className="py-24 bg-white">
+        <section ref={sectionRef} id="events" className="py-20 bg-white">
             <div className="max-w-7xl mx-auto px-6 lg:px-8">
                 <div className={`transition-all duration-1000 ${isVisible ? "animate-fade-in" : "opacity-0"}`}>
                     {/* Header */}
-                    <div className="text-center mb-20">
+                    <div className="text-center mb-16">
                         <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-6 mt-8">
                             Events
                         </h2>
@@ -116,7 +116,7 @@ export function EventsSection() {
                     </div>
 
                     {/* Events List */}
-                    <div className="space-y-24">
+                    <div className="space-y-16">
                         {eventsData.map((event, index) => (
                             <div
                                 key={event.id}

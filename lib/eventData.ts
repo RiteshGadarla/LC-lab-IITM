@@ -19,7 +19,14 @@ export const eventsData: Event[] = [
         ],
         date: "November 10, 2025",
         venue: "LCL Lab and IC & SR Hall 3, IIT Madras, Chennai",
-        images : []
+        images: [
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/c_crop,ar_1:1/v1766818602/1C2A8245_phhr7l.jpg",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1766818602/1C2A8018_mo0v0n.jpg",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1766818602/1C2A8264_dgwuyq.jpg",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1766818602/1C2A8272_rqrgx6.jpg",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1766818602/1C2A8298_wistr8.jpg",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1766818602/1C2A8324_jt0clt.jpg"
+        ]
     },
     {
         id: "generative-grammar-2025",

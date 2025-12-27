@@ -19,12 +19,12 @@ export function FundUsSection() {
     };
 
     return (
-        <div className="min-h-screen bg-slate-50 pt-32 pb-20">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-24">
+        <div className="min-h-screen bg-slate-50 pt-28 pb-16">
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 space-y-16">
                 {/* Header Section */}
-                <section className="text-center max-w-4xl mx-auto space-y-8">
+                <section className="text-center max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-700">
                     <div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6 ">
+                        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6 mt-6">
                             Support the LC Lab
                         </h1>
                         <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full"></div>
@@ -35,15 +35,15 @@ export function FundUsSection() {
                     </p>
 
                     <div className="flex flex-wrap justify-center gap-6 mt-8">
-                        <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-full px-6 py-2 shadow-sm">
+                        <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 cursor-default">
                             <Telescope className="text-[#000080]" size={20} />
                             <span className="text-slate-800 font-medium text-sm tracking-wide">Language-Focused Research</span>
                         </div>
-                        <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-full px-6 py-2 shadow-sm">
+                        <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 cursor-default">
                             <Brain className="text-[#000080]" size={20} />
                             <span className="text-slate-800 font-medium text-sm tracking-wide">Cognitive Investigation</span>
                         </div>
-                        <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-full px-6 py-2 shadow-sm">
+                        <div className="flex items-center gap-3 bg-white border border-slate-200 rounded-full px-6 py-2 shadow-sm hover:shadow-md transition-all duration-300 hover:scale-105 cursor-default">
                             <Microscope className="text-[#000080]" size={20} />
                             <span className="text-slate-800 font-medium text-sm tracking-wide">Collaborative Science</span>
                         </div>
@@ -53,84 +53,100 @@ export function FundUsSection() {
                 {/* Main Content Grid */}
                 <section className="grid md:grid-cols-2 gap-12">
                     {/* Why Fund Us */}
-                    <Card className="bg-white border text-card-foreground shadow-sm rounded-xl overflow-hidden">
-                        <CardHeader className="bg-slate-100/50 border-b border-slate-100 p-8 pb-6">
-                            <div className="flex items-center gap-4">
-                                <div className="p-3 bg-blue-50 rounded-lg">
-                                    <HeartHandshake className="text-[#000080]" size={32} />
+                    <Card className="bg-white/80 backdrop-blur-sm border border-slate-200 text-card-foreground shadow-sm rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 animate-in fade-in slide-in-from-left-8 duration-1000 group">
+                        <CardHeader className="bg-slate-50/80 border-b border-slate-100 p-10 pb-8">
+                            <div className="flex items-center gap-6">
+                                <div className="p-4 bg-blue-50/50 rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                                    <HeartHandshake className="text-[#000080]" size={40} strokeWidth={1.5} />
                                 </div>
-                                <CardTitle className="text-2xl font-bold text-slate-900">Why Fund Us?</CardTitle>
+                                <CardTitle className="text-3xl font-bold text-slate-900">Why Fund Us?</CardTitle>
                             </div>
                         </CardHeader>
-                        <CardContent className="p-8 pt-6 space-y-6">
-                            <div className="flex gap-4">
-                                <MapPin className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                        <CardContent className="p-10 pt-8 space-y-8">
+                            <div className="flex gap-6 group/item hover:translate-x-2 transition-transform duration-300">
+                                <div className="mt-1 p-2 bg-slate-50 rounded-lg h-fit text-slate-400 group-hover/item:text-[#000080] group-hover/item:bg-blue-50 transition-colors duration-300">
+                                    <MapPin size={24} />
+                                </div>
                                 <div>
-                                    <h3 className="font-semibold text-slate-900 text-lg">Linguistic Diversity</h3>
-                                    <p className="text-slate-600 leading-relaxed mt-1">To advance language and cognition research against the backdrop of India’s linguistic richness.</p>
+                                    <h3 className="font-bold text-slate-900 text-xl mb-2">Linguistic Diversity</h3>
+                                    <p className="text-slate-600 leading-relaxed text-lg font-light">To advance language and cognition research against the backdrop of India’s linguistic richness.</p>
                                 </div>
                             </div>
-                            <div className="flex gap-4">
-                                <Zap className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                            <div className="flex gap-6 group/item hover:translate-x-2 transition-transform duration-300">
+                                <div className="mt-1 p-2 bg-slate-50 rounded-lg h-fit text-slate-400 group-hover/item:text-[#000080] group-hover/item:bg-blue-50 transition-colors duration-300">
+                                    <Zap size={24} />
+                                </div>
                                 <div>
-                                    <h3 className="font-semibold text-slate-900 text-lg">Innovation Drive</h3>
-                                    <p className="text-slate-600 leading-relaxed mt-1">To empower interdisciplinary innovation across linguistics, neuroscience, and computation</p>
+                                    <h3 className="font-bold text-slate-900 text-xl mb-2">Innovation Drive</h3>
+                                    <p className="text-slate-600 leading-relaxed text-lg font-light">To empower interdisciplinary innovation across linguistics, neuroscience, and computation</p>
                                 </div>
                             </div>
-                            <div className="flex gap-4">
-                                <BookOpen className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                            <div className="flex gap-6 group/item hover:translate-x-2 transition-transform duration-300">
+                                <div className="mt-1 p-2 bg-slate-50 rounded-lg h-fit text-slate-400 group-hover/item:text-[#000080] group-hover/item:bg-blue-50 transition-colors duration-300">
+                                    <BookOpen size={24} />
+                                </div>
                                 <div>
-                                    <h3 className="font-semibold text-slate-900 text-lg">Knowledge Production</h3>
-                                    <p className="text-slate-600 leading-relaxed mt-1">To produce knowledge to uncover the interfaces of linguistics research</p>
+                                    <h3 className="font-bold text-slate-900 text-xl mb-2">Knowledge Production</h3>
+                                    <p className="text-slate-600 leading-relaxed text-lg font-light">To produce knowledge to uncover the interfaces of linguistics research</p>
                                 </div>
                             </div>
-                            <div className="flex gap-4">
-                                <Globe className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                            <div className="flex gap-6 group/item hover:translate-x-2 transition-transform duration-300">
+                                <div className="mt-1 p-2 bg-slate-50 rounded-lg h-fit text-slate-400 group-hover/item:text-[#000080] group-hover/item:bg-blue-50 transition-colors duration-300">
+                                    <Globe size={24} />
+                                </div>
                                 <div>
-                                    <h3 className="font-semibold text-slate-900 text-lg">Global Collaboration</h3>
-                                    <p className="text-slate-600 leading-relaxed mt-1">To expand cross-cultural academic collaboration</p>
+                                    <h3 className="font-bold text-slate-900 text-xl mb-2">Global Collaboration</h3>
+                                    <p className="text-slate-600 leading-relaxed text-lg font-light">To expand cross-cultural academic collaboration</p>
                                 </div>
                             </div>
                         </CardContent>
                     </Card>
 
                     {/* What We'll Do */}
-                    <Card className="bg-white border text-card-foreground shadow-sm rounded-xl overflow-hidden">
-                        <CardHeader className="bg-slate-100/50 border-b border-slate-100 p-8 pb-6">
-                            <div className="flex items-center gap-4">
-                                <div className="p-3 bg-teal-50 rounded-lg">
-                                    <TrendingUp className="text-teal-700" size={32} />
+                    <Card className="bg-white/80 backdrop-blur-sm border border-slate-200 text-card-foreground shadow-sm rounded-2xl overflow-hidden hover:shadow-xl transition-all duration-500 animate-in fade-in slide-in-from-right-8 duration-1000 group">
+                        <CardHeader className="bg-slate-50/80 border-b border-slate-100 p-10 pb-8">
+                            <div className="flex items-center gap-6">
+                                <div className="p-4 bg-teal-50/50 rounded-2xl group-hover:scale-110 transition-transform duration-500">
+                                    <TrendingUp className="text-teal-700" size={40} strokeWidth={1.5} />
                                 </div>
-                                <CardTitle className="text-2xl font-bold text-slate-900">What We'll Do</CardTitle>
+                                <CardTitle className="text-3xl font-bold text-slate-900">What We'll Do</CardTitle>
                             </div>
                         </CardHeader>
-                        <CardContent className="p-8 pt-6 space-y-6">
-                            <div className="flex gap-4">
-                                <Microscope className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                        <CardContent className="p-10 pt-8 space-y-8">
+                            <div className="flex gap-6 group/item hover:translate-x-2 transition-transform duration-300">
+                                <div className="mt-1 p-2 bg-slate-50 rounded-lg h-fit text-slate-400 group-hover/item:text-teal-700 group-hover/item:bg-teal-50 transition-colors duration-300">
+                                    <Microscope size={24} />
+                                </div>
                                 <div>
-                                    <h3 className="font-semibold text-slate-900 text-lg">Research Equipment</h3>
-                                    <p className="text-slate-600 leading-relaxed mt-1">Purchase research equipment (eye-tracking, EEG, etc.)</p>
+                                    <h3 className="font-bold text-slate-900 text-xl mb-2">Research Equipment</h3>
+                                    <p className="text-slate-600 leading-relaxed text-lg font-light">Purchase research equipment (eye-tracking, EEG, etc.)</p>
                                 </div>
                             </div>
-                            <div className="flex gap-4">
-                                <GraduationCap className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                            <div className="flex gap-6 group/item hover:translate-x-2 transition-transform duration-300">
+                                <div className="mt-1 p-2 bg-slate-50 rounded-lg h-fit text-slate-400 group-hover/item:text-teal-700 group-hover/item:bg-teal-50 transition-colors duration-300">
+                                    <GraduationCap size={24} />
+                                </div>
                                 <div>
-                                    <h3 className="font-semibold text-slate-900 text-lg">Student Support</h3>
-                                    <p className="text-slate-600 leading-relaxed mt-1">Offer student fellowships and research assistantships</p>
+                                    <h3 className="font-bold text-slate-900 text-xl mb-2">Student Support</h3>
+                                    <p className="text-slate-600 leading-relaxed text-lg font-light">Offer student fellowships and research assistantships</p>
                                 </div>
                             </div>
-                            <div className="flex gap-4">
-                                <Target className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                            <div className="flex gap-6 group/item hover:translate-x-2 transition-transform duration-300">
+                                <div className="mt-1 p-2 bg-slate-50 rounded-lg h-fit text-slate-400 group-hover/item:text-teal-700 group-hover/item:bg-teal-50 transition-colors duration-300">
+                                    <Target size={24} />
+                                </div>
                                 <div>
-                                    <h3 className="font-semibold text-slate-900 text-lg">Field Research</h3>
-                                    <p className="text-slate-600 leading-relaxed mt-1">Fund fieldwork and multilingual data collection</p>
+                                    <h3 className="font-bold text-slate-900 text-xl mb-2">Field Research</h3>
+                                    <p className="text-slate-600 leading-relaxed text-lg font-light">Fund fieldwork and multilingual data collection</p>
                                 </div>
                             </div>
-                            <div className="flex gap-4">
-                                <Calendar className="text-slate-400 mt-1 flex-shrink-0" size={20} />
+                            <div className="flex gap-6 group/item hover:translate-x-2 transition-transform duration-300">
+                                <div className="mt-1 p-2 bg-slate-50 rounded-lg h-fit text-slate-400 group-hover/item:text-teal-700 group-hover/item:bg-teal-50 transition-colors duration-300">
+                                    <Calendar size={24} />
+                                </div>
                                 <div>
-                                    <h3 className="font-semibold text-slate-900 text-lg">Knowledge Sharing</h3>
-                                    <p className="text-slate-600 leading-relaxed mt-1">Host workshops and knowledge-sharing events</p>
+                                    <h3 className="font-bold text-slate-900 text-xl mb-2">Knowledge Sharing</h3>
+                                    <p className="text-slate-600 leading-relaxed text-lg font-light">Host workshops and knowledge-sharing events</p>
                                 </div>
                             </div>
                         </CardContent>
@@ -138,58 +154,65 @@ export function FundUsSection() {
                 </section>
 
                 {/* Impact Grid - Simplified */}
-                <section className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-slate-200 pt-16">
-                    <div className="text-center p-6 rounded-lg hover:bg-white transition-colors duration-300">
-                        <Brain className="text-[#000080] mx-auto mb-4" size={40} strokeWidth={1.5} />
-                        <h3 className="text-lg font-bold text-slate-900 mb-2">Research Excellence</h3>
-                        <p className="text-slate-600">Pioneering linguistic and cognitive research</p>
+                <section className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-slate-200 pt-16 animate-in fade-in slide-in-from-bottom-12 duration-1000 delay-300">
+                    <div className="text-center p-8 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 group cursor-default">
+                        <div className="bg-blue-50 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <Brain className="text-[#000080]" size={40} strokeWidth={1.5} />
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-3">Research Excellence</h3>
+                        <p className="text-slate-600 font-light text-lg">Pioneering linguistic and cognitive research</p>
                     </div>
-                    <div className="text-center p-6 rounded-lg hover:bg-white transition-colors duration-300">
-                        <Globe className="text-[#000080] mx-auto mb-4" size={40} strokeWidth={1.5} />
-                        <h3 className="text-lg font-bold text-slate-900 mb-2">Cultural Preservation</h3>
-                        <p className="text-slate-600">Maintaining cultural linguistic roots</p>
+                    <div className="text-center p-8 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 group cursor-default">
+                        <div className="bg-blue-50 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <Globe className="text-[#000080]" size={40} strokeWidth={1.5} />
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-3">Cultural Preservation</h3>
+                        <p className="text-slate-600 font-light text-lg">Maintaining cultural linguistic roots</p>
                     </div>
-                    <div className="text-center p-6 rounded-lg hover:bg-white transition-colors duration-300">
-                        <Award className="text-[#000080] mx-auto mb-4" size={40} strokeWidth={1.5} />
-                        <h3 className="text-lg font-bold text-slate-900 mb-2">Innovation</h3>
-                        <p className="text-slate-600">Interdisciplinarity in language research</p>
+                    <div className="text-center p-8 rounded-2xl hover:bg-white hover:shadow-lg transition-all duration-300 group cursor-default">
+                        <div className="bg-blue-50 w-20 h-20 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300">
+                            <Award className="text-[#000080]" size={40} strokeWidth={1.5} />
+                        </div>
+                        <h3 className="text-xl font-bold text-slate-900 mb-3">Innovation</h3>
+                        <p className="text-slate-600 font-light text-lg">Interdisciplinarity in language research</p>
                     </div>
                 </section>
 
                 {/* Call to Action */}
-                <section className="bg-[#000080] rounded-2xl overflow-hidden shadow-lg relative">
-                    <div className="absolute top-0 right-0 p-12 opacity-10">
-                        <Users size={200} className="text-white" />
+                <section className="bg-[#000080] rounded-3xl overflow-hidden shadow-2xl relative animate-in zoom-in-95 duration-1000 delay-500">
+                    <div className="absolute top-0 right-0 p-12 opacity-5 pointer-events-none">
+                        <Users size={400} className="text-white" />
                     </div>
-                    <div className="relative z-10 px-8 py-16 text-center max-w-4xl mx-auto space-y-8">
-                        <h2 className="text-3xl md:text-4xl font-bold text-white">
+                    <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-blue-500 rounded-full blur-[100px] opacity-20"></div>
+                    <div className="relative z-10 px-8 py-20 text-center max-w-4xl mx-auto space-y-10">
+                        <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight">
                             Be a Part of Our Journey
                         </h2>
-                        <div className="space-y-4 text-blue-100 text-lg leading-relaxed font-light">
+                        <div className="space-y-6 text-blue-100 text-xl leading-relaxed font-light">
                             <p>
                                 Whether you are an individual donor, corporate sponsor, or institution, your contribution supports the future of
-                                <span className="text-white font-medium"> inclusive, diverse, and rigorous language science research. </span>
+                                <span className="text-white font-medium block mt-2 text-2xl"> inclusive, diverse, and rigorous language science research. </span>
                             </p>
-                            <p>
+                            <p className="text-lg opacity-80">
                                 Join us in contributing to language and cognition research with special focus on Indian societies and Indian languages.
                             </p>
                         </div>
 
-                        <div className="flex flex-col sm:flex-row gap-4 justify-center pt-4">
+                        <div className="flex flex-col sm:flex-row gap-6 justify-center pt-8">
                             <Button
                                 onClick={handleDonationClick}
-                                className="bg-white text-[#000080] hover:bg-blue-50 font-semibold px-8 py-6 text-lg rounded-full shadow-md transition-all h-auto"
+                                className="bg-white text-[#000080] hover:bg-blue-50 font-bold px-10 py-8 text-xl rounded-full shadow-lg hover:shadow-xl hover:-translate-y-1 transition-all h-auto"
                             >
-                                <Lightbulb className="mr-2" size={20} />
+                                <Lightbulb className="mr-3" size={24} />
                                 Make a Donation
                             </Button>
 
                             <Button
                                 variant="outline"
                                 onClick={() => router.push('/lclab/contact')}
-                                className="border-white text-white hover:bg-white/10 hover:text-white font-medium px-8 py-6 text-lg rounded-full transition-all h-auto bg-transparent"
+                                className="border-2 border-white/30 text-white hover:bg-white/10 hover:border-white font-semibold px-10 py-8 text-xl rounded-full transition-all h-auto bg-transparent hover:-translate-y-1"
                             >
-                                <Coffee className="mr-2" size={20} />
+                                <Coffee className="mr-3" size={24} />
                                 Join Us
                             </Button>
                         </div>
@@ -197,15 +220,15 @@ export function FundUsSection() {
                     </div>
                 </section>
 
-                {/* Donation Modal - Cleaned up */}
+                {/* Donation Modal */}
                 {isModalOpen && (
-                    <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-4">
-                        <div className="bg-white rounded-xl shadow-2xl max-w-lg w-full overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-                            <div className="p-8 pb-6 border-b border-slate-100 flex justify-between items-start">
+                    <div className="fixed inset-0 bg-slate-900/60 backdrop-blur-sm flex items-center justify-center z-[1000] p-4 animate-in fade-in duration-300">
+                        <div className="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden animate-in zoom-in-95 slide-in-from-bottom-8 duration-300">
+                            <div className="p-8 pb-6 border-b border-slate-100 flex justify-between items-start bg-slate-50/50">
                                 <h2 className="text-2xl font-bold text-slate-900">Thank You!</h2>
                                 <button
                                     onClick={closeModal}
-                                    className="text-slate-400 hover:text-slate-600 transition-colors"
+                                    className="text-slate-400 hover:text-slate-600 transition-colors p-2 hover:bg-slate-100 rounded-full"
                                 >
                                     <span className="sr-only">Close</span>
                                     <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -213,20 +236,28 @@ export function FundUsSection() {
                                     </svg>
                                 </button>
                             </div>
-                            <div className="p-8 space-y-6">
-                                <p className="text-slate-600 leading-relaxed">
-                                    We deeply appreciate your interest in supporting the LC Lab's mission to advance language and cognition research.
-                                    Your generosity helps us drive innovation, support students, and preserve linguistic diversity.
-                                </p>
-                                <p className="text-slate-600 leading-relaxed">
-                                    To further fund our initiatives or discuss partnership opportunities, please reach out to our team.
-                                </p>
+                            <div className="p-8 space-y-8">
+                                <div className="text-center mb-6">
+                                    <div className="bg-green-50 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4 text-green-600">
+                                        <HeartHandshake size={32} />
+                                    </div>
+                                    <p className="text-slate-600 text-lg leading-relaxed">
+                                        We deeply appreciate your interest in supporting the LC Lab's mission.
+                                    </p>
+                                </div>
+                                <div className="space-y-4 text-center">
+                                    <p className="text-slate-500 text-sm leading-relaxed">
+                                        Your generosity helps us drive innovation, support students, and preserve linguistic diversity.
+                                        To further fund our initiatives or discuss partnership opportunities, please reach out to us.
+                                    </p>
+                                </div>
+
                                 <div className="pt-2">
                                     <Button
                                         onClick={() => router.push("/lclab/contact")}
-                                        className="w-full bg-[#000080] hover:bg-blue-900 text-white font-semibold py-4 h-auto rounded-lg"
+                                        className="w-full bg-[#000080] hover:bg-blue-900 text-white font-bold py-6 text-lg h-auto rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
                                     >
-                                        <Mail className="mr-2" size={18} />
+                                        <Mail className="mr-2" size={20} />
                                         Contact Us
                                     </Button>
                                 </div>
