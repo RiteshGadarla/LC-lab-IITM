@@ -80,9 +80,8 @@ const FacilitySlideshow = () => {
             {facilityImages.map((src, index) => (
                 <div
                     key={index}
-                    className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${
-                        index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
-                    }`}
+                    className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out ${index === currentIndex ? "opacity-100 z-10" : "opacity-0 z-0"
+                        }`}
                 >
                     <img
                         src={src}
@@ -119,11 +118,10 @@ const FacilitySlideshow = () => {
                     <button
                         key={idx}
                         onClick={() => { setCurrentIndex(idx); resetTimer(); }}
-                        className={`h-1.5 rounded-full transition-all duration-300 shadow-sm backdrop-blur-sm ${
-                            idx === currentIndex
+                        className={`h-1.5 rounded-full transition-all duration-300 shadow-sm backdrop-blur-sm ${idx === currentIndex
                                 ? "w-6 bg-white"
                                 : "w-1.5 bg-white/50 hover:bg-white/80"
-                        }`}
+                            }`}
                         aria-label={`Go to slide ${idx + 1}`}
                     />
                 ))}
@@ -159,7 +157,7 @@ export function AboutSection() {
                     <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
                         Exploring Linguistics
                     </h1>
-                    <div className="h-1 w-24 bg-blue-600 mx-auto rounded-full mb-6"/>
+                    <div className="h-1 w-24 bg-blue-600 mx-auto rounded-full mb-6" />
                     <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                         Our lab investigates a wide range of linguistic phenomena through theoretical, typological, and experimental approaches.
                     </p>
