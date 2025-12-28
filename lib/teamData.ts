@@ -183,7 +183,7 @@ export const friends = [
     },
     {
         name: "Shobhith Vadlamudi",
-        contribution: "Co-Conducted the first experiment in the lab",
+        contribution: "Co-conducted the first laboratory experiment",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_fill,ar_1:1,g_auto/v1750746877/shobhit_e8zraw.jpg",
     },
     {

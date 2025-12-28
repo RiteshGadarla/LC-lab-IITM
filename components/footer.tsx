@@ -93,12 +93,10 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="border-t border-slate-800/50 pt-8 mt-8 flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-slate-500 text-sm">© {new Date().getFullYear()} Language & Cognition Laboratory, IIT Madras.</p>
-          <div className="flex gap-6 text-sm text-slate-500">
-            <span className="hover:text-slate-300 cursor-pointer transition-colors">Privacy Policy</span>
-            <span className="hover:text-slate-300 cursor-pointer transition-colors">Terms of Use</span>
-          </div>
+        <div className="border-t border-slate-800/50 pt-8 mt-8 flex justify-center items-center">
+          <p className="text-slate-500 text-sm text-center">
+            © {new Date().getFullYear()} Language & Cognition Laboratory, IIT Madras.
+          </p>
         </div>
       </div>
     </footer>
