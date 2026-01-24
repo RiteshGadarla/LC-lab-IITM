@@ -27,8 +27,8 @@ export default function PrincipalInvestigatorCard({
                 <CardContent className="p-8 md:p-10">
                     <div className="flex flex-col md:flex-row gap-10 items-start">
                         {/* Image */}
-                        <div className="flex justify-center md:block flex-shrink-0">
-                            <img
+                        <div className="flex justify-center md:justify-start flex-shrink-0 w-full md:w-auto">
+                        <img
                                 src={investigator.image || "/placeholder.svg"}
                                 alt={investigator.name}
                                 className="

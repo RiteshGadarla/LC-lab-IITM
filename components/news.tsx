@@ -14,12 +14,12 @@ export function NewsSection() {
                     >
                         <div className="flex flex-col md:flex-row items-start">
                             {item.imageUrl && (
-                                <div className="md:w-1/3 flex-shrink-0 p-2">
-                                    <img
+                                <div className="md:w-1/3 flex-shrink-0 p-2 flex justify-center md:justify-start">
+                                <img
                                         src={item.imageUrl}
                                         alt={item.title}
-                                        className="w-full h-auto max-h-96 object-contain"
-                                    />
+                                        className="h-auto max-h-96 object-contain mx-auto md:w-full"
+                                />
                                 </div>
                             )}
                             <div className={item.imageUrl ? "p-4 md:w-2/3" : "p-4 w-full"}>

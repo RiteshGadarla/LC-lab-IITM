@@ -10,6 +10,24 @@ export interface Event {
 
 export const eventsData: Event[] = [
     {
+        id: "ai-powered-tamil-language-proficiency-assessment-2026",
+        heading: "AI-Powered Unified Tamil Language Proficiency Assessment Platform",
+        tag: "Institute Open House",
+        description: [
+            "An AI-powered unified Tamil language proficiency assessment platform presented by the Language and Cognition Laboratory, IIT Madras, " +
+            "as part of the Institute Open House 2026. The platform demonstrates the use of responsible AI technologies to evaluate Tamil language skills, " +
+            "bringing together language research, cognition, and artificial intelligence under one unified assessment framework."
+        ],
+        date: "January 2-4, 2026",
+        venue: "LC Lab, HSB Ground Floor, Behind CLT, IIT Madras",
+        images: [
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1769265006/tamil3_wrdioz.jpg",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1769265005/tamil4_x6fdxu.jpg",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1769265005/tamil1_wyov0f.jpg",
+            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1769265008/tamil2_cltcbr.jpg"
+        ]
+    },
+    {
         id: "language-cognition-lab-inauguration-2025",
         heading: "Inauguration of the Language & Cognition Laboratory",
         tag: "One-Day Symposium",

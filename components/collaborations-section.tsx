@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Globe, MapPin } from "lucide-react"
 import { internationalCollaborators, IndianCollaborators } from "@/lib/teamData"
 import Image from "next/image"
-import { PartnerData, partnersData } from "@/lib/cerai";
+import { PartnerData, partnersData } from "@/lib/partners";
 
 export function CollaborationsSection() {
     const router = useRouter()
