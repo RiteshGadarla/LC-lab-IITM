@@ -1,18 +1,19 @@
 // Team data interfaces
 export interface TeamMember {
     name: string
-    role: string
+    role?: string
     research?: string
     image?: string
     email?: string
     phone?: string
+    contribution?: string
 }
 
 export interface lab {
     name: string
     email: string
     phone: string
-    linkedIn : string
+    linkedIn: string
     addresses: string[]
 }
 
@@ -42,7 +43,7 @@ export const principalInvestigator: PrincipalInvestigator = {
     image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749377865/ani_llz6al.jpg",
     linkedInLink: "https://www.linkedin.com/in/anindita-sahoo-3b971515/",
     iitmprofile: "https://hss.iitm.ac.in/anindita-sahoo/#",
-    cerai: "https://cerai.iitm.ac.in/faculty/",
+    cerai: "https://cerai.iitm.ac.in/people/anindita-sahoo/"
 }
 
 // Team members
@@ -61,7 +62,7 @@ export const teamMembers: TeamMember[] = [
     },
     {
         name: "Krishna Raj SR",
-        role: "IDRP Scholar (PhD in progress) - Co-guiding with Prof. Srinivasa Chakravarthy",
+        role: "IDRP Scholar (Graduated in 2026) – Co-guided with Prof. Srinivasa Chakravarthy",
         research: "From pixels to prepositions: Linking Vision and Spatial Prepositions",
         image:
             "https://res.cloudinary.com/dgzbrujvx/image/upload/c_crop,ar_1:1/v1756733304/krishna_peb5xz.jpg",
@@ -84,9 +85,6 @@ export const teamMembers: TeamMember[] = [
         research: "On the Interaction of Honorification, Copula and Definiteness: A Variationist Approach",
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/v1749980336/pratiti_amhwlv.jpg",
     },
-]
-
-export const othersMembers: TeamMember[] = [
     {
         name: "G L Vijayavani",
         role: "IDRP Scholar (PhD in progress) - Co-guiding with Prof. Preeti Aghalayam",
@@ -103,6 +101,7 @@ export const othersMembers: TeamMember[] = [
     },
 ]
 
+// Research
 export const researchStaff: TeamMember[] = [
     {
         name: "Nayana Rajan",
@@ -118,13 +117,51 @@ export const researchStaff: TeamMember[] = [
         name: "Suguna SG",
         role: "Research Assistant",
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1766503319/564d45a5-7b22-46b7-b9ff-f352d921746c.png",
-    },
+    }
+]
+
+// Interns
+export const interns: TeamMember[] = [
     {
         name: "Gadarla Ritesh Reddy",
-        role: "Intern",
+        role: "Web Developer & Data Analyst",
         image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1766503935/e8ae7184-a3df-4c19-bb8e-8020c312a88a.png",
     },
+    {
+        name: "Saravanan Sathishkumar",
+        role: "Language Assessment Tool Developer",
+    },
+    {
+        name: "Dinesh S",
+        role: "Language Assessment Tool Developer",
+    },
+    {
+        name: "Harshita Verma",
+        role: "Language Assessment Tool Developer",
+    },
 ]
+
+
+// Friends
+export const friends: TeamMember[] = [
+    {
+        name: "Madhav Mittal",
+        contribution: "Co-scripted the nomenclature",
+        image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_fill,ar_1:1,g_auto/v1750746877/madhav_stlidj.jpg",
+    },
+    {
+        name: "Shobhith Vadlamudi",
+        contribution: "Co-conducted the first laboratory experiment",
+        image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_fill,ar_1:1,g_auto/v1750746877/shobhit_e8zraw.jpg",
+    },
+    {
+        name: "Gadarla Rohit Reddy",
+        contribution: "Co-designed the website",
+        image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_fill,ar_1:1,g_auto/v1750746876/rohit_o1zjut.jpg",
+    },
+]
+
+
 
 // Collaborators
 export const internationalCollaborators = [
@@ -176,22 +213,4 @@ export const IndianCollaborators = [
     },
 ]
 
-// Friends data (legacy compatibility)
-export const friends = [
-    {
-        name: "Madhav Mittal",
-        contribution: "Co-scripted the nomenclature",
-        image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_fill,ar_1:1,g_auto/v1750746877/madhav_stlidj.jpg",
-    },
-    {
-        name: "Shobhith Vadlamudi",
-        contribution: "Co-conducted the first laboratory experiment",
-        image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_fill,ar_1:1,g_auto/v1750746877/shobhit_e8zraw.jpg",
-    },
-    {
-        name: "Gadarla Rohit Reddy",
-        contribution: "Co-designed the website",
-        image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_fill,ar_1:1,g_auto/v1750746876/rohit_o1zjut.jpg",
-    },
-]
 
