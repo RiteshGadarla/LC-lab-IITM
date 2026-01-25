@@ -9,7 +9,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: `${baseUrl}/lclab`,
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 1,
         },
         {
@@ -27,31 +27,31 @@ export default function sitemap(): MetadataRoute.Sitemap {
         {
             url: `${baseUrl}/lclab/facilities`,
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 0.7,
         },
         {
             url: `${baseUrl}/lclab/events`,
             lastModified: new Date(),
-            changeFrequency: 'weekly',
+            changeFrequency: 'monthly',
             priority: 0.8,
         },
         {
             url: `${baseUrl}/lclab/collaborations`,
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 0.6,
         },
         {
             url: `${baseUrl}/lclab/contact`,
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 0.9,
         },
         {
             url: `${baseUrl}/lclab/donate`,
             lastModified: new Date(),
-            changeFrequency: 'yearly',
+            changeFrequency: 'monthly',
             priority: 0.5,
         },
     ]
