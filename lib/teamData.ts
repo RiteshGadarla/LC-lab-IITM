@@ -124,20 +124,23 @@ export const researchStaff: TeamMember[] = [
 export const interns: TeamMember[] = [
     {
         name: "Gadarla Ritesh Reddy",
-        role: "Web Developer & Data Analyst",
-        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1766503935/e8ae7184-a3df-4c19-bb8e-8020c312a88a.png",
+        role: "Project Intern",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_crop,w_1100,h_1100,ar_1:1/v1766503935/e8ae7184-a3df-4c19-bb8e-8020c312a88a.png",
     },
     {
         name: "Saravanan Sathishkumar",
-        role: "Language Assessment Tool Developer",
+        role: "Technical Intern",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_crop,w_600,h_600,ar_1:1/v1769346238/671da02e-86fa-4cc6-9e83-4076391054db.png"
     },
     {
         name: "Dinesh S",
-        role: "Language Assessment Tool Developer",
+        role: "Technical Intern",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1769346344/17da8dfc-dda6-4cb0-819e-93a226ae82ee.png"
     },
     {
         name: "Harshita Verma",
-        role: "Language Assessment Tool Developer",
+        role: "Technical Intern",
+        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1769347705/c1e4b816-a1ac-4e0c-b2e5-b44d00ef8359.png"
     },
 ]
 
@@ -160,7 +163,6 @@ export const friends: TeamMember[] = [
         image: "https://res.cloudinary.com/dt8amwctw/image/upload/c_fill,ar_1:1,g_auto/v1750746876/rohit_o1zjut.jpg",
     },
 ]
-
 
 
 // Collaborators
@@ -212,5 +214,3 @@ export const IndianCollaborators = [
         image: "https://biotech.iitm.ac.in/img/outerfaculty/Srinivasa%20chakravarthy.png",
     },
 ]
-
-

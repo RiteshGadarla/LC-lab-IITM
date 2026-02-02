@@ -75,7 +75,7 @@ export function ResearchSection() {
                 <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 rounded-xl overflow-hidden group">
                   <CardContent className="p-8">
                     <div className="flex justify-between items-start mb-6">
-                      <div className="p-3 bg-blue-50 rounded-lg text-[#000080] group-hover:scale-110 transition-transform duration-300">
+                      <div className="p-3 bg-blue-50 text-[#000080] rounded-lg transition-all duration-300 group-hover:bg-[#000080] group-hover:text-white group-hover:scale-110">
                         <Users size={24} />
                       </div>
                       {project.year && (
@@ -116,7 +116,7 @@ export function ResearchSection() {
             )}
           </TabsContent>
 
-          {/* Publications - Refined UI */}
+          {/* Publications */}
           <TabsContent value="publications" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               {publicationChunks[publicationPage]?.map((pub, index) => (
@@ -179,7 +179,7 @@ export function ResearchSection() {
                 <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 rounded-xl group">
                   <CardContent className="p-8">
                     <div className="flex justify-between items-start mb-6">
-                      <div className="p-3 bg-blue-50 rounded-lg text-[#000080] group-hover:rotate-12 transition-transform duration-300">
+                      <div className="p-3 bg-blue-50 text-[#000080] rounded-lg transition-all duration-300 group-hover:bg-[#000080] group-hover:text-white group-hover:rotate-12">
                         <MapPin size={24} />
                       </div>
                       <div className="flex items-center text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full">

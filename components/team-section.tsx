@@ -33,7 +33,7 @@ export function TeamSection() {
                     </p>
                 </div>
 
-                {/* Principal Inverstigator Card */}
+                {/* Principal Investigator Card */}
                 <PrincipalInvestigatorCard investigator={principalInvestigator}/>
 
 
