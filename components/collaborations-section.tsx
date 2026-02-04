@@ -1,11 +1,11 @@
 "use client"
 
-import { useRouter } from "next/navigation";
-import { Card, CardContent } from "@/components/ui/card"
-import { Globe, MapPin } from "lucide-react"
-import { internationalCollaborators, IndianCollaborators } from "@/lib/teamData"
+import {useRouter} from "next/navigation";
+import {Card, CardContent} from "@/components/ui/card"
+import {Globe, MapPin} from "lucide-react"
+import {internationalCollaborators, IndianCollaborators} from "@/lib/collaboratorsData"
 import Image from "next/image"
-import { PartnerData, partnersData } from "@/lib/partners";
+import {partnersData} from "@/lib/partners";
 
 export function CollaborationsSection() {
     const router = useRouter()
@@ -49,7 +49,7 @@ export function CollaborationsSection() {
                                             <div className="w-full max-w-[200px]">
                                                 {partner.logo ? (
                                                     <a href={partner.link} target="_blank"
-                                                        rel="noopener noreferrer" className="block relative group">
+                                                       rel="noopener noreferrer" className="block relative group">
                                                         <Image
                                                             src={partner.logo}
                                                             alt={`${partner.name} logo`}
@@ -155,7 +155,8 @@ export function CollaborationsSection() {
 
                 {/* Call to Action */}
                 <section className="mt-20 text-center" aria-labelledby="cta-heading">
-                    <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-10 shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-10 shadow-sm hover:shadow-md transition-shadow">
                         <Globe
                             className="w-12 h-12 text-[#000080] mx-auto mb-6"
                             strokeWidth={1.5}

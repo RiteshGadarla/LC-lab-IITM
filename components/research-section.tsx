@@ -5,7 +5,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { researchProjects, publications, conferences } from "@/lib/researchData"
-import { Calendar, MapPin, Users, Award, Link2, ExternalLink, BookOpen } from "lucide-react"
+import { Calendar, MapPin, Users, ExternalLink, BookOpen } from "lucide-react"
 
 export function ResearchSection() {
   const [activeTab, setActiveTab] = useState("publications") // Default to publications to show changes

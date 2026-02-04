@@ -2,7 +2,7 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Mail, MapPin, ExternalLink, Linkedin } from "lucide-react"
-import { labDetails } from "@/lib/teamData"
+import { labDetails } from "@/lib/labDetails"
 import { useRouter } from "next/navigation";
 
 export function ContactSection() {
@@ -117,7 +117,7 @@ export function ContactSection() {
                   </CardContent>
                 </Card>
 
-                {/* LinkedIn Card Matching UI Style */}
+                {/* LinkedIn Card */}
                 <Card className="hover:shadow-md transition-all duration-300 rounded-xl bg-white border border-slate-200">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-5">
@@ -139,7 +139,7 @@ export function ContactSection() {
                             rel="noopener noreferrer"
                             className="text-slate-600 hover:text-[#000080] transition-colors"
                         >
-                          Connect on LinkedIn
+                          {labDetails.linkedInName}
                         </a>
                       </div>
                     </div>

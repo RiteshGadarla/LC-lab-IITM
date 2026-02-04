@@ -7,11 +7,11 @@ import {
     teamMembers,
     researchStaff,
     friends,
+    interns,
     type TeamMember
 } from "@/lib/teamData"
 import TeamGrid from "@/components/grids/team-grid";
 import InternGrid from "@/components/grids/intern-grid"
-import {interns} from "@/lib/teamData"
 import PrincipalInvestigatorCard from "@/components/grids/PrincipalInvestigatorCard";
 
 
@@ -36,29 +36,61 @@ export function TeamSection() {
                 {/* Principal Investigator Card */}
                 <PrincipalInvestigatorCard investigator={principalInvestigator}/>
 
+                <div className="text-center mb-10 mt-8">
+                    <h2 className="text-3xl md:text-5xl font-bold text-slate-900 text-center mb-6">
+                        Current Researchers
+                    </h2>
+                </div>
 
-                {/* PhD Scholars */}
                 <TeamGrid
                     title="PhD Scholars"
                     members={teamMembers}
                     onSelect={setSelectedMember}
+                    isActive={true}
                 />
 
-                {/* Research Project Staff */}
                 <TeamGrid
                     title="Research Project Staff"
                     members={researchStaff}
                     onSelect={setSelectedMember}
+                    isActive={true}
                 />
 
-                {/* Interns */}
-                <InternGrid interns={interns}/>
+                <InternGrid
+                    interns={interns}
+                    isActive={true}
+                />
 
-                {/* Friends */}
+                <div className="text-center mb-10 mt-8">
+                    <h2 className="text-3xl md:text-5xl font-bold text-slate-900 text-center mb-6">
+                        Alumni
+                    </h2>
+                </div>
+
+                <TeamGrid
+                    title="PhD Scholars"
+                    members={teamMembers}
+                    onSelect={setSelectedMember}
+                    isActive={false}
+                />
+
+                <TeamGrid
+                    title="Research Project Staff"
+                    members={researchStaff}
+                    onSelect={setSelectedMember}
+                    isActive={false}
+                />
+
+                <InternGrid
+                    interns={interns}
+                    isActive={false}
+                />
+
                 <TeamGrid
                     title="Friends of LC Lab"
                     members={friends}
                     onSelect={setSelectedMember}
+                    isActive={true}
                 />
 
                 {/* Open Position */}

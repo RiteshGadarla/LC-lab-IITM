@@ -1,26 +1,36 @@
 "use client"
 
-import { Card, CardContent } from "@/components/ui/card"
-import type { TeamMember } from "@/lib/teamData"
+import {Card, CardContent} from "@/components/ui/card"
+import type {TeamMember} from "@/lib/teamData"
 
 type InternGridProps = {
     title?: string
     interns: TeamMember[]
+    isActive: boolean
 }
 
 export default function InternGrid({
                                        title = "Interns",
                                        interns,
+                                       isActive,
                                    }: InternGridProps) {
+
+    const filteredInterns = interns.filter(
+        (intern) => intern.isActive === isActive
+    )
+
+    if (filteredInterns.length === 0) {
+        return null
+    }
+
     return (
         <section className="mb-24">
             <h3 className="text-3xl font-bold text-slate-900 mb-12 text-center">
                 {title}
             </h3>
 
-            {/* Flex layout for intelligent centering */}
             <div className="flex flex-wrap justify-center gap-6">
-                {interns.map((intern, index) => (
+                {filteredInterns.map((intern, index) => (
                     <Card
                         key={index}
                         className="

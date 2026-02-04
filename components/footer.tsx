@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { labDetails } from "@/lib/teamData"
+import { labDetails } from "@/lib/labDetails"
 
 export function Footer() {
   return (
