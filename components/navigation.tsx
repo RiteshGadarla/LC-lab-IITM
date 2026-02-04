@@ -158,7 +158,7 @@ export function Navigation() {
                     {/* --- Logo Section --- */}
                     <div className="flex items-center gap-4 flex-shrink-0">
                         <img
-                            src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
+                            src="/anindita/iitmadrasLogo.png"
                             alt="IIT Madras Logo"
                             onClick={() => window.open("https://www.iitm.ac.in", "_blank")}
                             className="h-10 md:h-12 w-auto cursor-pointer hover:opacity-90 transition-opacity"

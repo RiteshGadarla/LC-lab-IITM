@@ -5,7 +5,8 @@ export interface Event {
     description: string[];
     date: string;
     venue: string;
-    images: string[];
+    imagesBG: string[];
+    imagesSM: string[];
 }
 
 export const eventsData: Event[] = [
@@ -20,12 +21,8 @@ export const eventsData: Event[] = [
         ],
         date: "January 2-4, 2026",
         venue: "LC Lab, HSB Ground Floor, Behind CLT, IIT Madras",
-        images: [
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1769265006/tamil3_wrdioz.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1769265005/tamil4_x6fdxu.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1769265005/tamil1_wyov0f.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1769265008/tamil2_cltcbr.jpg"
-        ]
+        imagesBG: ["/anindita/eventImages/aipoweredtamillanguageproficiencyassessment2026_1_Bg.webp", "/anindita/eventImages/aipoweredtamillanguageproficiencyassessment2026_2_Bg.webp", "/anindita/eventImages/aipoweredtamillanguageproficiencyassessment2026_3_Bg.webp", "/anindita/eventImages/aipoweredtamillanguageproficiencyassessment2026_4_Bg.webp"],
+        imagesSM: ["/anindita/eventImages/aipoweredtamillanguageproficiencyassessment2026_1_Sm.webp", "/anindita/eventImages/aipoweredtamillanguageproficiencyassessment2026_2_Sm.webp", "/anindita/eventImages/aipoweredtamillanguageproficiencyassessment2026_3_Sm.webp", "/anindita/eventImages/aipoweredtamillanguageproficiencyassessment2026_4_Sm.webp"],
     },
     {
         id: "language-cognition-lab-inauguration-2025",
@@ -37,14 +34,8 @@ export const eventsData: Event[] = [
         ],
         date: "November 10, 2025",
         venue: "LCL Lab and IC & SR Hall 3, IIT Madras, Chennai",
-        images: [
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/c_crop,ar_1:1/v1766818602/1C2A8245_phhr7l.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1766818602/1C2A8018_mo0v0n.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1766818602/1C2A8264_dgwuyq.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1766818602/1C2A8272_rqrgx6.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1766818602/1C2A8298_wistr8.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1766818602/1C2A8324_jt0clt.jpg"
-        ]
+        imagesBG: ["/anindita/eventImages/languagecognitionlabinauguration2025_1_Bg.webp", "/anindita/eventImages/languagecognitionlabinauguration2025_2_Bg.webp", "/anindita/eventImages/languagecognitionlabinauguration2025_3_Bg.webp", "/anindita/eventImages/languagecognitionlabinauguration2025_4_Bg.webp", "/anindita/eventImages/languagecognitionlabinauguration2025_5_Bg.webp", "/anindita/eventImages/languagecognitionlabinauguration2025_6_Bg.webp"],
+        imagesSM: ["/anindita/eventImages/languagecognitionlabinauguration2025_1_Sm.webp", "/anindita/eventImages/languagecognitionlabinauguration2025_2_Sm.webp", "/anindita/eventImages/languagecognitionlabinauguration2025_3_Sm.webp", "/anindita/eventImages/languagecognitionlabinauguration2025_4_Sm.webp", "/anindita/eventImages/languagecognitionlabinauguration2025_5_Sm.webp", "/anindita/eventImages/languagecognitionlabinauguration2025_6_Sm.webp"],
     },
     {
         id: "generative-grammar-2025",
@@ -56,13 +47,8 @@ export const eventsData: Event[] = [
         ],
         date: "June 11–14, 2025",
         venue: "IC & SR Building, IIT Madras, Chennai",
-        images: [
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630995/image4_wzyuto.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630996/image11_f4jh96.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630998/image10_srzi3c.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630995/image5_jdwjwd.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751630996/image7_lrlytk.jpg",
-        ],
+        imagesBG: ["/anindita/eventImages/generativegrammar2025_1_Bg.webp", "/anindita/eventImages/generativegrammar2025_2_Bg.webp", "/anindita/eventImages/generativegrammar2025_3_Bg.webp", "/anindita/eventImages/generativegrammar2025_4_Bg.webp", "/anindita/eventImages/generativegrammar2025_5_Bg.webp"],
+        imagesSM: ["/anindita/eventImages/generativegrammar2025_1_Sm.webp", "/anindita/eventImages/generativegrammar2025_2_Sm.webp", "/anindita/eventImages/generativegrammar2025_3_Sm.webp", "/anindita/eventImages/generativegrammar2025_4_Sm.webp", "/anindita/eventImages/generativegrammar2025_5_Sm.webp"],
     },
     {
         id: "voice-category-copula-2024",
@@ -74,12 +60,8 @@ export const eventsData: Event[] = [
         ],
         date: "September 16-17 2024",
         venue: "Department of Humanities and Social Sciences, IIT Madras, Chennai",
-        images: [
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751816056/voice1_bfidwm.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751816058/voice2_s8dqr6.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751816063/voice3_zvtgj0.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751907506/sep3_clfrqn.jpg",
-        ]
+        imagesBG: ["/anindita/eventImages/voicecategorycopula2024_1_Bg.webp", "/anindita/eventImages/voicecategorycopula2024_2_Bg.webp", "/anindita/eventImages/voicecategorycopula2024_3_Bg.webp", "/anindita/eventImages/voicecategorycopula2024_4_Bg.webp"],
+        imagesSM: ["/anindita/eventImages/voicecategorycopula2024_1_Sm.webp", "/anindita/eventImages/voicecategorycopula2024_2_Sm.webp", "/anindita/eventImages/voicecategorycopula2024_3_Sm.webp", "/anindita/eventImages/voicecategorycopula2024_4_Sm.webp"],
     },
     {
         id: "voice-seminar-2023",
@@ -90,9 +72,7 @@ export const eventsData: Event[] = [
         ],
         date: "April 14-15, 2023",
         venue: "IC & SR Building, IIT Madras, Chennai",
-        images: [
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751869660/avv1_g4mzhd.jpg",
-            "https://res.cloudinary.com/dgzbrujvx/image/upload/v1751869660/avv2_bkolqa.jpg",
-        ]
+        imagesBG: ["/anindita/eventImages/voiceseminar2023_1_Bg.webp", "/anindita/eventImages/voiceseminar2023_2_Bg.webp"],
+        imagesSM: ["/anindita/eventImages/voiceseminar2023_1_Sm.webp", "/anindita/eventImages/voiceseminar2023_2_Sm.webp"],
     }
 ];

@@ -37,15 +37,21 @@ export function FacilitiesSection() {
                 <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-16">
                     <div className="grid lg:grid-cols-2 gap-0">
                         {/* Image Side */}
-                        <div className="relative h-[400px] lg:h-auto bg-slate-100 flex items-center justify-center p-8">
-                            {/* Ideally use Next.js Image here, but sticking to img tag as per original code structure flexibility */}
+                        <div className="relative flex items-center justify-center p-8">
                             <img
                                 src={eyeLinkPortableDuoImage}
                                 alt="EyeLink Portable Duo System"
-                                className="max-w-full max-h-full object-contain drop-shadow-xl"
+                                className="
+                                    block
+                                    max-w-[600px]
+                                    w-full
+                                    h-auto
+                                    object-contain
+                                    bg-transparent
+                                    image-rendering-auto
+                                "
                             />
                         </div>
-
                         {/* Content Side */}
                         <div className="p-8 lg:p-12 flex flex-col justify-center">
                             <h3 className="text-3xl font-bold text-slate-900 mb-6">EyeLink Portable Duo System</h3>

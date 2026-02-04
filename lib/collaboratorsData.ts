@@ -4,27 +4,26 @@ export const internationalCollaborators = [
         name: "Prof. Dagmar Divjak",
         institution: "University of Birmingham",
         country: "United Kingdom",
-        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751822838/52d15f43-2902-4d98-9b5a-c589043b100f.png",
+        image: "/anindita/collaboratorImages/dagmardivjak.png",
     },
     {
         name: "Prof. Foong Ha Yap",
         institution: "Chinese University of Hong Kong, Shenzhen",
         country: "China",
-        image: "https://i1.rgstatic.net/ii/profile.image/272694683893781-1442026887536_Q512/Foong-Ha-Yap.jpg",
+        image: "/anindita/collaboratorImages/foonghayap.png",
     },
     {
         name: "Prof. Marcel den Dikken",
         institution: "Hungarian Research Centre for Linguistics",
         country: "Hungary",
-        image: "https://res.cloudinary.com/dgzbrujvx/image/upload/c_fill,ar_1:1,g_auto/v1751822661/4d802908-4c29-4cce-9cec-67b912fae821.png",
+        image: "/anindita/collaboratorImages/marceldendikken.png",
     },
     {
         name: "Prof. Seppo Kittilä",
         institution: "University of Helsinki",
         country: "Finland",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYJ4pS9ktse5Q8p8zx832IXTBEQppXm7TnnHrRTyqbnYHNSwN9a_wJsQ8&s=10",
+        image: "/anindita/collaboratorImages/seppoKittila.png",
     },
-
 ]
 
 export const IndianCollaborators = [
