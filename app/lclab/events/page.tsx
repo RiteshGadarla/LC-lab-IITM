@@ -5,7 +5,7 @@ import { NewsSection } from "@/components/news";
 export const metadata = {
     title: "Events | Language & Cognition Lab",
     description: "Workshops and events advancing the study of language and cognition at IIT Madras.",
-    // canonical: "https://yourdomain.com/events", // Uncomment and use your domain on launch
+    canonical: "https://home.iitm.ac.in/anindita/lclab/events/",
     keywords: [
         "linguistics events",
         "language workshops",
@@ -17,8 +17,7 @@ export const metadata = {
         title: "Events | Language & Cognition Lab",
         description: "See recent and past linguistics/cognition events at IIT Madras.",
         type: "website",
-        // url: "https://yourdomain.com/events", // Uncomment when you have a domain
-        // images: [{ url: "https://yourdomain.com/og-events.jpg" }], // Add OG image upon launch
+        url: "https://home.iitm.ac.in/anindita/lclab/events/"
     },
     robots: { index: true, follow: true },
 };
@@ -28,7 +27,7 @@ const jsonLD = {
     "@type": "Event",
     "name": "Language & Cognition Lab Events",
     "description": "Academic events, seminars, and workshops related to language and cognition at IIT Madras.",
-    // "url": "https://yourdomain.com/events", // Fill in later
+    "url": "https://home.iitm.ac.in/anindita/lclab/events/",
     "location": {
         "@type": "Place",
         "name": "IIT Madras",

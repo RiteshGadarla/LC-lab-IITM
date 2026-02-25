@@ -20,16 +20,8 @@ export const metadata: Metadata = {
     openGraph: {
         title: 'Research Collaborations | Language & Cognition Lab',
         description: 'Explore our global network of research partnerships advancing language and cognition science.',
-        // url: 'https://yoursite.com/collaborations',
+        url: 'https://home.iitm.ac.in/anindita/lclab/collaborations',
         siteName: 'Language & Cognition Lab',
-        // images: [
-        //     {
-        //         url: 'https://yoursite.com/og-collaborations.jpg',
-        //         width: 1200,
-        //         height: 630,
-        //         alt: 'Language & Cognition Lab Research Collaborations',
-        //     },
-        // ],
         locale: 'en_US',
         type: 'website',
     },
@@ -45,7 +37,7 @@ export const metadata: Metadata = {
         },
     },
     alternates: {
-        // canonical: 'https://yoursite.com/collaborations',
+        canonical: 'https://home.iitm.ac.in/anindita/lclab/collaborations',
     },
 }
 
@@ -55,7 +47,7 @@ const jsonLd = {
     "@type": "CollectionPage",
     "name": "Research Collaborations",
     "description": "International and domestic research partnerships of the Language & Cognition Lab at IIT Madras",
-    // "url": "https://yoursite.com/collaborations",
+    "url": "https://home.iitm.ac.in/anindita/lclab/collaborations",
     "mainEntity": {
         "@type": "ResearchProject",
         "name": "Language & Cognition Research Collaborations",
@@ -63,7 +55,7 @@ const jsonLd = {
         "provider": {
             "@type": "Organization",
             "name": "Language & Cognition Lab",
-            // "url": "https://yoursite.com",
+            "url": "https://home.iitm.ac.in/anindita/lclab",
             "parentOrganization": {
                 "@type": "EducationalOrganization",
                 "name": "Indian Institute of Technology Madras",

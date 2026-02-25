@@ -22,14 +22,6 @@ export const metadata: Metadata = {
         description: "Explore our comprehensive research portfolio including ongoing projects, peer-reviewed publications, and conference presentations in linguistics and cognition.",
         url: "https://home.iitm.ac.in/anindita/lclab/research/",
         siteName: "Language and Cognition Research Lab",
-        // images: [
-        //     {
-        //         url: "/research-og-image.jpg",
-        //         width: 1200,
-        //         height: 630,
-        //         alt: "Research Portfolio - Language and Cognition Research Lab",
-        //     },
-        // ],
         locale: "en_US",
         type: "website",
     },
@@ -37,12 +29,8 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "Research Portfolio | Language and Cognition Research Lab",
         description: "Explore our comprehensive research portfolio in linguistics, cognition, and experimental language studies.",
-        // images: ["/research-og-image.jpg"],
     },
     robots: "index, follow",
-    // alternates: {
-    //     canonical: "https://yourdomain.com/research", // Replace with your actual domain
-    // },
 };
 
 export default function ResearchPage() {

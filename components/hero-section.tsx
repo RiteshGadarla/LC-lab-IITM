@@ -243,9 +243,6 @@ export function HeroSection() {
 
             <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
                 <header className="animate-fade-in">
-                    {/* UPDATED: Removed whitespace-nowrap and added leading-tight / break-words
-                to allow text to wrap on wide dyslexic fonts
-            */}
                     {isMobile ? (
                         <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-tight break-words">
                             Language & Cognition

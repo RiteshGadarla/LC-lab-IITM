@@ -33,6 +33,12 @@ export const principalInvestigator: PrincipalInvestigator = {
 // Team members
 export const teamMembers: TeamMember[] = [
     {
+        name: "Nayana Rajan",
+        isActive: true,
+        role: "PhD in Progress",
+        image: "/anindita/peopleImages/nayanaRajan_Sm.webp",
+    },
+    {
         name: "Aziza Said Hussein",
         isActive: true,
         role: "PhD in Progress",
@@ -76,7 +82,7 @@ export const teamMembers: TeamMember[] = [
     },
     {
         name: "G L Vijayavani",
-        isActive: false,
+        isActive: true,
         role: "IDRP Scholar (PhD in progress) - Co-guiding with Prof. Preeti Aghalayam",
         research:
             "Identifying Gender Bias in Indian Academic Institutional Communication: A Dual Approach Using Text Analysis and Stakeholder Perception",
@@ -89,12 +95,6 @@ export const teamMembers: TeamMember[] = [
         research:
             "Persuasion in Public Service Advertising: Creating Changes Through Creative Strategies in the Print Media",
         image: "/anindita/peopleImages/rubyGeorge_Sm.webp",
-    },
-    {
-        name: "Nayana Rajan",
-        isActive: true,
-        role: "PhD in Progress",
-        image: "/anindita/peopleImages/nayanaRajan_Sm.webp",
     },
 ]
 

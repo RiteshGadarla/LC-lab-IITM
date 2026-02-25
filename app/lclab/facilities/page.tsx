@@ -17,16 +17,14 @@ export const metadata = {
         title: "Research Facilities | Language & Cognition Lab IIT Madras",
         description: "Cutting-edge equipment for experimental linguistics, cognition, and language research.",
         type: "website",
-        // url: "https://yourdomain.com/facilities",
-        // images: [{ url: "https://yourdomain.com/og-facilities.jpg", width: 1200, height: 630, alt: "Research Facilities" }]
+        url: "https://home.iitm.ac.in/anindita/lclab/facilities/"
     },
     twitter: {
         card: "summary_large_image",
         title: "Research Facilities | Language & Cognition Lab IIT Madras",
-        description: "Explore lab equipment and infrastructure supporting advanced research at IIT Madras.",
-        // images: ["https://yourdomain.com/twitter-facilities.jpg"]
+        description: "Explore lab equipment and infrastructure supporting advanced research at IIT Madras."
     },
-    // canonical: "https://yourdomain.com/facilities",
+    canonical: "https://home.iitm.ac.in/anindita/lclab/facilities/",
     robots: { index: true, follow: true }
 };
 
@@ -36,7 +34,7 @@ const jsonLD = {
     "@type": "ResearchProject",
     "name": "Language & Cognition Lab Research Facilities",
     "description": "Detailed overview of research infrastructure at the Language & Cognition Lab, IIT Madras.",
-    // "url": "https://yourdomain.com/facilities",
+    "url": "https://home.iitm.ac.in/anindita/lclab/facilities/",
     "provider": {
         "@type": "Organization",
         "name": "Language & Cognition Lab, IIT Madras",

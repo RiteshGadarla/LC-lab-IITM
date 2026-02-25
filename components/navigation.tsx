@@ -133,7 +133,7 @@ export function Navigation() {
                 {/* Arrow pointing up */}
                 <div className="absolute -top-1.5 right-3 w-3 h-3 bg-red-600 rotate-45 transform" />
 
-                <span>Try Dyslexia Font</span>
+                <span>Use Dyslexia-Friendly Font</span>
 
                 <button
                     onClick={closeTooltip}

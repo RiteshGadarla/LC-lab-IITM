@@ -19,7 +19,7 @@ export default function JsonLd() {
                 "@type": "Organization",
                 "name": "Language and Cognition Laboratory, IIT Madras",
                 "url": "https://home.iitm.ac.in/anindita/lclab",
-                "logo": "https://home.iitm.ac.in/anindita/darkLogo2.png", // Assuming this path based on layout
+                "logo": "https://home.iitm.ac.in/anindita/darkLogo2.png",
                 "sameAs": [
                     "https://www.iitm.ac.in/"
                 ],

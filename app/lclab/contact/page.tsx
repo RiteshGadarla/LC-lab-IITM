@@ -1,28 +1,23 @@
-import { ContactSection } from "@/components/contact-section";
+import {ContactSection} from "@/components/contact-section";
 
-// SEO Metadata (for Next.js App Router)
-// If you’re on Next.js 13+, you can use metadata export.
-// All URLs are commented out for you to fill in once you have a domain.
-
+// SEO Metadata
 export const metadata = {
     title: "Contact | Language & Cognition Lab IIT Madras",
     description: "Contact the Language and Cognition Lab at IIT Madras. Reach us via email, phone, or visit our department for research collaborations and inquiries.",
-    // Open Graph example:
+
     openGraph: {
         title: "Contact | Language & Cognition Lab IIT Madras",
         description: "Contact us for research queries, collaboration, and project information.",
         url: "https://home.iitm.ac.in/anindita/lclab/contact",
-        // images: [ { url: "https://yourdomain.com/og-contact.jpg", width: 1200, height: 630, alt: "Contact Language Lab" } ],
         type: "website",
     },
     // Twitter Card Example:
     twitter: {
         card: "summary_large_image",
         title: "Contact | Language & Cognition Lab IIT Madras",
-        description: "Contact us for research queries, collaboration, and project information.",
-        // images: [ "https://yourdomain.com/twitter-contact.jpg" ],
+        description: "Contact us for research queries, collaboration, and project information."
     },
-    // canonical: "https://yourdomain.com/contact",
+    canonical: "https://home.iitm.ac.in/anindita/lclab/contact",
     robots: {
         index: true,
         follow: true,
@@ -41,7 +36,7 @@ const jsonLD = {
     "@context": "https://schema.org",
     "@type": "ResearchProject",
     "name": "Language & Cognition Lab, IIT Madras",
-    "url": "https://home.iitm.ac.in/anindita/lclab/contact/", // "https://yourdomain.com/contact",
+    "url": "https://home.iitm.ac.in/anindita/lclab/contact/",
     "contactPoint": {
         "@type": "ContactPoint",
         "email": "principal@iitm.ac.in",
@@ -65,10 +60,10 @@ export default function ContactPage() {
             {/* JSON-LD structured data for search engines */}
             <script
                 type="application/ld+json"
-                dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLD) }}
+                dangerouslySetInnerHTML={{__html: JSON.stringify(jsonLD)}}
             />
             <div className="min-h-screen bg-white">
-                <ContactSection />
+                <ContactSection/>
             </div>
         </>
     );

@@ -2,9 +2,9 @@
 import { HeroSection } from "@/components/hero-section";
 import { AboutSection } from "@/components/about-section";
 
-// SEO Metadata (recommended for App Router)
+// SEO Metadata
 export const metadata = {
-    title: "Language and Cognition Research Lab | Exploring Linguistics",
+    title: "Language and Cognition Research Lab",
     description: "Discover research in linguistics, cognition, and experimental methods.",
     keywords: [
         "linguistics",
@@ -14,10 +14,11 @@ export const metadata = {
         "cross-linguistic studies",
         "eye tracking",
         "psycholinguistics",
-        "Indian languages"
+        "Indian languages",
+        "IIT Madras"
     ],
     openGraph: {
-        title: "Language and Cognition Research Lab | Exploring Linguistics",
+        title: "Language and Cognition Research Lab",
         description: "Discover research in linguistics, cognition, and experimental methods.",
         type: "website",
         url: "https://home.iitm.ac.in/anindita/lclab/",
