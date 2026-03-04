@@ -125,7 +125,7 @@ export const interns: TeamMember[] = [
     {
         name: "Gadarla Ritesh Reddy",
         isActive: false,
-        role: "Project Intern",
+        role: "Research Intern",
         image: "/anindita/peopleImages/gadarlaRiteshReddy_Sm.webp",
     },
     {
