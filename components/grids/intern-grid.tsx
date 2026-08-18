@@ -34,7 +34,7 @@ export default function InternGrid({
                     <Card
                         key={index}
                         className="
-                            border border-slate-200 rounded-xl bg-white
+                            border border-slate-200 rounded-2xl bg-white
                             hover:shadow-md transition-shadow duration-300
                             w-[calc(50%-1.5rem)]
                             md:w-[calc(33.333%-1.5rem)]

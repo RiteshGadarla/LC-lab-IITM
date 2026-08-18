@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { researchProjects, publications, conferences } from "@/lib/researchData"
 import { Calendar, MapPin, Users, ExternalLink, BookOpen } from "lucide-react"
+import { PageHeader } from "@/components/page-header"
 
 export function ResearchSection() {
   const [activeTab, setActiveTab] = useState("publications") // Default to publications to show changes
@@ -30,40 +31,55 @@ export function ResearchSection() {
   }
 
   return (
-    <section id="research" className="pt-24 pb-16 bg-slate-50">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-6 mt-8">Research Portfolio</h2>
-          <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
-            Discover our ongoing projects, publications, and contributions to the field of language and cognition
-            research.
-          </p>
-        </div>
+    <section id="research" className="relative overflow-hidden pt-24 pb-16 bg-slate-50">
+      <div className="absolute -top-24 right-0 w-[32rem] h-[32rem] bg-blue-100/60 rounded-full blur-[110px] pointer-events-none" />
+      <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+        <PageHeader
+          eyebrow="What we study"
+          title="Research Portfolio"
+          description="Discover our ongoing projects, publications, and contributions to the field of language and cognition research."
+        />
+
+        {/* Stats */}
+        <dl className="grid grid-cols-3 gap-4 max-w-2xl mx-auto mb-16 border-t border-slate-200 pt-10">
+          {[
+            { value: researchProjects.length, label: "Research Projects" },
+            { value: publications.length, label: "Publications" },
+            { value: conferences.length, label: "Conferences" },
+          ].map((stat) => (
+            <div key={stat.label} className="text-center sm:border-l sm:first:border-l-0 border-slate-200">
+              <dd className="text-3xl md:text-4xl font-bold text-[#000080] tracking-tight">{stat.value}</dd>
+              <dt className="mt-2 text-xs [.dyslexic-mode_&]:text-[10px] uppercase tracking-widest [.dyslexic-mode_&]:tracking-normal text-slate-500 font-medium leading-relaxed">
+                {stat.label.split(" ").map((word, i) => (
+                  <span key={i} className="block">{word}</span>
+                ))}
+              </dt>
+            </div>
+          ))}
+        </dl>
 
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
           <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto mb-12 h-auto p-1 bg-white border border-slate-200 rounded-full shadow-sm">
             <TabsTrigger
               value="projects"
-              className="flex items-center justify-center gap-2 rounded-full py-3 text-sm font-medium data-[state=active]:bg-[#000080] data-[state=active]:text-white transition-all duration-300"
+              className="flex items-center justify-center gap-2 [.dyslexic-mode_&]:gap-1 rounded-full py-3 [.dyslexic-mode_&]:px-1 text-sm [.dyslexic-mode_&]:text-[11px] font-medium data-[state=active]:bg-[#000080] data-[state=active]:text-white transition-all duration-300"
             >
-              <Users size={16} />
+              <Users size={16} className="hidden sm:block [.dyslexic-mode_&]:hidden" />
               Projects
             </TabsTrigger>
             <TabsTrigger
               value="publications"
-              className="flex items-center justify-center gap-2 rounded-full py-3 text-sm font-medium data-[state=active]:bg-[#000080] data-[state=active]:text-white transition-all duration-300"
+              className="flex items-center justify-center gap-2 [.dyslexic-mode_&]:gap-1 rounded-full py-3 [.dyslexic-mode_&]:px-1 text-sm [.dyslexic-mode_&]:text-[11px] font-medium data-[state=active]:bg-[#000080] data-[state=active]:text-white transition-all duration-300"
             >
-              <BookOpen size={16} />
+              <BookOpen size={16} className="hidden sm:block [.dyslexic-mode_&]:hidden" />
               Publications
             </TabsTrigger>
             <TabsTrigger
               value="conferences"
-              className="flex items-center justify-center gap-2 rounded-full py-3 text-sm font-medium data-[state=active]:bg-[#000080] data-[state=active]:text-white transition-all duration-300"
+              className="flex items-center justify-center gap-2 [.dyslexic-mode_&]:gap-1 rounded-full py-3 [.dyslexic-mode_&]:px-1 text-sm [.dyslexic-mode_&]:text-[11px] font-medium data-[state=active]:bg-[#000080] data-[state=active]:text-white transition-all duration-300"
             >
-              <MapPin size={16} />
+              <MapPin size={16} className="hidden sm:block [.dyslexic-mode_&]:hidden" />
               Conferences
             </TabsTrigger>
           </TabsList>
@@ -72,10 +88,10 @@ export function ResearchSection() {
           <TabsContent value="projects" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="grid md:grid-cols-2 gap-8">
               {projectChunks[projectPage]?.map((project, index) => (
-                <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 rounded-xl overflow-hidden group">
+                <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-2xl overflow-hidden group">
                   <CardContent className="p-8">
-                    <div className="flex justify-between items-start mb-6">
-                      <div className="p-3 bg-blue-50 text-[#000080] rounded-lg transition-all duration-300 group-hover:bg-[#000080] group-hover:text-white group-hover:scale-110">
+                    <div className="flex justify-end sm:justify-between [.dyslexic-mode_&]:justify-end items-start mb-6">
+                      <div className="hidden sm:block [.dyslexic-mode_&]:hidden p-3 bg-blue-50 text-[#000080] rounded-lg transition-all duration-300 group-hover:bg-[#000080] group-hover:text-white group-hover:scale-110">
                         <Users size={24} />
                       </div>
                       {project.year && (
@@ -120,7 +136,7 @@ export function ResearchSection() {
           <TabsContent value="publications" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-8">
               {publicationChunks[publicationPage]?.map((pub, index) => (
-                <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-xl group relative overflow-hidden h-full flex flex-col">
+                <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-2xl group relative overflow-hidden h-full flex flex-col">
                   {/* Decorative side accent */}
                   <div className="absolute left-0 top-0 bottom-0 w-1 bg-[#000080] opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
@@ -134,7 +150,7 @@ export function ResearchSection() {
                           {pub.title}
                         </h3>
                       </div>
-                      <div className="p-2 bg-slate-50 rounded-full text-slate-400 group-hover:bg-[#000080] group-hover:text-white transition-all duration-300">
+                      <div className="hidden sm:block [.dyslexic-mode_&]:hidden p-2 bg-slate-50 rounded-full text-slate-400 group-hover:bg-[#000080] group-hover:text-white transition-all duration-300">
                         <BookOpen size={20} />
                       </div>
                     </div>
@@ -176,10 +192,10 @@ export function ResearchSection() {
           <TabsContent value="conferences" className="space-y-8 animate-in fade-in slide-in-from-bottom-4 duration-500">
             <div className="grid md:grid-cols-2 gap-8">
               {conferenceChunks[conferencePage]?.map((conf, index) => (
-                <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 rounded-xl group">
+                <Card key={index} className="bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1 rounded-2xl group">
                   <CardContent className="p-8">
-                    <div className="flex justify-between items-start mb-6">
-                      <div className="p-3 bg-blue-50 text-[#000080] rounded-lg transition-all duration-300 group-hover:bg-[#000080] group-hover:text-white group-hover:rotate-12">
+                    <div className="flex justify-end sm:justify-between [.dyslexic-mode_&]:justify-end items-start mb-6">
+                      <div className="hidden sm:block [.dyslexic-mode_&]:hidden p-3 bg-blue-50 text-[#000080] rounded-lg transition-all duration-300 group-hover:bg-[#000080] group-hover:text-white group-hover:rotate-12">
                         <MapPin size={24} />
                       </div>
                       <div className="flex items-center text-sm font-medium text-slate-500 bg-slate-100 px-3 py-1 rounded-full">

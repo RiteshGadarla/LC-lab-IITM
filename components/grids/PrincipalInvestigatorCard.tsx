@@ -79,7 +79,7 @@ export default function PrincipalInvestigatorCard({
                                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors text-sm font-medium"
                                 >
                                     <img
-                                        src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
+                                        src="/anindita/iitmadrasLogo.png"
                                         alt="IIT Madras"
                                         className="w-4 h-4 object-contain"
                                     />
@@ -93,7 +93,7 @@ export default function PrincipalInvestigatorCard({
                                     className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-slate-100 hover:bg-slate-200 text-slate-700 transition-colors text-sm font-medium"
                                 >
                                     <img
-                                        src="https://res.cloudinary.com/dgzbrujvx/image/upload/e_background_removal/f_png/v1752322335/0a251fb5-6fba-4a47-90f7-e88790143a00.png"
+                                        src="/anindita/partnerImages/cerai.png"
                                         alt="CeRAI"
                                         className="w-4 h-4 object-contain"
                                     />

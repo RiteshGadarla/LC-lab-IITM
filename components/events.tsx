@@ -5,6 +5,7 @@ import { Calendar, MapPin } from "lucide-react"
 import { Badge } from "@/components/ui/badge"
 import { eventsData } from "@/lib/eventData"
 import EventImageSlideshow from "./Slideshow"
+import { PageHeader } from "@/components/page-header"
 
 export function EventsSection() {
     const [isVisible, setIsVisible] = useState(false)
@@ -35,24 +36,19 @@ export function EventsSection() {
     }, [])
 
     return (
-        <section ref={sectionRef} id="events" className="py-20 bg-white">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section ref={sectionRef} id="events" className="relative overflow-hidden py-20 bg-white">
+            <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[36rem] h-[36rem] bg-blue-50 rounded-full blur-[120px] pointer-events-none" />
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
                 <div
                     className={`transition-all duration-1000 ${
                         isVisible ? "animate-fade-in" : "opacity-0"
                     }`}
                 >
-                    {/* Header */}
-                    <div className="text-center mb-16">
-                        <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 mt-8">
-                            Events
-                        </h2>
-                        <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-8" />
-                        <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed font-light">
-                            We have been hosting exciting events that advanced the study of language and cognition
-                            through collaboration and innovation.
-                        </p>
-                    </div>
+                    <PageHeader
+                        eyebrow="What's happening"
+                        title="Events"
+                        description="We have been hosting exciting events that advanced the study of language and cognition through collaboration and innovation."
+                    />
 
                     {/* Events List */}
                     <div className="space-y-16">

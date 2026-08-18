@@ -13,6 +13,7 @@ import {
 import TeamGrid from "@/components/grids/team-grid";
 import InternGrid from "@/components/grids/intern-grid"
 import PrincipalInvestigatorCard from "@/components/grids/PrincipalInvestigatorCard";
+import { PageHeader } from "@/components/page-header"
 
 
 export function TeamSection() {
@@ -20,18 +21,14 @@ export function TeamSection() {
     const router = useRouter()
 
     return (
-        <section id="team" className="pt-24 pb-16 bg-slate-50">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                {/* Header */}
-                <div className="text-center mb-10 mt-8">
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-6">
-                        Our Team
-                    </h2>
-                    <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-6"></div>
-                    <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
-                        Meet the dedicated researchers advancing our understanding of language and cognition.
-                    </p>
-                </div>
+        <section id="team" className="relative overflow-hidden pt-24 pb-16 bg-slate-50">
+            <div className="absolute -top-24 left-0 w-[32rem] h-[32rem] bg-blue-100/60 rounded-full blur-[110px] pointer-events-none" />
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <PageHeader
+                    eyebrow="Who we are"
+                    title="Our Team"
+                    description="Meet the dedicated researchers advancing our understanding of language and cognition."
+                />
 
                 {/* Principal Investigator Card */}
                 <PrincipalInvestigatorCard investigator={principalInvestigator}/>

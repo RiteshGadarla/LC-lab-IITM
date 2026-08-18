@@ -31,7 +31,6 @@ export function Navigation() {
     const [isScrolled, setIsScrolled] = useState(!isHomePage)
     const [showOverflow, setShowOverflow] = useState(false)
     const [overflowItems, setOverflowItems] = useState<typeof NAV_ITEMS>([])
-    const [showDyslexicTip, setShowDyslexicTip] = useState(false)
     const [mounted, setMounted] = useState(false)
     const navRef = useRef<HTMLDivElement>(null)
 
@@ -67,28 +66,6 @@ export function Navigation() {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [handleScroll])
 
-    // Handle Tooltip Visibility
-    useEffect(() => {
-        let timer: NodeJS.Timeout
-
-        if (isHomePage) {
-            // Wait 5.5 seconds before showing the tip
-            timer = setTimeout(() => {
-                setShowDyslexicTip(true)
-            }, 5500)
-        } else {
-            setShowDyslexicTip(false)
-        }
-
-        // Cleanup timer if user leaves page before 4.5s
-        return () => clearTimeout(timer)
-    }, [isHomePage])
-
-    const closeTooltip = (e: React.MouseEvent) => {
-        e.stopPropagation()
-        setShowDyslexicTip(false)
-    }
-
     // Check for overflow in dyslexia mode
     useEffect(() => {
         if (!isDyslexic) {
@@ -122,28 +99,6 @@ export function Navigation() {
         target.onerror = null
         target.src = "/placeholder.svg"
     }
-
-    // Tooltip Component
-    const DyslexiaTooltip = () => (
-        <div className={`
-            absolute top-14 right-0 z-50 animate-in fade-in slide-in-from-top-2 duration-500
-            ${!showDyslexicTip ? 'hidden' : 'block'}
-        `}>
-            <div className="relative bg-red-600 text-white text-xs font-semibold tracking-wide px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 whitespace-nowrap">
-                {/* Arrow pointing up */}
-                <div className="absolute -top-1.5 right-3 w-3 h-3 bg-red-600 rotate-45 transform" />
-
-                <span>Use Dyslexia-Friendly Font</span>
-
-                <button
-                    onClick={closeTooltip}
-                    className="ml-1 hover:bg-red-700 rounded-full p-0.5 transition-colors"
-                >
-                    <X size={12} strokeWidth={3} />
-                </button>
-            </div>
-        </div>
-    )
 
     return (
         <nav
@@ -179,16 +134,16 @@ export function Navigation() {
                                 }}
                             />
                             <div className="hidden sm:block">
-                                <h1 className={`text-base md:text-lg font-bold leading-none tracking-tight font-serif ${isScrolled ? "text-slate-900" : "text-white"}`}>
+                                <p className={`text-base md:text-lg font-bold leading-none tracking-tight font-serif ${isScrolled ? "text-slate-900" : "text-white"}`}>
                                     Language & Cognition Lab
-                                </h1>
+                                </p>
                                 <p className={`text-[10px] uppercase tracking-widest font-medium mt-1 ${isScrolled ? "text-slate-500" : "text-slate-300"}`}>IIT Madras</p>
                             </div>
                         </div>
                     </div>
 
                     {/* --- Desktop Navigation --- */}
-                    <div className={`hidden lg:flex items-center gap-1 xl:gap-2 ${isDyslexic ? "flex-shrink-0" : ""
+                    <div className={`hidden xl:flex items-center gap-1 xl:gap-2 ${isDyslexic ? "flex-shrink-0" : ""
                         }`} ref={navRef}>
                         {visibleItems.map((item) => (
                             <Link
@@ -256,13 +211,11 @@ export function Navigation() {
                                 <Type size={16} strokeWidth={2.5} />
                                 <span className="sr-only">Toggle Dyslexic Font</span>
                             </button>
-                            {/* Desktop Tooltip */}
-                            <DyslexiaTooltip />
                         </div>
                     </div>
 
                     {/* --- Mobile Menu Button --- */}
-                    <div className="flex items-center gap-3 lg:hidden">
+                    <div className="flex items-center gap-3 xl:hidden">
                         {/* Mobile Font Toggle */}
                         <div className="relative">
                             <button
@@ -272,8 +225,6 @@ export function Navigation() {
                             >
                                 <Type size={18} />
                             </button>
-                            {/* Mobile Tooltip */}
-                            <DyslexiaTooltip />
                         </div>
 
                         <Button

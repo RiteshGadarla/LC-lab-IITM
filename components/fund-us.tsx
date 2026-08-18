@@ -42,8 +42,11 @@ export function FundUsSection() {
                 {/* Header Section */}
                 <section
                     className="text-center max-w-4xl mx-auto space-y-8 animate-in fade-in slide-in-from-bottom-8 duration-700">
-                    <div>
-                        <h1 className="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight leading-tight mb-6 mt-6">
+                    <div className="pt-4">
+                        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#000080] mb-4">
+                            Support the lab
+                        </p>
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-slate-900 tracking-tight leading-tight mb-6">
                             Support the LC Lab
                         </h1>
                         <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full"></div>
@@ -329,7 +332,7 @@ export function FundUsSection() {
                                 <div className="pt-2">
                                     <Button
                                         onClick={() => router.push("/lclab/contact")}
-                                        className="w-full bg-[#000080] hover:bg-blue-900 text-white font-bold py-6 text-lg h-auto rounded-xl shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
+                                        className="w-full bg-[#000080] hover:bg-blue-900 text-white font-bold py-6 text-lg h-auto rounded-2xl shadow-md hover:shadow-lg transition-all hover:-translate-y-0.5"
                                     >
                                         <Mail className="mr-2" size={20}/>
                                         Contact Us

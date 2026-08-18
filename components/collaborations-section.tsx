@@ -3,9 +3,10 @@
 import {useRouter} from "next/navigation";
 import {Card, CardContent} from "@/components/ui/card"
 import {Globe, MapPin} from "lucide-react"
-import {internationalCollaborators, IndianCollaborators} from "@/lib/collaboratorsData"
+import {internationalCollaborators} from "@/lib/collaboratorsData"
 import Image from "next/image"
 import {partnersData} from "@/lib/partners";
+import { PageHeader } from "@/components/page-header"
 
 export function CollaborationsSection() {
     const router = useRouter()
@@ -13,21 +14,16 @@ export function CollaborationsSection() {
     return (
         <section
             id="collaborations"
-            className="pt-24 pb-16 bg-slate-50"
+            className="relative overflow-hidden pt-24 pb-16 bg-slate-50"
             aria-label="Research Collaborations"
         >
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                {/* Header */}
-                <header className="text-center mb-20">
-                    <h1 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-6 mt-8">
-                        Research Collaborators
-                    </h1>
-                    <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-8"></div>
-                    <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed mb-12">
-                        Building bridges across institutions to advance language and cognition research through diverse
-                        partnerships.
-                    </p>
-                </header>
+            <div className="absolute -top-24 right-0 w-[32rem] h-[32rem] bg-blue-100/60 rounded-full blur-[110px] pointer-events-none" />
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <PageHeader
+                    eyebrow="Who we work with"
+                    title="Research Collaborators"
+                    description="Building bridges across institutions to advance language and cognition research through diverse partnerships."
+                />
 
                 {/* Partners */}
                 <section className="mb-16" aria-labelledby="partners-heading">
@@ -40,7 +36,7 @@ export function CollaborationsSection() {
                         {partnersData.map((partner, index) => (
                             <Card
                                 key={index}
-                                className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 rounded-xl overflow-hidden"
+                                className="bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 rounded-2xl overflow-hidden"
                             >
                                 <CardContent className="p-0">
                                     <div className="flex flex-col md:flex-row items-center md:items-stretch">
@@ -104,7 +100,7 @@ export function CollaborationsSection() {
                         {internationalCollaborators.map((collaborator, index) => (
                             <Card
                                 key={`intl-${index}`}
-                                className="group relative overflow-hidden border border-slate-200 bg-white hover:border-blue-200 transition-all duration-300 hover:shadow-md rounded-xl"
+                                className="group relative overflow-hidden border border-slate-200 bg-white hover:border-blue-200 transition-all duration-300 hover:shadow-lg rounded-2xl"
                                 role="listitem"
                             >
                                 <CardContent className="p-6">
