@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
 import {FundUsSection} from "@/components/fund-us";
+import { OG_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: "Support Our Research | Language & Cognition Lab, IIT Madras",
+    title: "Support Our Research",
     description: "Support research in theoretical, applied, experimental, and cognitive linguistics at the Language & Cognition Lab, IIT Madras. Learn how your contribution advances language science.",
     keywords: [
         "donate IIT Madras",
@@ -16,11 +17,13 @@ export const metadata: Metadata = {
         description: "Your support drives research in theoretical, applied, experimental, and cognitive linguistics at IIT Madras.",
         url: "https://home.iitm.ac.in/anindita/lclab/donate/",
         type: "website",
+        images: [OG_IMAGE],
     },
     twitter: {
         card: "summary_large_image",
         title: "Support Our Research | Language & Cognition Lab, IIT Madras",
         description: "Support research in language, cognition, and communication at IIT Madras.",
+        images: [OG_IMAGE.url],
     },
     alternates: {
         canonical: "https://home.iitm.ac.in/anindita/lclab/donate/",

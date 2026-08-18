@@ -1,8 +1,9 @@
 import { Metadata } from 'next'
 import { CollaborationsSection } from "@/components/collaborations-section";
+import { OG_IMAGE } from "@/lib/seo";
 
 export const metadata: Metadata = {
-    title: 'Research Collaborations | Language & Cognition Lab - IIT Madras',
+    title: 'Research Collaborations',
     description: 'Discover our international and domestic research partnerships at the Language & Cognition Lab, IIT Madras. Working with leading institutions worldwide to advance language and cognition research.',
     keywords: [
         'language research collaboration',
@@ -24,6 +25,13 @@ export const metadata: Metadata = {
         siteName: 'Language & Cognition Lab',
         locale: 'en_US',
         type: 'website',
+        images: [OG_IMAGE],
+    },
+    twitter: {
+        card: 'summary_large_image',
+        title: 'Research Collaborations | Language & Cognition Lab',
+        description: 'Explore our global network of research partnerships advancing language and cognition science.',
+        images: [OG_IMAGE.url],
     },
     robots: {
         index: true,

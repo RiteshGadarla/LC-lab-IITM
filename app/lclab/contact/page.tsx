@@ -1,8 +1,9 @@
 import {ContactSection} from "@/components/contact-section";
+import { OG_IMAGE } from "@/lib/seo";
 
 // SEO Metadata
 export const metadata = {
-    title: "Contact | Language & Cognition Lab IIT Madras",
+    title: "Contact",
     description: "Contact the Language and Cognition Lab at IIT Madras. Reach us via email, phone, or visit our department for research collaborations and inquiries.",
 
     openGraph: {
@@ -10,14 +11,18 @@ export const metadata = {
         description: "Contact us for research queries, collaboration, and project information.",
         url: "https://home.iitm.ac.in/anindita/lclab/contact",
         type: "website",
+        images: [OG_IMAGE],
     },
     // Twitter Card Example:
     twitter: {
         card: "summary_large_image",
         title: "Contact | Language & Cognition Lab IIT Madras",
-        description: "Contact us for research queries, collaboration, and project information."
+        description: "Contact us for research queries, collaboration, and project information.",
+        images: [OG_IMAGE.url],
     },
-    canonical: "https://home.iitm.ac.in/anindita/lclab/contact",
+    alternates: {
+        canonical: "https://home.iitm.ac.in/anindita/lclab/contact",
+    },
     robots: {
         index: true,
         follow: true,

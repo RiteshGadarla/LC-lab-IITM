@@ -1,9 +1,9 @@
 import {TeamSection} from "@/components/team-section";
+import { OG_IMAGE } from "@/lib/seo";
 
 export const metadata = {
-    title: "Our Team | Language & Cognition Lab, IIT Madras",
+    title: "Our Team",
     description: "Meet the expert faculty, researchers, PhD scholars, and collaborators driving cutting-edge research at the Language & Cognition Lab, IIT Madras.",
-    canonical: "https://home.iitm.ac.in/anindita/lclab/team/",
     keywords: [
         "Language and Cognition Lab team",
         "faculty",
@@ -18,13 +18,18 @@ export const metadata = {
         description: "Meet the faculty, researchers, and scholars of the Language Lab, IIT Madras.",
         type: "website",
         url: "https://home.iitm.ac.in/anindita/lclab/team/",
+        images: [OG_IMAGE],
     },
     twitter: {
         card: "summary_large_image",
         title: "Our Team | Language & Cognition Lab, IIT Madras",
-        description: "Faculty, scholars, and staff of IIT Madras’ Language & Cognition Lab."
+        description: "Faculty, scholars, and staff of IIT Madras’ Language & Cognition Lab.",
+        images: [OG_IMAGE.url],
     },
     robots: {index: true, follow: true},
+    alternates: {
+        canonical: "https://home.iitm.ac.in/anindita/lclab/team/",
+    },
 };
 
 const jsonLD = {

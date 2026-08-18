@@ -1,11 +1,11 @@
 // app/events/page.tsx (or wherever this is rendered!)
 import { EventsSection } from "@/components/events";
 import { NewsSection } from "@/components/news";
+import { OG_IMAGE } from "@/lib/seo";
 
 export const metadata = {
-    title: "Events | Language & Cognition Lab",
+    title: "Events",
     description: "Workshops and events advancing the study of language and cognition at IIT Madras.",
-    canonical: "https://home.iitm.ac.in/anindita/lclab/events/",
     keywords: [
         "linguistics events",
         "language workshops",
@@ -17,9 +17,19 @@ export const metadata = {
         title: "Events | Language & Cognition Lab",
         description: "See recent and past linguistics/cognition events at IIT Madras.",
         type: "website",
-        url: "https://home.iitm.ac.in/anindita/lclab/events/"
+        url: "https://home.iitm.ac.in/anindita/lclab/events/",
+        images: [OG_IMAGE],
+    },
+    twitter: {
+        card: "summary_large_image",
+        title: "Events | Language & Cognition Lab",
+        description: "See recent and past linguistics/cognition events at IIT Madras.",
+        images: [OG_IMAGE.url],
     },
     robots: { index: true, follow: true },
+    alternates: {
+        canonical: "https://home.iitm.ac.in/anindita/lclab/events/",
+    },
 };
 
 const jsonLD = {

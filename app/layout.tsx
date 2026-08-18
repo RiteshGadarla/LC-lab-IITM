@@ -6,6 +6,7 @@ import { Footer } from "@/components/footer"
 import "./globals.css"
 import { FontProvider } from "@/app/FontContext";
 import JsonLd from "@/components/JsonLd";
+import { OG_IMAGE } from "@/lib/seo";
 
 const inter = Inter({
     subsets: ['latin'],
@@ -32,7 +33,9 @@ export const metadata: Metadata = {
     publisher: "IIT Madras",
     icons: {
         icon: '/anindita/darkLogo2.png',
+        apple: '/anindita/darkLogo2.png',
     },
+    manifest: '/anindita/site.webmanifest',
     openGraph: {
         title: "Language and Cognition Laboratory - IIT Madras",
         description: "Premier research lab exploring language, cognition, and communication",
@@ -40,11 +43,13 @@ export const metadata: Metadata = {
         siteName: 'LC Lab IIT Madras',
         locale: 'en_US',
         type: "website",
+        images: [OG_IMAGE],
     },
     twitter: {
         card: 'summary_large_image',
         title: 'Language and Cognition Laboratory - IIT Madras',
         description: "Premier research lab exploring language, cognition, and communication at IIT Madras",
+        images: [OG_IMAGE.url],
     },
     alternates: {
         canonical: './',
