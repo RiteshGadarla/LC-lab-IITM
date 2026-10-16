@@ -171,7 +171,7 @@ export function CollaborationsSection() {
                         </p>
                         <button
                             onClick={() => router.push("/lclab/contact")}
-                            className="bg-[#000080] hover:bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:-translate-y-0.5"
+                            className="bg-[#000080] hover:bg-blue-900 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:-translate-y-0.5"
                             aria-label="Navigate to contact page to start collaboration"
                         >
                             Contact Us

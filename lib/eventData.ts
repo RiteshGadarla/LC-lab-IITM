@@ -7,9 +7,30 @@ export interface Event {
     venue: string;
     imagesBG: string[];
     imagesSM: string[];
+    note?: string;
 }
 
 export const eventsData: Event[] = [
+    {
+        id: "indian-linguistics-at-crossroads-2026",
+        heading: "Indian Linguistics at Crossroads: Theory, Corpus and Experiment",
+        tag: "Seminar",
+        description: [
+            "A seminar on Indian Linguistics at Crossroads: Theory, Corpus and Experiment, organized by the Language and Cognition Laboratory, IIT Madras. " +
+            "The seminar brings together diverse approaches to linguistic inquiry, including psycholinguistics, sociolinguistics, corpus linguistics, " +
+            "experimental linguistics, linguistics and AI, language acquisition, and language and cognition, with a focus on Indian languages and multilingual India. " +
+            "The event will feature Prof. Chad Howe from the Department of Linguistics, University of Georgia, as the keynote speaker. "
+        ],
+        date: "November 21-22, 2026",
+        venue: "IC&SR Hall 3, IIT Madras, Chennai",
+        imagesBG: [
+            "/anindita/eventImages/ilc2026.png",
+        ],
+        imagesSM: [
+            "/anindita/eventImages/ilc2026.png",
+        ],
+        note: "Due to travel issues, Prof. Chad Howe’s in-person participation is uncertain; if unable to attend, he may join online.",
+    },
     {
         id: "ai-powered-tamil-language-proficiency-assessment-2026",
         heading: "AI-Powered Unified Tamil Language Proficiency Assessment Platform",

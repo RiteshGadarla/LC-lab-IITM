@@ -10,7 +10,33 @@ import { PageHeader } from "@/components/page-header"
 export function EventsSection() {
     const [isVisible, setIsVisible] = useState(false)
     const [isMobile, setIsMobile] = useState(false)
+    const [upcomingEventIds, setUpcomingEventIds] = useState<Set<string>>(new Set())
     const sectionRef = useRef<HTMLElement>(null)
+
+    useEffect(() => {
+        const checkUpcomingEvents = () => {
+            const istDateString = new Date().toLocaleString("en-US", { timeZone: "Asia/Kolkata" })
+            const nowIST = new Date(istDateString)
+            nowIST.setHours(0, 0, 0, 0) // Start of today in IST
+
+            const upcomingIds = new Set<string>()
+            eventsData.forEach(event => {
+                const match = event.date.match(/([a-zA-Z]+)\s+(\d+)(?:[-–](\d+))?,?\s+(\d{4})/)
+                if (match) {
+                    const month = match[1]
+                    const endDay = match[3] || match[2]
+                    const year = match[4]
+                    
+                    const eventEndDate = new Date(`${month} ${endDay}, ${year}`)
+                    if (eventEndDate >= nowIST) {
+                        upcomingIds.add(event.id)
+                    }
+                }
+            })
+            setUpcomingEventIds(upcomingIds)
+        }
+        checkUpcomingEvents()
+    }, [])
 
     useEffect(() => {
         const handleResize = () => {
@@ -62,12 +88,21 @@ export function EventsSection() {
                                 {/* Text Content */}
                                 <div className={`space-y-8 ${index % 2 === 1 ? "lg:col-start-2" : ""}`}>
                                     <div className="space-y-4">
-                                        <Badge
-                                            variant="outline"
-                                            className="border-[#000080] text-[#000080] bg-blue-50/50 rounded-full px-4 py-1.5 text-sm font-medium w-fit"
-                                        >
-                                            {event.tag}
-                                        </Badge>
+                                        <div className="flex flex-wrap gap-2">
+                                            {upcomingEventIds.has(event.id) && (
+                                                <Badge
+                                                    className="bg-[#000080] hover:bg-[#000080]/90 text-white border-transparent rounded-full px-4 py-1.5 text-sm font-medium w-fit shadow-sm uppercase tracking-wider text-xs"
+                                                >
+                                                    Upcoming
+                                                </Badge>
+                                            )}
+                                            <Badge
+                                                variant="outline"
+                                                className="border-[#000080] text-[#000080] bg-blue-50/50 rounded-full px-4 py-1.5 text-sm font-medium w-fit"
+                                            >
+                                                {event.tag}
+                                            </Badge>
+                                        </div>
 
                                         <h3 className="text-3xl md:text-4xl font-bold text-slate-900 leading-tight">
                                             {event.heading}
@@ -109,6 +144,13 @@ export function EventsSection() {
                                                 {desc}
                                             </p>
                                         ))}
+                                        {event.note && (
+                                            <div className="border-l-4 border-slate-400 pl-5 py-3 bg-slate-50 rounded-r-md mt-6">
+                                                <p className="text-slate-500 italic text-base">
+                                                    {event.note}
+                                                </p>
+                                            </div>
+                                        )}
                                     </div>
                                 </div>
 
