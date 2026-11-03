@@ -44,7 +44,6 @@ This repository holds the lab's public website: its research, people, collaborat
 
 ## Features
 
-- **Deep links to people and events.** Add a hash to the URL to jump straight to a card, for example `/lclab/team/#firstnamelastname` or `/lclab/events/#essentialsofgenerativegrammar`. The hash is the name or event title in lowercase letters and digits only. Unknown hashes are ignored.
 - **Accessibility.** Dyslexia-friendly font mode, semantic markup and keyboard-focus styles.
 - **Responsive design.** Layouts tuned for phones, tablets and desktops.
 - **SEO.** Page metadata, Open Graph images, JSON-LD, sitemap and `robots.txt`.
