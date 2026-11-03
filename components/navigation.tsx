@@ -31,7 +31,6 @@ export function Navigation() {
     const [isScrolled, setIsScrolled] = useState(!isHomePage)
     const [showOverflow, setShowOverflow] = useState(false)
     const [overflowItems, setOverflowItems] = useState<typeof NAV_ITEMS>([])
-    const [showDyslexicTip, setShowDyslexicTip] = useState(false)
     const [mounted, setMounted] = useState(false)
     const navRef = useRef<HTMLDivElement>(null)
 
@@ -67,28 +66,6 @@ export function Navigation() {
         return () => window.removeEventListener("scroll", handleScroll)
     }, [handleScroll])
 
-    // Handle Tooltip Visibility
-    useEffect(() => {
-        let timer: NodeJS.Timeout
-
-        if (isHomePage) {
-            // Wait 5.5 seconds before showing the tip
-            timer = setTimeout(() => {
-                setShowDyslexicTip(true)
-            }, 5500)
-        } else {
-            setShowDyslexicTip(false)
-        }
-
-        // Cleanup timer if user leaves page before 4.5s
-        return () => clearTimeout(timer)
-    }, [isHomePage])
-
-    const closeTooltip = (e: React.MouseEvent) => {
-        e.stopPropagation()
-        setShowDyslexicTip(false)
-    }
-
     // Check for overflow in dyslexia mode
     useEffect(() => {
         if (!isDyslexic) {
@@ -123,28 +100,6 @@ export function Navigation() {
         target.src = "/placeholder.svg"
     }
 
-    // Tooltip Component
-    const DyslexiaTooltip = () => (
-        <div className={`
-            absolute top-14 right-0 z-50 animate-in fade-in slide-in-from-top-2 duration-500
-            ${!showDyslexicTip ? 'hidden' : 'block'}
-        `}>
-            <div className="relative bg-red-600 text-white text-xs font-semibold tracking-wide px-4 py-2 rounded-lg shadow-lg flex items-center gap-2 whitespace-nowrap">
-                {/* Arrow pointing up */}
-                <div className="absolute -top-1.5 right-3 w-3 h-3 bg-red-600 rotate-45 transform" />
-
-                <span>Try Dyslexia Font</span>
-
-                <button
-                    onClick={closeTooltip}
-                    className="ml-1 hover:bg-red-700 rounded-full p-0.5 transition-colors"
-                >
-                    <X size={12} strokeWidth={3} />
-                </button>
-            </div>
-        </div>
-    )
-
     return (
         <nav
             className={`fixed top-0 left-0 right-0 z-[9999] transition-all duration-500 ease-in-out border-b ${isScrolled
@@ -158,10 +113,10 @@ export function Navigation() {
                     {/* --- Logo Section --- */}
                     <div className="flex items-center gap-4 flex-shrink-0">
                         <img
-                            src="https://upload.wikimedia.org/wikipedia/en/thumb/6/69/IIT_Madras_Logo.svg/1200px-IIT_Madras_Logo.svg.png"
+                            src="/anindita/iitmadrasLogo.png"
                             alt="IIT Madras Logo"
                             onClick={() => window.open("https://www.iitm.ac.in", "_blank")}
-                            className="h-10 md:h-12 w-auto cursor-pointer hover:opacity-90 transition-opacity"
+                            className="h-11 md:h-14 w-auto cursor-pointer hover:opacity-90 transition-opacity"
                             onError={handleImageError}
                         />
 
@@ -171,30 +126,35 @@ export function Navigation() {
                             <img
                                 src={isScrolled ? "/anindita/darkLogo.png" : "/anindita/lightLogo.png"}
                                 alt="LC Lab Logo"
-                                className="h-8 md:h-10 w-auto transition-all duration-300 group-hover:scale-105"
+                                className="h-12 md:h-[60px] w-auto transition-all duration-300 group-hover:scale-105"
                                 onError={(e) => {
                                     const target = e.currentTarget;
                                     target.onerror = null;
                                     target.src = "/anindita/placeholder.svg"
                                 }}
                             />
-                            <div className="hidden sm:block">
-                                <h1 className={`text-base md:text-lg font-bold leading-none tracking-tight font-serif ${isScrolled ? "text-slate-900" : "text-white"}`}>
-                                    Language & Cognition Lab
-                                </h1>
-                                <p className={`text-[10px] uppercase tracking-widest font-medium mt-1 ${isScrolled ? "text-slate-500" : "text-slate-300"}`}>IIT Madras</p>
+                            <div className="hidden sm:flex flex-col font-montserrat select-none">
+                                <span className={`text-[9px] md:text-[10px] font-bold uppercase tracking-wide text-right leading-none ${isScrolled ? "text-slate-500" : "text-slate-300"}`}>
+                                    IIT MADRAS
+                                </span>
+                                <span className={`text-sm md:text-base lg:text-[18px] font-bold uppercase tracking-normal leading-none my-[3px] ${isScrolled ? "text-slate-900" : "text-white"}`}>
+                                    LANGUAGE & COGNITION LAB
+                                </span>
+                                <span className={`text-[9px] md:text-[10px] lg:text-[11.5px] font-medium tracking-normal leading-none text-center ${isScrolled ? "text-slate-600" : "text-slate-200"}`}>
+                                    Exploring languages and Expanding insights
+                                </span>
                             </div>
                         </div>
                     </div>
 
                     {/* --- Desktop Navigation --- */}
-                    <div className={`hidden lg:flex items-center gap-1 xl:gap-2 ${isDyslexic ? "flex-shrink-0" : ""
+                    <div className={`hidden xl:flex items-center gap-1 xl:gap-2 ${isDyslexic ? "flex-shrink-0" : ""
                         }`} ref={navRef}>
                         {visibleItems.map((item) => (
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 whitespace-nowrap ${pathname === item.href
+                                className={`px-4 py-2 text-sm font-medium font-montserrat rounded-full transition-all duration-300 whitespace-nowrap ${pathname === item.href
                                     ? "bg-blue-600/10 text-blue-700"
                                     : isScrolled
                                         ? "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
@@ -256,13 +216,11 @@ export function Navigation() {
                                 <Type size={16} strokeWidth={2.5} />
                                 <span className="sr-only">Toggle Dyslexic Font</span>
                             </button>
-                            {/* Desktop Tooltip */}
-                            <DyslexiaTooltip />
                         </div>
                     </div>
 
                     {/* --- Mobile Menu Button --- */}
-                    <div className="flex items-center gap-3 lg:hidden">
+                    <div className="flex items-center gap-3 xl:hidden">
                         {/* Mobile Font Toggle */}
                         <div className="relative">
                             <button
@@ -272,8 +230,6 @@ export function Navigation() {
                             >
                                 <Type size={18} />
                             </button>
-                            {/* Mobile Tooltip */}
-                            <DyslexiaTooltip />
                         </div>
 
                         <Button
@@ -296,13 +252,24 @@ export function Navigation() {
                                 <img
                                     src="/anindita/darkLogo.png"
                                     alt="LC Lab Logo"
-                                    className="h-8 w-auto"
+                                    className="h-11 w-auto"
                                     onError={(e) => {
                                         const target = e.currentTarget;
                                         target.onerror = null;
                                         target.src = "/anindita/placeholder.svg"
                                     }}
                                 />
+                                <div className="flex flex-col font-montserrat select-none">
+                                    <span className="text-[8px] font-bold uppercase tracking-wider text-right text-slate-500 leading-tight">
+                                        IIT MADRAS
+                                    </span>
+                                    <span className="text-xs sm:text-sm font-bold uppercase tracking-wide text-slate-900 leading-tight my-[1px]">
+                                        LANGUAGE & COGNITION LAB
+                                    </span>
+                                    <span className="text-[8px] sm:text-[9px] font-normal tracking-normal text-slate-600 leading-tight">
+                                        Exploring languages and Expanding insights
+                                    </span>
+                                </div>
                             </div>
                             <Button
                                 variant="ghost"
@@ -326,7 +293,7 @@ export function Navigation() {
                                             onClick={() => setIsOpen(false)}
                                             style={{ animationDelay: `${idx * 50}ms` }}
                                             className={`
-                                                block w-full text-center px-4 py-4 text-2xl font-bold rounded-2xl transition-all duration-300 animate-in slide-in-from-bottom-8 fill-mode-backwards
+                                                block w-full text-center px-4 py-4 text-2xl font-bold font-montserrat rounded-2xl transition-all duration-300 animate-in slide-in-from-bottom-8 fill-mode-backwards
                                                 ${isActive
                                                     ? "text-[#000080]"
                                                     : "text-slate-400 hover:text-slate-900"

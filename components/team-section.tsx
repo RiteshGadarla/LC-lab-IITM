@@ -1,64 +1,149 @@
 "use client"
 
-import {useState} from "react"
+import {useEffect, useState} from "react"
 import {useRouter} from "next/navigation"
 import {
     principalInvestigator,
     teamMembers,
     researchStaff,
     friends,
+    collaborationMembers,
+    interns,
     type TeamMember
 } from "@/lib/teamData"
 import TeamGrid from "@/components/grids/team-grid";
 import InternGrid from "@/components/grids/intern-grid"
-import {interns} from "@/lib/teamData"
 import PrincipalInvestigatorCard from "@/components/grids/PrincipalInvestigatorCard";
+import { PageHeader } from "@/components/page-header"
 
 
 export function TeamSection() {
     const [selectedMember, setSelectedMember] = useState<TeamMember | null>(null)
     const router = useRouter()
 
+    // Scroll to a person when the URL has a hash like #gadarlariteshreddy; ignore unknown hashes.
+    // Wait until images have loaded (they shift the layout), do one smooth scroll, then a quick
+    // instant correction in case the layout still moved. Stops if the user scrolls themselves.
+    useEffect(() => {
+        let userScrolled = false
+        const timers: ReturnType<typeof setTimeout>[] = []
+        const stop = () => { userScrolled = true }
+
+        const targetTop = (el: HTMLElement) => {
+            const rect = el.getBoundingClientRect()
+            // Desktop/tablet: centre the card. Phones: sit just under the navbar.
+            const top = window.innerWidth >= 768
+                ? rect.top + window.scrollY - (window.innerHeight - rect.height) / 2
+                : rect.top + window.scrollY - 81
+            return Math.max(0, top)
+        }
+
+        const align = (behavior: ScrollBehavior) => {
+            if (userScrolled) return
+            const id = decodeURIComponent(window.location.hash.slice(1))
+            const el = id ? document.getElementById(id) : null
+            if (!el) return
+            window.scrollTo({top: targetTop(el), behavior})
+        }
+
+        const run = () => {
+            userScrolled = false
+            align("smooth")
+            // correct any drift once the smooth scroll has finished
+            timers.push(setTimeout(() => align("instant"), 1200))
+        }
+
+        const start = () => timers.push(setTimeout(run, 250))
+        if (document.readyState === "complete") start()
+        else window.addEventListener("load", start, {once: true})
+
+        window.addEventListener("wheel", stop, {passive: true})
+        window.addEventListener("touchmove", stop, {passive: true})
+        window.addEventListener("hashchange", run)
+        return () => {
+            timers.forEach(clearTimeout)
+            window.removeEventListener("load", start)
+            window.removeEventListener("wheel", stop)
+            window.removeEventListener("touchmove", stop)
+            window.removeEventListener("hashchange", run)
+        }
+    }, [])
+
     return (
-        <section id="team" className="pt-24 pb-16 bg-slate-50">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                {/* Header */}
-                <div className="text-center mb-10 mt-8">
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-6">
-                        Our Team
-                    </h2>
-                    <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-6"></div>
-                    <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
-                        Meet the dedicated researchers advancing our understanding of language and cognition.
-                    </p>
-                </div>
+        <section id="team" className="relative overflow-hidden pt-24 pb-16 bg-slate-50">
+            <div className="absolute -top-24 left-0 w-[32rem] h-[32rem] bg-blue-100/60 rounded-full blur-[110px] pointer-events-none" />
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <PageHeader
+                    eyebrow="Who we are"
+                    title="Our Team"
+                    description="Meet the dedicated researchers advancing our understanding of language and cognition."
+                />
 
                 {/* Principal Investigator Card */}
                 <PrincipalInvestigatorCard investigator={principalInvestigator}/>
 
+                <div className="text-center mb-10 mt-8">
+                    <h2 className="text-3xl md:text-5xl font-bold text-slate-900 text-center mb-6">
+                        Current Researchers
+                    </h2>
+                </div>
 
-                {/* PhD Scholars */}
                 <TeamGrid
                     title="PhD Scholars"
                     members={teamMembers}
                     onSelect={setSelectedMember}
+                    isActive={true}
                 />
 
-                {/* Research Project Staff */}
                 <TeamGrid
                     title="Research Project Staff"
                     members={researchStaff}
                     onSelect={setSelectedMember}
+                    isActive={true}
                 />
 
-                {/* Interns */}
-                <InternGrid interns={interns}/>
+                <InternGrid
+                    interns={interns}
+                    isActive={true}
+                />
 
-                {/* Friends */}
+                <TeamGrid
+                    title="Collaboration"
+                    members={collaborationMembers}
+                    onSelect={setSelectedMember}
+                    isActive={true}
+                />
+
+                <div className="text-center mb-10 mt-8">
+                    <h2 className="text-3xl md:text-5xl font-bold text-slate-900 text-center mb-6">
+                        Alumni
+                    </h2>
+                </div>
+
+                <TeamGrid
+                    title="PhD Scholars"
+                    members={teamMembers}
+                    onSelect={setSelectedMember}
+                    isActive={false}
+                />
+
+                <TeamGrid
+                    title="Research Project Staff"
+                    members={researchStaff}
+                    onSelect={setSelectedMember}
+                    isActive={false}
+                />
+
+                <InternGrid
+                    interns={interns}
+                    isActive={false}
+                />
+
                 <TeamGrid
                     title="Friends of LC Lab"
                     members={friends}
                     onSelect={setSelectedMember}
+                    isActive={true}
                 />
 
                 {/* Open Position */}

@@ -2,31 +2,26 @@
 
 import { Card, CardContent } from "@/components/ui/card"
 import { Phone, Mail, MapPin, ExternalLink, Linkedin } from "lucide-react"
-import { labDetails } from "@/lib/teamData"
+import { labDetails } from "@/lib/labDetails"
 import { useRouter } from "next/navigation";
+import { PageHeader } from "@/components/page-header"
 
 export function ContactSection() {
   const router = useRouter();
   return (
       <section
           id="contact"
-          className="pt-24 pb-16 bg-white"
+          className="relative overflow-hidden pt-24 pb-16 bg-white"
           aria-labelledby="contact-heading"
       >
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          {/* Contact Header */}
-          <header className="text-center mb-20">
-            <h1
-                id="contact-heading"
-                className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-6 mt-8"
-            >
-              Get In Touch
-            </h1>
-            <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-8"></div>
-            <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
-              We’d love to hear from you! If you’re a student interested in our research, a collaborator, or simply curious about our work, feel free to reach out.
-            </p>
-          </header>
+        <div className="absolute -top-24 left-1/2 -translate-x-1/2 w-[36rem] h-[36rem] bg-blue-50 rounded-full blur-[120px] pointer-events-none" />
+        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+          <PageHeader
+              headingId="contact-heading"
+              eyebrow="Get in touch"
+              title="Get In Touch"
+              description="We'd love to hear from you! If you're a student interested in our research, a collaborator, or simply curious about our work, feel free to reach out."
+          />
 
           <div className="grid lg:grid-cols-2 gap-12">
             {/* Left: Form and Links */}
@@ -39,7 +34,7 @@ export function ContactSection() {
                   Send Us a Message
                 </h2>
                 <a
-                    href="https://forms.gle/d1ebU3yL2xsBduMz5"
+                    href="https://docs.google.com/forms/d/e/1FAIpQLScdg5iEhO95RAIGWXU4YePjlMBPw3Uoy85hXe1w0gPFRUVL9Q/viewform"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-[#000080] font-medium text-sm hover:underline flex items-center gap-1"
@@ -48,17 +43,17 @@ export function ContactSection() {
                 </a>
               </div>
 
-              <Card className="shadow-sm hover:shadow-md transition-all duration-300 rounded-xl border border-slate-200 overflow-hidden bg-slate-50">
+              <Card className="shadow-sm hover:shadow-lg transition-all duration-300 rounded-2xl border border-slate-200 overflow-hidden bg-slate-50">
                 <CardContent className="p-0">
                   <div className="w-full h-[600px]">
                     <iframe
-                        src="https://forms.gle/d1ebU3yL2xsBduMz5"
+                        src="https://docs.google.com/forms/d/e/1FAIpQLScdg5iEhO95RAIGWXU4YePjlMBPw3Uoy85hXe1w0gPFRUVL9Q/viewform?embedded=true"
                         width="100%"
                         height="100%"
                         style={{ border: 0 }}
-                        allowFullScreen
+                        loading="lazy"
                         title="Contact Form"
-                    ></iframe>
+                    >Loading…</iframe>
                   </div>
                 </CardContent>
               </Card>
@@ -98,7 +93,7 @@ export function ContactSection() {
                 Contact Information
               </h2>
               <div className="grid gap-6">
-                <Card className="hover:shadow-md transition-all duration-300 rounded-xl bg-white border border-slate-200">
+                <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-white border border-slate-200">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-5">
                       <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 text-[#000080]">
@@ -117,8 +112,8 @@ export function ContactSection() {
                   </CardContent>
                 </Card>
 
-                {/* LinkedIn Card Matching UI Style */}
-                <Card className="hover:shadow-md transition-all duration-300 rounded-xl bg-white border border-slate-200">
+                {/* LinkedIn Card */}
+                <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-white border border-slate-200">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-5">
                       <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 text-[#000080]">
@@ -137,14 +132,14 @@ export function ContactSection() {
                             href={`mailto:lclab@smail.iitm.ac.in`}
                             className="text-black hover:text-gray-700 transition-colors"
                         >
-                          {'lclab@smail.iitm.ac.in'}
+                          {labDetails.linkedInName}
                         </a>
                       </div>
                     </div>
                   </CardContent>
                 </Card>
 
-                <Card className="hover:shadow-md transition-all duration-300 rounded-xl bg-white border border-slate-200">
+                <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-white border border-slate-200">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-5">
                       <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 text-[#000080]">
@@ -158,7 +153,7 @@ export function ContactSection() {
                   </CardContent>
                 </Card>
 
-                <Card className="hover:shadow-md transition-all duration-300 rounded-xl bg-white border border-slate-200">
+                <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-white border border-slate-200">
                   <CardContent className="p-6">
                     <div className="flex items-start gap-5">
                       <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 text-[#000080]">
@@ -178,7 +173,7 @@ export function ContactSection() {
               </div>
 
               <div className="pt-2">
-                <Card className="h-80 bg-slate-50 border border-slate-200 rounded-xl overflow-hidden shadow-sm">
+                <Card className="h-80 bg-slate-50 border border-slate-200 rounded-2xl overflow-hidden shadow-sm">
                   <iframe
                       title="IIT Madras Precise Location"
                       width="100%"

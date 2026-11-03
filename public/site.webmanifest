@@ -1,0 +1,17 @@
+{
+    "name": "Language & Cognition Laboratory, IIT Madras",
+    "short_name": "LC Lab",
+    "description": "A premier research lab at IIT Madras exploring the intersection of language, cognition, and communication.",
+    "start_url": "/anindita/lclab/",
+    "scope": "/anindita/",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#1e293b",
+    "icons": [
+        {
+            "src": "/anindita/darkLogo.png",
+            "sizes": "1369x1149",
+            "type": "image/png"
+        }
+    ]
+}

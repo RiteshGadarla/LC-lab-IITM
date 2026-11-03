@@ -9,13 +9,19 @@ export const partnersData: PartnerData[] = [
     {
         name: "CeRAI",
         description: "Centre for Responsible AI (CeRAI) is a virtual interdisciplinary research centre at IIT Madras. The centre envisions to be a premier research centre for both fundamental and applied research in Responsible AI with immediate impact in deploying AI systems in the Indian ecosystem. The centre aims to pursue research in the domains of Ethical and Responsible AI and become the standard body in the country to recommend guidelines and policies to make deployable AI models/ systems more accountable, explainable and responsible.",
-        logo: "/anindita/cerai.png",
+        logo: "/anindita/partnerImages/cerai.png",
         link: "https://cerai.iitm.ac.in/",
     },
     {
         name: "Out Of Our Minds",
         description: "Out Of Our Minds is a University of Birmingham research project focused on understanding how people naturally learn languages. It develops cognitive based methods, resources, and tools to improve language learning by studying real usage patterns instead of traditional grammar rules.",
-        logo: "/anindita/oom.png",
+        logo: "/anindita/partnerImages/oom.png",
         link: "https://outofourminds.bham.ac.uk/",
+    },
+    {
+        name: "Psychology of Language",   
+        description: "The Psychology of Language Research Group at the Georg-Elias-Müller Institute of Psychology, in conjunction with its affiliated laboratory \"WortSchatzInsel\", is dedicated to uncovering the underlying mechanisms that facilitate children's learning, with the goal of gaining a deeper understanding of the processes that drive their development.",
+        logo: "/anindita/partnerImages/pol.jpeg",
+        link: "https://www.psych.uni-goettingen.de/en/lang/psychology-of-language",
     }
 ];

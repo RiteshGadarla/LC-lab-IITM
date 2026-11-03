@@ -1,11 +1,12 @@
 "use client"
 
-import { useRouter } from "next/navigation";
-import { Card, CardContent } from "@/components/ui/card"
-import { Globe, MapPin } from "lucide-react"
-import { internationalCollaborators, IndianCollaborators } from "@/lib/teamData"
+import {useRouter} from "next/navigation";
+import {Card, CardContent} from "@/components/ui/card"
+import {Globe, MapPin} from "lucide-react"
+import {internationalCollaborators} from "@/lib/collaboratorsData"
 import Image from "next/image"
-import { PartnerData, partnersData } from "@/lib/partners";
+import {partnersData} from "@/lib/partners";
+import { PageHeader } from "@/components/page-header"
 
 export function CollaborationsSection() {
     const router = useRouter()
@@ -13,21 +14,16 @@ export function CollaborationsSection() {
     return (
         <section
             id="collaborations"
-            className="pt-24 pb-16 bg-slate-50"
+            className="relative overflow-hidden pt-24 pb-16 bg-slate-50"
             aria-label="Research Collaborations"
         >
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                {/* Header */}
-                <header className="text-center mb-20">
-                    <h1 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-6 mt-8">
-                        Research Collaborators
-                    </h1>
-                    <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-8"></div>
-                    <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed mb-12">
-                        Building bridges across institutions to advance language and cognition research through diverse
-                        partnerships.
-                    </p>
-                </header>
+            <div className="absolute -top-24 right-0 w-[32rem] h-[32rem] bg-blue-100/60 rounded-full blur-[110px] pointer-events-none" />
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <PageHeader
+                    eyebrow="Who we work with"
+                    title="Research Collaborators"
+                    description="Building bridges across institutions to advance language and cognition research through diverse partnerships."
+                />
 
                 {/* Partners */}
                 <section className="mb-16" aria-labelledby="partners-heading">
@@ -40,7 +36,7 @@ export function CollaborationsSection() {
                         {partnersData.map((partner, index) => (
                             <Card
                                 key={index}
-                                className="bg-white border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 rounded-xl overflow-hidden"
+                                className="bg-white border border-slate-200 shadow-sm hover:shadow-lg transition-all duration-300 rounded-2xl overflow-hidden"
                             >
                                 <CardContent className="p-0">
                                     <div className="flex flex-col md:flex-row items-center md:items-stretch">
@@ -49,7 +45,7 @@ export function CollaborationsSection() {
                                             <div className="w-full max-w-[200px]">
                                                 {partner.logo ? (
                                                     <a href={partner.link} target="_blank"
-                                                        rel="noopener noreferrer" className="block relative group">
+                                                       rel="noopener noreferrer" className="block relative group">
                                                         <Image
                                                             src={partner.logo}
                                                             alt={`${partner.name} logo`}
@@ -104,7 +100,12 @@ export function CollaborationsSection() {
                         {internationalCollaborators.map((collaborator, index) => (
                             <Card
                                 key={`intl-${index}`}
-                                className="group relative overflow-hidden border border-slate-200 bg-white hover:border-blue-200 transition-all duration-300 hover:shadow-md rounded-xl"
+                                className={`group relative overflow-hidden border border-slate-200 bg-white hover:border-blue-200 transition-all duration-300 hover:shadow-lg rounded-2xl ${
+                                    // odd count: centre the lone last card under the two-column grid
+                                    index === internationalCollaborators.length - 1 && index % 2 === 0
+                                        ? "md:col-span-2 md:w-[calc(50%-1rem)] md:justify-self-center"
+                                        : ""
+                                }`}
                                 role="listitem"
                             >
                                 <CardContent className="p-6">
@@ -113,14 +114,28 @@ export function CollaborationsSection() {
                                         <div className="relative flex-shrink-0">
                                             <div
                                                 className="relative h-20 w-20 rounded-full overflow-hidden shadow-sm border border-slate-100">
-                                                <Image
-                                                    src={collaborator.image || "/placeholder.svg"}
-                                                    alt={`Portrait of ${collaborator.name}`}
-                                                    fill
-                                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                                    sizes="80px"
-                                                    loading="lazy"
-                                                />
+{collaborator.image ? (
+                                                    <Image
+                                                        src={collaborator.image}
+                                                        alt={`Portrait of ${collaborator.name}`}
+                                                        fill
+                                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                                        sizes="80px"
+                                                        loading="lazy"
+                                                    />
+                                                ) : (
+                                                    <div
+                                                        className="flex h-full w-full items-center justify-center bg-slate-100 text-xl font-bold text-[#152550]"
+                                                        aria-hidden="true"
+                                                    >
+                                                        {collaborator.name
+                                                            .replace(/^(Prof\.|Dr\.)\s*/, "")
+                                                            .split(" ")
+                                                            .map((w) => w[0])
+                                                            .slice(0, 2)
+                                                            .join("")}
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
 
@@ -155,7 +170,8 @@ export function CollaborationsSection() {
 
                 {/* Call to Action */}
                 <section className="mt-20 text-center" aria-labelledby="cta-heading">
-                    <div className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-10 shadow-sm hover:shadow-md transition-shadow">
+                    <div
+                        className="max-w-3xl mx-auto bg-white border border-slate-200 rounded-2xl p-10 shadow-sm hover:shadow-md transition-shadow">
                         <Globe
                             className="w-12 h-12 text-[#000080] mx-auto mb-6"
                             strokeWidth={1.5}
@@ -174,7 +190,7 @@ export function CollaborationsSection() {
                         </p>
                         <button
                             onClick={() => router.push("/lclab/contact")}
-                            className="bg-[#000080] hover:bg-blue-900 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-300 shadow-md hover:-translate-y-0.5"
+                            className="bg-[#000080] hover:bg-blue-900 text-white px-8 py-3 rounded-full font-semibold transition-all duration-300 shadow-md hover:-translate-y-0.5"
                             aria-label="Navigate to contact page to start collaboration"
                         >
                             Contact Us

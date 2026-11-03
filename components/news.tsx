@@ -3,9 +3,9 @@ import { newsItems, NewsItem } from "@/lib/newsData";
 export function NewsSection() {
     return (
         <div className="container mx-auto px-4 py-8 md:px-8 lg:px-16">
-            <h1 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">
+            <h2 className="text-4xl md:text-5xl font-bold text-black text-center mb-8 border-b-4 border-[#000080] inline-block w-full pb-4">
                 Latest News
-            </h1>
+            </h2>
             <div className="space-y-6">
                 {newsItems.map((item: NewsItem, index: number) => (
                     <div

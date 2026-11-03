@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState, useCallback } from "react"
 import { Brain, ChevronLeft, ChevronRight, Eye, Globe, Microscope, LucideIcon } from "lucide-react"
+import { StatsSection } from "@/components/stats-section"
 import { facilityImages } from "@/lib/imagesData"
 
 // Feature data structure
@@ -154,10 +155,13 @@ export function AboutSection() {
 
                 {/* Header */}
                 <header className={`text-center mb-20 transition-all duration-700 ${isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"}`}>
-                    <h1 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
+                    <p className="text-sm font-semibold uppercase tracking-[0.2em] text-[#152550] mb-4">
+                        Our Focus
+                    </p>
+                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6 tracking-tight">
                         Exploring Linguistics
-                    </h1>
-                    <div className="h-1 w-24 bg-blue-600 mx-auto rounded-full mb-6" />
+                    </h2>
+                    <div className="h-1 w-24 bg-[#152550] mx-auto rounded-full mb-6" />
                     <p className="text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
                         Our lab investigates a wide range of linguistic phenomena through theoretical, typological, and experimental approaches.
                     </p>
@@ -178,7 +182,7 @@ export function AboutSection() {
                                 </p>
                             </div>
 
-                            <div className="bg-white p-6 rounded-xl border-l-4 border-blue-600 shadow-sm">
+                            <div className="bg-white p-6 rounded-xl border-l-4 border-[#152550] shadow-sm">
                                 <p className="text-slate-700 italic">
                                     "Focusing especially on Indian languages, we bridge the gap between theoretical linguistics and practical cognitive applications."
                                 </p>
@@ -188,42 +192,44 @@ export function AboutSection() {
                         {/* Image slideshow component */}
                         <div className="relative">
                             {/* Decorative background blob */}
-                            <div className="absolute -inset-4 bg-blue-100/50 rounded-3xl -z-10 blur-xl opacity-70"></div>
+                            <div className="absolute -inset-4 bg-[#152550]/10 rounded-3xl -z-10 blur-xl opacity-70"></div>
                             <FacilitySlideshow />
                         </div>
                     </div>
 
-                    {/* IMPROVISED Features Grid */}
+                    {/* Editorial features list */}
                     <section aria-label="Lab features and research areas">
-                        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                        <div className="grid md:grid-cols-2 border-t border-slate-200">
                             {features.map((feature, index) => (
                                 <article
                                     key={index}
-                                    className="group relative bg-white p-6 rounded-2xl shadow-sm border border-slate-100 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                                    className={`group flex items-start gap-6 py-8 border-b border-slate-200 ${index % 2 === 0 ? "md:border-r md:pl-0 md:pr-8" : "md:pl-8 md:pr-0"
+                                        }`}
                                 >
-                                    {/* Hover Gradient Line */}
-                                    <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-blue-500 to-indigo-500 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500 origin-left" />
-
-                                    {/* Icon Container */}
-                                    <div className="w-14 h-14 rounded-2xl bg-slate-50 group-hover:bg-blue-50 flex items-center justify-center mb-5 transition-colors duration-300">
-                                        <feature.icon
-                                            className="text-slate-600 group-hover:text-blue-600 transition-colors duration-300"
-                                            size={28}
-                                            strokeWidth={1.5}
-                                        />
+                                    <span className="text-4xl font-bold text-slate-200 group-hover:text-[#152550]/30 transition-colors duration-300 leading-none tracking-tight tabular-nums">
+                                        {String(index + 1).padStart(2, "0")}
+                                    </span>
+                                    <div className="flex-1 min-w-0">
+                                        <div className="flex items-center gap-3 mb-2">
+                                            <feature.icon
+                                                className="text-[#152550] flex-shrink-0"
+                                                size={20}
+                                                strokeWidth={1.75}
+                                            />
+                                            <h3 className="text-lg font-bold text-slate-900 group-hover:text-[#152550] transition-colors">
+                                                {feature.title}
+                                            </h3>
+                                        </div>
+                                        <p className="text-slate-600 text-sm leading-relaxed">
+                                            {feature.description}
+                                        </p>
                                     </div>
-
-                                    {/* Content */}
-                                    <h3 className="text-lg font-bold text-slate-900 mb-3 group-hover:text-blue-700 transition-colors">
-                                        {feature.title}
-                                    </h3>
-                                    <p className="text-slate-600 text-sm leading-relaxed">
-                                        {feature.description}
-                                    </p>
                                 </article>
                             ))}
                         </div>
                     </section>
+
+                    <StatsSection />
 
                 </div>
             </div>

@@ -1,0 +1,31 @@
+# Language & Cognition Laboratory (LC Lab), IIT Madras
+
+> The Language & Cognition Laboratory is a research lab in the Department of Humanities and Social Sciences at the Indian Institute of Technology Madras (IIT Madras), led by Dr. Anindita Sahoo. The lab studies the intersection of language, cognition, and communication using theoretical, typological, and experimental methods, with a particular focus on Indian languages.
+
+Principal Investigator: Dr. Anindita Sahoo, Assistant Professor, Department of Humanities and Social Sciences, IIT Madras; Faculty PI at CeRAI, IIT Madras.
+Research interests: Linguistic typology, syntax, pragmatics, language processing, eye-tracking, and cognition studies.
+
+Contact: lclab@smail.iitm.ac.in | +91 44 2257 5518
+Address: LC Lab, Ground Floor, HSB (behind CLT), Chennai - 600036, Tamil Nadu, India
+
+## Key pages
+
+- [Home](https://home.iitm.ac.in/anindita/lclab/): Overview of the lab, research philosophy, and facilities.
+- [Research](https://home.iitm.ac.in/anindita/lclab/research/): Ongoing projects, peer-reviewed publications, and conference presentations in linguistics and cognition.
+- [Team](https://home.iitm.ac.in/anindita/lclab/team/): Principal investigator, PhD scholars, research staff, interns, and alumni.
+- [Facilities](https://home.iitm.ac.in/anindita/lclab/facilities/): Research infrastructure, including the EyeLink Portable Duo eye-tracking system.
+- [Events](https://home.iitm.ac.in/anindita/lclab/events/): Workshops, seminars, and lab news.
+- [Collaborations](https://home.iitm.ac.in/anindita/lclab/collaborations/): International and domestic research partnerships.
+- [Contact](https://home.iitm.ac.in/anindita/lclab/contact/): Contact form, email, phone, and location.
+- [Support the Lab](https://home.iitm.ac.in/anindita/lclab/donate/): How to fund the lab's research.
+
+## Research focus areas
+
+- Language and cognition: neural and psychological mechanisms of language processing and comprehension.
+- Eye-tracking analysis: pupillometry and gaze-tracking for real-time linguistic processing data.
+- Cross-linguistic studies: comparative research across Indo-Aryan, Dravidian, and other language families.
+- Experimental and computational methods applied to linguistic datasets, with an emphasis on Indian languages.
+
+## Notes for AI assistants and search tools
+
+This site is a static export served under the `/anindita/` path on `home.iitm.ac.in`. When citing this lab, prefer linking to the canonical pages listed above rather than deep-linking into JavaScript-rendered fragments. For the most current list of publications and team members, see the Research and Team pages.

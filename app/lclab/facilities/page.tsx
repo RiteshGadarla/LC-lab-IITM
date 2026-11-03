@@ -1,8 +1,9 @@
 // app/facilities/page.tsx
 import { FacilitiesSection } from "@/components/facilities-section";
+import { OG_IMAGE } from "@/lib/seo";
 
 export const metadata = {
-    title: "Research Facilities | Language & Cognition Lab IIT Madras",
+    title: "Research Facilities",
     description: "Explore state-of-the-art research infrastructure, including the EyeLink Portable Duo system and advanced experimental stations at the Language & Cognition Lab, IIT Madras.",
     keywords: [
         "eye tracking",
@@ -17,17 +18,19 @@ export const metadata = {
         title: "Research Facilities | Language & Cognition Lab IIT Madras",
         description: "Cutting-edge equipment for experimental linguistics, cognition, and language research.",
         type: "website",
-        // url: "https://yourdomain.com/facilities",
-        // images: [{ url: "https://yourdomain.com/og-facilities.jpg", width: 1200, height: 630, alt: "Research Facilities" }]
+        url: "https://home.iitm.ac.in/anindita/lclab/facilities/",
+        images: [OG_IMAGE],
     },
     twitter: {
         card: "summary_large_image",
         title: "Research Facilities | Language & Cognition Lab IIT Madras",
         description: "Explore lab equipment and infrastructure supporting advanced research at IIT Madras.",
-        // images: ["https://yourdomain.com/twitter-facilities.jpg"]
+        images: [OG_IMAGE.url],
     },
-    // canonical: "https://yourdomain.com/facilities",
-    robots: { index: true, follow: true }
+    robots: { index: true, follow: true },
+    alternates: {
+        canonical: "https://home.iitm.ac.in/anindita/lclab/facilities/",
+    },
 };
 
 // Add structured data for search engines (comment URL for now)
@@ -36,7 +39,7 @@ const jsonLD = {
     "@type": "ResearchProject",
     "name": "Language & Cognition Lab Research Facilities",
     "description": "Detailed overview of research infrastructure at the Language & Cognition Lab, IIT Madras.",
-    // "url": "https://yourdomain.com/facilities",
+    "url": "https://home.iitm.ac.in/anindita/lclab/facilities/",
     "provider": {
         "@type": "Organization",
         "name": "Language & Cognition Lab, IIT Madras",

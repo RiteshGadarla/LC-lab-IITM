@@ -1,8 +1,9 @@
 "use client"
 
-import { useEffect, useState, useCallback } from "react"
+import { useEffect, useState, useCallback, useRef } from "react"
 import { useRouter } from "next/navigation";
 import { ChevronDown } from "lucide-react"
+import { useFont } from "@/app/FontContext"
 import { multilingualChars } from "@/lib/chars"
 
 interface FloatingChar {
@@ -26,8 +27,14 @@ export function HeroSection() {
         line2: Array(10).fill(" ")
     })
     const [contentVisible, setContentVisible] = useState(false)
-    const [isMobile, setIsMobile] = useState(false)
+    const [lineScale, setLineScale] = useState({ line1: 1, line2: 1 })
+    const headerRef = useRef<HTMLElement>(null)
+    const line1Ref = useRef<HTMLSpanElement>(null)
+    const line2Ref = useRef<HTMLSpanElement>(null)
+    const line1MeasureRef = useRef<HTMLSpanElement>(null)
+    const line2MeasureRef = useRef<HTMLSpanElement>(null)
     const router = useRouter();
+    const { isDyslexic } = useFont()
     const MIN_CHARS = 50
     const MAX_CHARS = 100
     const SPAWN_RATE = 60
@@ -43,21 +50,42 @@ export function HeroSection() {
     const LETTER_REVEAL_INTERVAL = TOTAL_REVEAL_DURATION_LINE1 / targetText.line1.length
 
     useEffect(() => {
-        const checkMobile = () => {
-            setIsMobile(window.innerWidth < 1024)
+        const fitText = () => {
+            const maxWidth = headerRef.current?.clientWidth ?? 0
+            if (!maxWidth) return
+
+            const measure = (el: HTMLElement | null) => {
+                if (!el) return 1
+                const natural = el.scrollWidth
+                return natural > maxWidth ? maxWidth / natural : 1
+            }
+
+            setLineScale({
+                line1: measure(line1MeasureRef.current),
+                line2: measure(line2MeasureRef.current)
+            })
         }
 
-        checkMobile()
-        window.addEventListener('resize', checkMobile)
-
-        return () => window.removeEventListener('resize', checkMobile)
-    }, [])
-
-    useEffect(() => {
-        if (isMobile) {
-            setContentVisible(true)
+        let cancelled = false
+        const runFit = async () => {
+            if (typeof document !== "undefined" && document.fonts) {
+                try {
+                    await document.fonts.load("700 1em OpenDyslexic")
+                } catch {
+                    // ignore font load failures, fall back to whatever metrics are available
+                }
+                await document.fonts.ready
+            }
+            if (!cancelled) fitText()
         }
-    }, [isMobile])
+
+        runFit()
+        window.addEventListener('resize', fitText)
+        return () => {
+            cancelled = true
+            window.removeEventListener('resize', fitText)
+        }
+    }, [isDyslexic])
 
     const createChar = useCallback((id?: number): FloatingChar => {
         const x = Math.random() * 90 + 5
@@ -155,8 +183,6 @@ export function HeroSection() {
     }, [createChar, updateChars])
 
     useEffect(() => {
-        if (isMobile) return
-
         let index = -1
         let isLine1Complete = false
 
@@ -216,11 +242,15 @@ export function HeroSection() {
 
         const revealInterval = setInterval(revealLetter, LETTER_REVEAL_INTERVAL)
         return () => clearInterval(revealInterval)
-    }, [isMobile])
+    }, [])
 
     return (
         <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
-            <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-blue-900 to-indigo-900" />
+            <div className="absolute inset-0 bg-mesh-navy" />
+
+            {/* Soft glow accents for depth */}
+            <div className="absolute -top-32 -left-32 w-[28rem] h-[28rem] bg-blue-500/20 rounded-full blur-[100px] pointer-events-none" />
+            <div className="absolute -bottom-40 -right-20 w-[32rem] h-[32rem] bg-indigo-500/20 rounded-full blur-[120px] pointer-events-none" />
 
             <div className="absolute inset-0 overflow-hidden pointer-events-none select-none">
                 {floatingChars.map((char) => (
@@ -241,44 +271,52 @@ export function HeroSection() {
                 ))}
             </div>
 
-            <div className="relative z-10 text-center max-w-5xl mx-auto px-4">
-                <header className="animate-fade-in">
-                    {/* UPDATED: Removed whitespace-nowrap and added leading-tight / break-words
-                to allow text to wrap on wide dyslexic fonts
-            */}
-                    {isMobile ? (
-                        <h1 className="text-5xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-tight break-words">
-                            Language & Cognition
-                            <br />
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
-                                Laboratory
-                            </span>
-                        </h1>
-                    ) : (
-                        <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight break-words flex flex-wrap justify-center gap-x-2">
-                            <span className="inline-block">
-                                {displayText.line1.map((char, index) => (
-                                    <span
-                                        key={`line1-${index}`}
-                                        className={char !== targetText.line1[index] && char !== " " ? "scale-95 inline-block" : "inline-block"}
-                                    >
-                                        {char === " " ? "\u00A0" : char}
-                                    </span>
-                                ))}
-                            </span>
-                            <br className="hidden md:block" />
-                            <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400 inline-block">
-                                {displayText.line2.map((char, index) => (
-                                    <span
-                                        key={`line2-${index}`}
-                                        className={char !== targetText.line2[index] && char !== " " ? "scale-85 inline-block" : "inline-block"}
-                                    >
-                                        {char === " " ? "\u00A0" : char}
-                                    </span>
-                                ))}
-                            </span>
-                        </h1>
-                    )}
+            <div className="relative z-10 text-center max-w-5xl mx-auto px-4 w-full">
+                <header ref={headerRef} className="animate-fade-in">
+                    <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold text-white mb-6 leading-tight tracking-tight flex flex-col items-center">
+                        <span
+                            ref={line1MeasureRef}
+                            className="absolute invisible pointer-events-none whitespace-nowrap"
+                            aria-hidden="true"
+                        >
+                            {targetText.line1}
+                        </span>
+                        <span
+                            ref={line2MeasureRef}
+                            className="absolute invisible pointer-events-none whitespace-nowrap"
+                            aria-hidden="true"
+                        >
+                            {targetText.line2}
+                        </span>
+                        <span
+                            ref={line1Ref}
+                            className="inline-block whitespace-nowrap"
+                            style={{ transform: `scale(${lineScale.line1})`, transformOrigin: 'center' }}
+                        >
+                            {displayText.line1.map((char, index) => (
+                                <span
+                                    key={`line1-${index}`}
+                                    className={char !== targetText.line1[index] && char !== " " ? "scale-95 inline-block" : "inline-block"}
+                                >
+                                    {char === " " ? "\u00A0" : char}
+                                </span>
+                            ))}
+                        </span>
+                        <span
+                            ref={line2Ref}
+                            className="bg-clip-text text-transparent bg-gradient-to-r from-blue-300 to-indigo-400 inline-block whitespace-nowrap"
+                            style={{ transform: `scale(${lineScale.line2})`, transformOrigin: 'center' }}
+                        >
+                            {displayText.line2.map((char, index) => (
+                                <span
+                                    key={`line2-${index}`}
+                                    className={char !== targetText.line2[index] && char !== " " ? "scale-85 inline-block" : "inline-block"}
+                                >
+                                    {char === " " ? "\u00A0" : char}
+                                </span>
+                            ))}
+                        </span>
+                    </h1>
 
                     <div
                         className={`transition-all duration-1000 ease-out ${contentVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-4"
@@ -290,7 +328,7 @@ export function HeroSection() {
                         <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center" role="navigation" aria-label="Primary navigation">
                             <button
                                 onClick={() => router.push("/lclab/research")}
-                                className="bg-blue-800  hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                                className="bg-white hover:bg-slate-100 text-[#152550] px-8 py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
                                 aria-label="Navigate to research page"
                             >
                                 Research Portfolio
@@ -303,7 +341,6 @@ export function HeroSection() {
                                 Meet the Team
                             </button>
                         </nav>
-
                     </div>
                 </header>
             </div>

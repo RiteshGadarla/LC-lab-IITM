@@ -3,6 +3,7 @@
 import { Card, CardContent } from "@/components/ui/card"
 import { Eye, Monitor } from "lucide-react"
 import { eyeLinkPortableDuoImage } from "@/lib/imagesData";
+import { PageHeader } from "@/components/page-header"
 
 const equipment = [
     {
@@ -21,31 +22,34 @@ const equipment = [
 
 export function FacilitiesSection() {
     return (
-        <section id="facilities" className="pt-24 pb-16 bg-slate-50">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
-                {/* Header */}
-                <div className="text-center mb-16">
-                    <h2 className="text-4xl md:text-5xl font-bold text-slate-900 text-center mb-6 mt-8">Research Facilities</h2>
-                    <div className="w-24 h-1 bg-[#000080] mx-auto rounded-full mb-8"></div>
-                    <p className="text-xl text-slate-600 max-w-3xl mx-auto font-light leading-relaxed">
-                        State-of-the-art equipment and infrastructure supporting cutting-edge language and cognition
-                        research.
-                    </p>
-                </div>
+        <section id="facilities" className="relative overflow-hidden pt-24 pb-16 bg-slate-50">
+            <div className="absolute -top-24 right-0 w-[32rem] h-[32rem] bg-blue-100/60 rounded-full blur-[110px] pointer-events-none" />
+            <div className="max-w-7xl mx-auto px-6 lg:px-8 relative">
+                <PageHeader
+                    eyebrow="What we use"
+                    title="Research Facilities"
+                    description="State-of-the-art equipment and infrastructure supporting cutting-edge language and cognition research."
+                />
 
                 {/* Featured Equipment: EyeLink */}
                 <div className="bg-white rounded-2xl shadow-sm border border-slate-200 overflow-hidden mb-16">
                     <div className="grid lg:grid-cols-2 gap-0">
                         {/* Image Side */}
-                        <div className="relative h-[400px] lg:h-auto bg-slate-100 flex items-center justify-center p-8">
-                            {/* Ideally use Next.js Image here, but sticking to img tag as per original code structure flexibility */}
+                        <div className="relative flex items-center justify-center p-8">
                             <img
                                 src={eyeLinkPortableDuoImage}
                                 alt="EyeLink Portable Duo System"
-                                className="max-w-full max-h-full object-contain drop-shadow-xl"
+                                className="
+                                    block
+                                    max-w-[600px]
+                                    w-full
+                                    h-auto
+                                    object-contain
+                                    bg-transparent
+                                    image-rendering-auto
+                                "
                             />
                         </div>
-
                         {/* Content Side */}
                         <div className="p-8 lg:p-12 flex flex-col justify-center">
                             <h3 className="text-3xl font-bold text-slate-900 mb-6">EyeLink Portable Duo System</h3>
@@ -83,7 +87,7 @@ export function FacilitiesSection() {
                 {/* Other Equipment Grid */}
                 <div className="grid md:grid-cols-2 gap-8">
                     {equipment.map((item, index) => (
-                        <Card key={index} className="bg-white hover:shadow-md transition-all rounded-xl duration-300 border border-slate-200">
+                        <Card key={index} className="bg-white hover:shadow-lg transition-all rounded-2xl duration-300 border border-slate-200">
                             <CardContent className="p-8">
                                 <div className="flex items-start gap-6">
                                     <div className="flex-shrink-0">
