@@ -7,6 +7,7 @@ import {
     teamMembers,
     researchStaff,
     friends,
+    collaborationMembers,
     interns,
     type TeamMember
 } from "@/lib/teamData"
@@ -103,6 +104,13 @@ export function TeamSection() {
 
                 <InternGrid
                     interns={interns}
+                    isActive={true}
+                />
+
+                <TeamGrid
+                    title="Collaboration"
+                    members={collaborationMembers}
+                    onSelect={setSelectedMember}
                     isActive={true}
                 />
 

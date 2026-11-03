@@ -1,5 +1,7 @@
 "use client"
 import { nameToSlug } from "@/lib/utils"
+import PersonAvatar from "./person-avatar"
+import PersonLink from "./person-link"
 
 import {Card, CardContent} from "@/components/ui/card"
 import type {TeamMember} from "@/lib/teamData"
@@ -44,26 +46,24 @@ export default function InternGrid({
                             max-w-xs
                         "
                     >
-                        <CardContent className="p-4">
-                            <div className="flex flex-col md:flex-row items-center gap-2">
-                                <img
-                                    src={intern.image || "/anindita/placeholder.svg"}
-                                    alt={intern.name}
-                                    className="w-16 h-16 rounded-full object-cover"
-                                />
-
-                                <div className="text-center md:text-left">
-                                    <h4 className="text-base font-bold text-slate-900 leading-snug">
-                                        {intern.name}
-                                    </h4>
-                                    {intern.role && (
-                                        <p className="text-sm font-medium text-slate-500 mt-1 leading-relaxed">
-                                            {intern.role}
-                                        </p>
-                                    )}
+                        <PersonLink link={intern.link} name={intern.name}>
+                            <CardContent className="p-4">
+                                <div className="flex flex-col md:flex-row items-center gap-2">
+                                    <PersonAvatar name={intern.name} image={intern.image} className="w-16 h-16"/>
+    
+                                    <div className="text-center md:text-left">
+                                        <h4 className="text-base font-bold text-slate-900 leading-snug">
+                                            {intern.name}
+                                        </h4>
+                                        {intern.role && (
+                                            <p className="text-sm font-medium text-slate-500 mt-1 leading-relaxed">
+                                                {intern.role}
+                                            </p>
+                                        )}
+                                    </div>
                                 </div>
-                            </div>
-                        </CardContent>
+                            </CardContent>
+                        </PersonLink>
                     </Card>
                 ))}
             </div>

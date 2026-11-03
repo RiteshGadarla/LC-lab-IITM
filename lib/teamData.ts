@@ -6,6 +6,8 @@ export interface TeamMember {
     research?: string
     image?: string
     contribution?: string
+    affiliation?: string
+    link?: string 
 }
 
 
@@ -114,10 +116,34 @@ export const researchStaff: TeamMember[] = [
     },
     {
         name: "Suguna SG",
-        isActive: true,
+        isActive: false,
         role: "Research Associate",
         image: "/anindita/peopleImages/sugunaSg_Sm.webp",
-    }
+    },
+    {
+        name: "Anagha",
+        isActive: true,
+        role: "Project assistant",
+        image: "/anindita/peopleImages/Anagha.webp",
+    },
+    {
+        name: "Bidisha",
+        isActive: true,
+        role: "Research Assistant",
+        image: "/anindita/peopleImages/Bidisha.webp",
+    },
+    {
+        name: "Emily",
+        isActive: true,
+        role: "Research Associate",
+        image: "/anindita/peopleImages/Emily.webp",
+    },
+    {
+        name: "Shivani",
+        isActive: true,
+        role: "Project Associate",
+        image: "/anindita/peopleImages/Shivani.webp",
+    },    
 ]
 
 // Interns
@@ -125,6 +151,7 @@ export const interns: TeamMember[] = [
     {
         name: "Gadarla Ritesh Reddy",
         isActive: false,
+        // link: "https://www.linkedin.com/in/riteshreddyg/",
         role: "Research Intern",
         image: "/anindita/peopleImages/gadarlaRiteshReddy_Sm.webp",
     },
@@ -168,5 +195,17 @@ export const friends: TeamMember[] = [
         isActive: true,
         contribution: "Co-designed the website",
         image: "/anindita/peopleImages/gadarlaRohitReddy_Sm.webp",
+    },
+]
+
+// Collaborators from other institutions (shown under "Collaboration" on the Team page)
+export const collaborationMembers: TeamMember[] = [
+    {
+        name: "Shreya Venkatesan",
+        isActive: true,
+        role: "PhD Scholar",
+        affiliation: "University of Göttingen",
+        link: "https://www.uni-goettingen.de/de/693908.html",
+        image: "/anindita/peopleImages/shreyaVenkatesan_Sm.webp",
     },
 ]

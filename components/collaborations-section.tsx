@@ -100,7 +100,12 @@ export function CollaborationsSection() {
                         {internationalCollaborators.map((collaborator, index) => (
                             <Card
                                 key={`intl-${index}`}
-                                className="group relative overflow-hidden border border-slate-200 bg-white hover:border-blue-200 transition-all duration-300 hover:shadow-lg rounded-2xl"
+                                className={`group relative overflow-hidden border border-slate-200 bg-white hover:border-blue-200 transition-all duration-300 hover:shadow-lg rounded-2xl ${
+                                    // odd count: centre the lone last card under the two-column grid
+                                    index === internationalCollaborators.length - 1 && index % 2 === 0
+                                        ? "md:col-span-2 md:w-[calc(50%-1rem)] md:justify-self-center"
+                                        : ""
+                                }`}
                                 role="listitem"
                             >
                                 <CardContent className="p-6">
@@ -109,14 +114,28 @@ export function CollaborationsSection() {
                                         <div className="relative flex-shrink-0">
                                             <div
                                                 className="relative h-20 w-20 rounded-full overflow-hidden shadow-sm border border-slate-100">
-                                                <Image
-                                                    src={collaborator.image || "/placeholder.svg"}
-                                                    alt={`Portrait of ${collaborator.name}`}
-                                                    fill
-                                                    className="object-cover transition-transform duration-500 group-hover:scale-105"
-                                                    sizes="80px"
-                                                    loading="lazy"
-                                                />
+{collaborator.image ? (
+                                                    <Image
+                                                        src={collaborator.image}
+                                                        alt={`Portrait of ${collaborator.name}`}
+                                                        fill
+                                                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                                        sizes="80px"
+                                                        loading="lazy"
+                                                    />
+                                                ) : (
+                                                    <div
+                                                        className="flex h-full w-full items-center justify-center bg-slate-100 text-xl font-bold text-[#152550]"
+                                                        aria-hidden="true"
+                                                    >
+                                                        {collaborator.name
+                                                            .replace(/^(Prof\.|Dr\.)\s*/, "")
+                                                            .split(" ")
+                                                            .map((w) => w[0])
+                                                            .slice(0, 2)
+                                                            .join("")}
+                                                    </div>
+                                                )}
                                             </div>
                                         </div>
 
