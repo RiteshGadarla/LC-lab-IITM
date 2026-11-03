@@ -1,4 +1,5 @@
 "use client"
+import { nameToSlug } from "@/lib/utils"
 
 import {Card, CardContent} from "@/components/ui/card"
 import type {TeamMember} from "@/lib/teamData"
@@ -35,8 +36,8 @@ export default function TeamGrid({
                 {filteredMembers.map((member, index) => (
                     <Card
                         key={index}
-                        onClick={() => onSelect?.(member)}
-                        className="group cursor-pointer hover:shadow-lg border border-slate-200 rounded-2xl transition-all duration-300 bg-white w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] max-w-sm"
+                        id={nameToSlug(member.name)}
+                        className="group hover:shadow-lg border border-slate-200 rounded-2xl transition-all duration-300 bg-white w-full md:w-[calc(50%-2rem)] lg:w-[calc(33.333%-2rem)] max-w-sm"
                     >
                         <CardContent className="p-8 flex flex-col items-center text-center h-full">
                             {member.image && (

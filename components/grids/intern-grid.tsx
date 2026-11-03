@@ -1,4 +1,5 @@
 "use client"
+import { nameToSlug } from "@/lib/utils"
 
 import {Card, CardContent} from "@/components/ui/card"
 import type {TeamMember} from "@/lib/teamData"
@@ -33,6 +34,7 @@ export default function InternGrid({
                 {filteredInterns.map((intern, index) => (
                     <Card
                         key={index}
+                        id={nameToSlug(intern.name)}
                         className="
                             border border-slate-200 rounded-2xl bg-white
                             hover:shadow-md transition-shadow duration-300

@@ -1,4 +1,5 @@
 "use client"
+import { nameToSlug } from "@/lib/utils"
 
 import {Card, CardContent} from "@/components/ui/card"
 import type {PrincipalInvestigator} from "@/lib/teamData"
@@ -17,6 +18,7 @@ export default function PrincipalInvestigatorCard({
             </h3>
 
             <Card
+                id={nameToSlug(investigator.name)}
                 className="
                     max-w-5xl mx-auto bg-white border border-slate-200
                     rounded-2xl overflow-hidden shadow-sm

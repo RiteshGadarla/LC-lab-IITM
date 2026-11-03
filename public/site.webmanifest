@@ -9,8 +9,8 @@
     "theme_color": "#1e293b",
     "icons": [
         {
-            "src": "/anindita/darkLogo2.png",
-            "sizes": "313x275",
+            "src": "/anindita/darkLogo.png",
+            "sizes": "1369x1149",
             "type": "image/png"
         }
     ]

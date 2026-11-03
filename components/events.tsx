@@ -6,6 +6,7 @@ import { Badge } from "@/components/ui/badge"
 import { eventsData } from "@/lib/eventData"
 import EventImageSlideshow from "./Slideshow"
 import { PageHeader } from "@/components/page-header"
+import { nameToSlug } from "@/lib/utils"
 
 export function EventsSection() {
     const [isVisible, setIsVisible] = useState(false)
@@ -36,6 +37,43 @@ export function EventsSection() {
             setUpcomingEventIds(upcomingIds)
         }
         checkUpcomingEvents()
+    }, [])
+
+    // Scroll to an event when the URL hash is its heading in lowercase alphanumerics
+    // (e.g. #essentialsofgenerativegrammar). Unknown hashes are ignored.
+    useEffect(() => {
+        let userScrolled = false
+        const timers: ReturnType<typeof setTimeout>[] = []
+        const stop = () => { userScrolled = true }
+
+        const align = (behavior: ScrollBehavior) => {
+            if (userScrolled) return
+            const id = decodeURIComponent(window.location.hash.slice(1))
+            const el = id ? document.getElementById(id) : null
+            if (!el) return
+            // Phones: put the top of the event (its badges) just under the ~73px navbar.
+            const top = el.getBoundingClientRect().top + window.scrollY - (window.innerWidth < 768 ? 80 : 96)
+            window.scrollTo({ top: Math.max(0, top), behavior })
+        }
+        const run = () => {
+            userScrolled = false
+            align("smooth")
+            timers.push(setTimeout(() => align("instant"), 1200))
+        }
+        const start = () => timers.push(setTimeout(run, 250))
+        if (document.readyState === "complete") start()
+        else window.addEventListener("load", start, { once: true })
+
+        window.addEventListener("wheel", stop, { passive: true })
+        window.addEventListener("touchmove", stop, { passive: true })
+        window.addEventListener("hashchange", run)
+        return () => {
+            timers.forEach(clearTimeout)
+            window.removeEventListener("load", start)
+            window.removeEventListener("wheel", stop)
+            window.removeEventListener("touchmove", stop)
+            window.removeEventListener("hashchange", run)
+        }
     }, [])
 
     useEffect(() => {
@@ -81,6 +119,7 @@ export function EventsSection() {
                         {eventsData.map((event, index) => (
                             <div
                                 key={event.id}
+                                id={nameToSlug(event.heading)}
                                 className={`grid lg:grid-cols-2 gap-12 lg:gap-16 items-start ${
                                     index % 2 === 1 ? "lg:grid-flow-dense" : ""
                                 }`}
@@ -144,11 +183,16 @@ export function EventsSection() {
                                                 {desc}
                                             </p>
                                         ))}
-                                        {event.note && (
-                                            <div className="border-l-4 border-slate-400 pl-5 py-3 bg-slate-50 rounded-r-md mt-6">
-                                                <p className="text-slate-500 italic text-base">
-                                                    {event.note}
-                                                </p>
+                                        {event.notes && event.notes.length > 0 && (
+                                            <div className="border-l-4 border-[#000080] pl-5 py-3 bg-slate-50 rounded-r-md mt-6 space-y-2">
+                                                {event.notes.map((note, idx) => (
+                                                    <p
+                                                        key={idx}
+                                                        className="text-slate-700 text-base font-medium"
+                                                    >
+                                                        {note}
+                                                    </p>
+                                                ))}
                                             </div>
                                         )}
                                     </div>

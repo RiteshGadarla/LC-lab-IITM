@@ -116,7 +116,7 @@ export function Navigation() {
                             src="/anindita/iitmadrasLogo.png"
                             alt="IIT Madras Logo"
                             onClick={() => window.open("https://www.iitm.ac.in", "_blank")}
-                            className="h-10 md:h-12 w-auto cursor-pointer hover:opacity-90 transition-opacity"
+                            className="h-11 md:h-14 w-auto cursor-pointer hover:opacity-90 transition-opacity"
                             onError={handleImageError}
                         />
 
@@ -126,18 +126,23 @@ export function Navigation() {
                             <img
                                 src={isScrolled ? "/anindita/darkLogo.png" : "/anindita/lightLogo.png"}
                                 alt="LC Lab Logo"
-                                className="h-8 md:h-10 w-auto transition-all duration-300 group-hover:scale-105"
+                                className="h-12 md:h-[60px] w-auto transition-all duration-300 group-hover:scale-105"
                                 onError={(e) => {
                                     const target = e.currentTarget;
                                     target.onerror = null;
                                     target.src = "/anindita/placeholder.svg"
                                 }}
                             />
-                            <div className="hidden sm:block">
-                                <p className={`text-base md:text-lg font-bold leading-none tracking-tight font-serif ${isScrolled ? "text-slate-900" : "text-white"}`}>
-                                    Language & Cognition Lab
-                                </p>
-                                <p className={`text-[10px] uppercase tracking-widest font-medium mt-1 ${isScrolled ? "text-slate-500" : "text-slate-300"}`}>IIT Madras</p>
+                            <div className="hidden sm:flex flex-col font-montserrat select-none">
+                                <span className={`text-[9px] md:text-[10px] font-bold uppercase tracking-wide text-right leading-none ${isScrolled ? "text-slate-500" : "text-slate-300"}`}>
+                                    IIT MADRAS
+                                </span>
+                                <span className={`text-sm md:text-base lg:text-[18px] font-bold uppercase tracking-normal leading-none my-[3px] ${isScrolled ? "text-slate-900" : "text-white"}`}>
+                                    LANGUAGE & COGNITION LAB
+                                </span>
+                                <span className={`text-[9px] md:text-[10px] lg:text-[11.5px] font-medium tracking-normal leading-none text-center ${isScrolled ? "text-slate-600" : "text-slate-200"}`}>
+                                    Exploring languages and Expanding insights
+                                </span>
                             </div>
                         </div>
                     </div>
@@ -149,7 +154,7 @@ export function Navigation() {
                             <Link
                                 key={item.href}
                                 href={item.href}
-                                className={`px-4 py-2 text-sm font-medium rounded-full transition-all duration-300 whitespace-nowrap ${pathname === item.href
+                                className={`px-4 py-2 text-sm font-medium font-montserrat rounded-full transition-all duration-300 whitespace-nowrap ${pathname === item.href
                                     ? "bg-blue-600/10 text-blue-700"
                                     : isScrolled
                                         ? "text-slate-600 hover:text-slate-900 hover:bg-slate-100"
@@ -247,13 +252,24 @@ export function Navigation() {
                                 <img
                                     src="/anindita/darkLogo.png"
                                     alt="LC Lab Logo"
-                                    className="h-8 w-auto"
+                                    className="h-11 w-auto"
                                     onError={(e) => {
                                         const target = e.currentTarget;
                                         target.onerror = null;
                                         target.src = "/anindita/placeholder.svg"
                                     }}
                                 />
+                                <div className="flex flex-col font-montserrat select-none">
+                                    <span className="text-[8px] font-bold uppercase tracking-wider text-right text-slate-500 leading-tight">
+                                        IIT MADRAS
+                                    </span>
+                                    <span className="text-xs sm:text-sm font-bold uppercase tracking-wide text-slate-900 leading-tight my-[1px]">
+                                        LANGUAGE & COGNITION LAB
+                                    </span>
+                                    <span className="text-[8px] sm:text-[9px] font-normal tracking-normal text-slate-600 leading-tight">
+                                        Exploring languages and Expanding insights
+                                    </span>
+                                </div>
                             </div>
                             <Button
                                 variant="ghost"
@@ -277,7 +293,7 @@ export function Navigation() {
                                             onClick={() => setIsOpen(false)}
                                             style={{ animationDelay: `${idx * 50}ms` }}
                                             className={`
-                                                block w-full text-center px-4 py-4 text-2xl font-bold rounded-2xl transition-all duration-300 animate-in slide-in-from-bottom-8 fill-mode-backwards
+                                                block w-full text-center px-4 py-4 text-2xl font-bold font-montserrat rounded-2xl transition-all duration-300 animate-in slide-in-from-bottom-8 fill-mode-backwards
                                                 ${isActive
                                                     ? "text-[#000080]"
                                                     : "text-slate-400 hover:text-slate-900"

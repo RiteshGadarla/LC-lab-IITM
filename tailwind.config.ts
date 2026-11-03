@@ -10,11 +10,14 @@ const config: Config = {
   ],
   theme: {
   	extend: {
+  		fontFamily: {
+  			montserrat: ['var(--font-montserrat)', 'sans-serif'],
+  		},
   		colors: {
   			brand: {
-  				DEFAULT: '#000080',
-  				dark: '#00005c',
-  				light: '#1e3a8a'
+  				DEFAULT: '#152550',
+  				dark: '#0e1a38',
+  				light: '#1f3570'
   			},
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',

@@ -60,24 +60,30 @@ export function ResearchSection() {
 
         {/* Tabs */}
         <Tabs value={activeTab} onValueChange={setActiveTab} className="w-full">
-          <TabsList className="grid w-full grid-cols-3 max-w-md mx-auto mb-12 h-auto p-1 bg-white border border-slate-200 rounded-full shadow-sm">
+          <TabsList className="relative grid w-full grid-cols-3 max-w-md mx-auto mb-12 h-auto p-1 bg-white border border-slate-200 rounded-full shadow-sm">
+            {/* Sliding pill: moves between the three equal-width tabs */}
+            <span
+              aria-hidden="true"
+              className="absolute top-1 bottom-1 left-1 w-[calc((100%-0.5rem)/3)] rounded-full bg-[#000080] shadow-sm transition-transform duration-500 ease-[cubic-bezier(0.65,0,0.35,1)]"
+              style={{ transform: `translateX(${["projects", "publications", "conferences"].indexOf(activeTab) * 100}%)` }}
+            />
             <TabsTrigger
               value="projects"
-              className="flex items-center justify-center gap-2 [.dyslexic-mode_&]:gap-1 rounded-full py-3 [.dyslexic-mode_&]:px-1 text-sm [.dyslexic-mode_&]:text-[11px] font-medium data-[state=active]:bg-[#000080] data-[state=active]:text-white transition-all duration-300"
+              className="flex items-center justify-center gap-2 [.dyslexic-mode_&]:gap-1 relative z-10 rounded-full py-3 [.dyslexic-mode_&]:px-1 text-sm [.dyslexic-mode_&]:text-[11px] font-medium data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-white transition-colors duration-500"
             >
               <Users size={16} className="hidden sm:block [.dyslexic-mode_&]:hidden" />
               Projects
             </TabsTrigger>
             <TabsTrigger
               value="publications"
-              className="flex items-center justify-center gap-2 [.dyslexic-mode_&]:gap-1 rounded-full py-3 [.dyslexic-mode_&]:px-1 text-sm [.dyslexic-mode_&]:text-[11px] font-medium data-[state=active]:bg-[#000080] data-[state=active]:text-white transition-all duration-300"
+              className="flex items-center justify-center gap-2 [.dyslexic-mode_&]:gap-1 relative z-10 rounded-full py-3 [.dyslexic-mode_&]:px-1 text-sm [.dyslexic-mode_&]:text-[11px] font-medium data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-white transition-colors duration-500"
             >
               <BookOpen size={16} className="hidden sm:block [.dyslexic-mode_&]:hidden" />
               Publications
             </TabsTrigger>
             <TabsTrigger
               value="conferences"
-              className="flex items-center justify-center gap-2 [.dyslexic-mode_&]:gap-1 rounded-full py-3 [.dyslexic-mode_&]:px-1 text-sm [.dyslexic-mode_&]:text-[11px] font-medium data-[state=active]:bg-[#000080] data-[state=active]:text-white transition-all duration-300"
+              className="flex items-center justify-center gap-2 [.dyslexic-mode_&]:gap-1 relative z-10 rounded-full py-3 [.dyslexic-mode_&]:px-1 text-sm [.dyslexic-mode_&]:text-[11px] font-medium data-[state=active]:bg-transparent data-[state=active]:shadow-none data-[state=active]:text-white transition-colors duration-500"
             >
               <MapPin size={16} className="hidden sm:block [.dyslexic-mode_&]:hidden" />
               Conferences

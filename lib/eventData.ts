@@ -7,7 +7,7 @@ export interface Event {
     venue: string;
     imagesBG: string[];
     imagesSM: string[];
-    note?: string;
+    notes?: string[];
 }
 
 export const eventsData: Event[] = [
@@ -29,7 +29,10 @@ export const eventsData: Event[] = [
         imagesSM: [
             "/anindita/eventImages/ilc2026.png",
         ],
-        note: "Due to travel issues, Prof. Chad Howe’s in-person participation is uncertain; if unable to attend, he may join online.",
+        notes: [
+            "Revised abstract submission and registration deadline: November 10, 2026.",
+            "This seminar is supported by De Gruyter Brill.",
+        ],
     },
     {
         id: "ai-powered-tamil-language-proficiency-assessment-2026",

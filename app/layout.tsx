@@ -1,6 +1,6 @@
 import type React from "react"
 import type { Metadata, Viewport } from "next"
-import { Inter, Crimson_Text } from 'next/font/google'
+import { Inter, Crimson_Text, Montserrat } from 'next/font/google'
 import { Navigation } from "@/components/navigation"
 import { Footer } from "@/components/footer"
 import "./globals.css"
@@ -21,6 +21,13 @@ const crimsonText = Crimson_Text({
     display: 'swap',
 })
 
+const montserrat = Montserrat({
+    weight: ['400', '500', '600', '700', '800'],
+    subsets: ['latin'],
+    variable: '--font-montserrat',
+    display: 'swap',
+})
+
 export const metadata: Metadata = {
     metadataBase: new URL('https://home.iitm.ac.in/anindita/'),
     title: {
@@ -32,8 +39,8 @@ export const metadata: Metadata = {
     authors: [{ name: "Language and Cognition Laboratory, IIT Madras" }],
     publisher: "IIT Madras",
     icons: {
-        icon: '/anindita/darkLogo2.png',
-        apple: '/anindita/darkLogo2.png',
+        icon: '/anindita/darkLogo.png',
+        apple: '/anindita/darkLogo.png',
     },
     manifest: '/anindita/site.webmanifest',
     openGraph: {
@@ -70,7 +77,7 @@ export default function RootLayout({ children, }: {
     children: React.ReactNode
 }) {
     return (
-        <html lang="en" className={`${inter.variable} ${crimsonText.variable} scroll-smooth`}>
+        <html lang="en" className={`${inter.variable} ${crimsonText.variable} ${montserrat.variable} scroll-smooth`}>
             <body className="antialiased min-h-screen bg-white">
                 <JsonLd />
                 <FontProvider>

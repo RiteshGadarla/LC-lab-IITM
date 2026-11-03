@@ -5,16 +5,6 @@ import { useRouter } from "next/navigation";
 import { ChevronDown } from "lucide-react"
 import { useFont } from "@/app/FontContext"
 import { multilingualChars } from "@/lib/chars"
-import { publications, researchProjects } from "@/lib/researchData"
-import { teamMembers, researchStaff } from "@/lib/teamData"
-import { internationalCollaborators } from "@/lib/collaboratorsData"
-
-const HERO_STATS = [
-    { value: publications.length, label: "Publications" },
-    { value: researchProjects.length, label: "Research Projects" },
-    { value: [...teamMembers, ...researchStaff].filter((m) => m.isActive).length, label: "Active Researchers" },
-    { value: internationalCollaborators.length, label: "Global Collaborators" },
-]
 
 interface FloatingChar {
     id: number
@@ -338,7 +328,7 @@ export function HeroSection() {
                         <nav className="flex flex-col sm:flex-row gap-4 justify-center items-center" role="navigation" aria-label="Primary navigation">
                             <button
                                 onClick={() => router.push("/lclab/research")}
-                                className="bg-blue-800 hover:bg-blue-700 text-white px-8 py-3 rounded-2xl font-medium transition-all duration-300 hover:scale-105 shadow-lg"
+                                className="bg-white hover:bg-slate-100 text-[#152550] px-8 py-3 rounded-2xl font-semibold transition-all duration-300 hover:scale-105 shadow-lg"
                                 aria-label="Navigate to research page"
                             >
                                 Research Portfolio
@@ -351,19 +341,6 @@ export function HeroSection() {
                                 Meet the Team
                             </button>
                         </nav>
-
-                        <dl className="hidden sm:grid mt-16 grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-4 max-w-3xl mx-auto border-t border-white/10 pt-10">
-                            {HERO_STATS.map((stat) => (
-                                <div key={stat.label} className="text-center sm:border-l sm:first:border-l-0 border-white/10">
-                                    <dd className="text-3xl md:text-4xl font-bold text-white tracking-tight">{stat.value}</dd>
-                                    <dt className="mt-2 text-xs uppercase tracking-widest text-slate-400 font-medium leading-relaxed">
-                                        {stat.label.split(" ").map((word, i) => (
-                                            <span key={i} className="block">{word}</span>
-                                        ))}
-                                    </dt>
-                                </div>
-                            ))}
-                        </dl>
                     </div>
                 </header>
             </div>

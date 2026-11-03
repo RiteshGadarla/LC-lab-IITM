@@ -12,12 +12,12 @@ export function Footer() {
               <img
                 src="/anindita/lightLogo.png"
                 alt="LC Lab"
-                className="h-10 w-auto opacity-90"
+                className="h-[60px] w-auto opacity-90"
               />
-              <div>
-                <h3 className="font-serif font-bold text-lg tracking-wide">Language & Cognition Lab</h3>
-                <p className="text-sm text-slate-400 font-medium">Department of Humanities and Social Sciences</p>
-                <p className="text-xs text-slate-500 uppercase tracking-widest mt-1">IIT Madras</p>
+              <div className="font-montserrat">
+                <h3 className="font-montserrat font-bold text-lg tracking-wide">Language & Cognition Lab</h3>
+                <p className="text-sm text-slate-400 font-normal">Department of Humanities and Social Sciences</p>
+                <p className="text-xs text-slate-500 font-bold uppercase tracking-widest mt-1">IIT Madras</p>
               </div>
             </div>
             <p className="text-slate-400 text-sm leading-7 max-w-md">
