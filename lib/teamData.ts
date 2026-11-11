@@ -24,7 +24,7 @@ export const principalInvestigator: PrincipalInvestigator = {
     name: "Dr. Anindita Sahoo",
     role: "Principal Investigator",
     isActive: true,
-    title: "Assistant Professor, Department of Humanities and Social Sciences, IIT Madras | Faculty PI at CeRAI, IIT Madras",
+    title: "Associate Professor, Department of Humanities and Social Sciences, IIT Madras | Faculty PI at CeRAI, IIT Madras",
     interests: "Linguistic Typology, Syntax, Pragmatics, Language Processing, Eye-tracking, Cognition Studies",
     image: "/anindita/peopleImages/drAninditaSahoo_Sm.webp",
     linkedInLink: "https://www.linkedin.com/in/anindita-sahoo-3b971515/",

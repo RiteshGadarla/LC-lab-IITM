@@ -19,22 +19,18 @@ const collaborators = [
         image: "/anindita/collaboratorImages/marceldendikken.webp",
     },
     {
+        name: "Prof. Dr. Nivedita Mani",
+        institution: "Georg-August University of Göttingen",
+        country: "Germany",
+        image: "/anindita/collaboratorImages/niveditaMani.webp",
+    },
+    {
         name: "Prof. Seppo Kittilä",
         institution: "University of Helsinki",
         country: "Finland",
         image: "/anindita/collaboratorImages/seppoKittila.webp",
-    },
-    {
-        name: "Dr. Nivedita Mani",
-        institution: "Georg-August University of Göttingen",
-        country: "Germany",
-        image: "/anindita/collaboratorImages/niveditaMani.webp",
     }
 ]
 
-// Alphabetical by first name, ignoring the "Prof." / "Dr." title
-const sortKey = (name: string) => name.replace(/^(Prof\.|Dr\.)\s*/, "")
 
-export const internationalCollaborators = [...collaborators].sort((a, b) =>
-    sortKey(a.name).localeCompare(sortKey(b.name))
-)
+export const internationalCollaborators = [...collaborators]
