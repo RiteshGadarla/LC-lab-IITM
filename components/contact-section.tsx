@@ -118,10 +118,10 @@ export function ContactSection() {
                     <div className="flex items-start gap-5">
                       <div className="w-12 h-12 bg-blue-50 rounded-lg flex items-center justify-center flex-shrink-0 text-[#000080]">
                         <a
-                            href={labDetails.linkedIn}
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            className="hover:text-[#000080]"
+                          href={labDetails.linkedIn}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-[#000080]"
                         >
                           <Linkedin size={24} strokeWidth={1.5} />
                         </a>
@@ -129,8 +129,10 @@ export function ContactSection() {
                       <div>
                         <h3 className="font-bold text-slate-900 mb-1">LinkedIn</h3>
                         <a
-                            href={`mailto:lclab@smail.iitm.ac.in`}
-                            className="text-black hover:text-gray-700 transition-colors"
+                          href={labDetails.linkedIn}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-black hover:text-gray-700 transition-colors"
                         >
                           {labDetails.linkedInName}
                         </a>
@@ -138,6 +140,7 @@ export function ContactSection() {
                     </div>
                   </CardContent>
                 </Card>
+
 
                 <Card className="hover:shadow-lg transition-all duration-300 rounded-2xl bg-white border border-slate-200">
                   <CardContent className="p-6">
